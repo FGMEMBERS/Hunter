@@ -21,6 +21,12 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
       <flight-model>yasim</flight-model>
       <aero>hunter-yasim-2t</aero>
       <fuel-fraction>1.0</fuel-fraction>
+	  <ai> 
+        <scenario>ship_demo</scenario>
+		<carrier>
+		  <path>Aircraft/Hunter/Models/carrier.xml</path>
+		</carrier>
+      </ai>
       <systems> 
         <!--   -->
         <autopilot> 
@@ -152,29 +158,29 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
             <value type="double">1</value>
           </binding>
         </key>
-        <!-- map keys for arrestor hook -->
-        <key n="72"> 
-          <name>H</name>
+        <!-- map keys for arrester hook -->
+        <key n="79"> 
+          <name>O</name>
           <desc>Hook down.</desc>
           <binding> 
             <command>property-assign</command>
-            <property>/controls/gear/tailhook</property>
+            <property>controls/gear/tailhook</property>
             <value type="double">1.0</value>
           </binding>
         </key>
-        <key n="104"> 
-          <name>h</name>
+        <key n="111"> 
+          <name>o</name>
           <desc>Hook Up.</desc>
           <binding> 
             <command>property-assign</command>
-            <property>/controls/gear/tailhook</property>
+            <property>controls/gear/tailhook</property>
             <value type="double">0.0</value>
           </binding>
         </key>
         <!-- map keys for wing fold -->
         <key n="70"> 
           <name>F</name>
-          <desc>Wing Fold Down.</desc>
+          <desc>Wing Fold Down/Canopy Close.</desc>
           <binding> 
             <command>property-assign</command>
             <property>/controls/flight/wing-fold</property>
@@ -183,7 +189,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
         </key>
         <key n="102"> 
           <name>f</name>
-          <desc>Wing Fold Up.</desc>
+          <desc>Wing Fold Up/Canopy Open.</desc>
           <binding> 
             <command>property-assign</command>
             <property>/controls/flight/wing-fold</property>
