@@ -18,6 +18,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
  <sim>
 
   <description>Hawker Hunter(YASim)</description>
+  <author>Lee Elliot</author>
   <status>early-production</status>
 
   <virtual-cockpit archive="y">true</virtual-cockpit>
