@@ -1,7 +1,250 @@
 <?xml version="1.0"?>
+<!--
+************************************************************************
+Hawker Hunter simulation config. This files ties together 
+all the components used by FGFS to represent the Hawker Hunter. Components include 
+the flight data model, instrument panel, and external 3D model.
 
-<PropertyList include="hunter-yasim-set.xml">
+Ver 0.1.0
+
+Revised keybard bindings are included for cockpit canopy open/close, arrestor hook 
+raise/lower, emergency flap lowering, and 10 degree flap steps.
+
+
+************************************************************************
+-->
+
+<PropertyList>
  <sim>
-  <description>Alias for hunter-yasim.</description>
+
+  <description>Hawker Hunter(YASim)</description>
+
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+
+  <flight-model>yasim</flight-model>
+  <aero>hunter-yasim</aero>
+  <fuel-fraction>1.0</fuel-fraction>
+
+  <systems>
+   <electrical>
+    <path>Aircraft/Generic/generic-electrical.xml</path>
+   </electrical>
+  </systems> 
+ 
+  <sound>
+   <audible>true</audible>
+   <path>Aircraft/Hunter/Sounds/hunter-sound.xml</path>
+  </sound>
+
+<!-- hide the 2D panel -->
+  <panel>
+   <visibility archive="n">false</visibility>
+  </panel>
+ 
+ 
+ <!-- no HUD --> 
+  <hud>
+   <path>Huds/Default/default.xml</path>
+   <visibility>false</visibility>
+  </hud>
+
+  <model>
+   <path>Aircraft/Hunter/Models/hunter-model.xml</path>
+  </model>
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y">0</x-offset-m>
+    <y-offset-m archive="y">0.81</y-offset-m>
+    <z-offset-m archive="y">-4.26</z-offset-m>
+<!--	<eye-heading-deg-path>/orientation/gamma-horiz-deg</eye-heading-deg-path>-->
+     <pitch-offset-deg>-15</pitch-offset-deg> 
+    <default-field-of-view-deg>60</default-field-of-view-deg>
+   </config>
+  </view>
+
+<!--
+  <current-view>
+    <field-of-view>60.0</field-of-view>
+  </current-view>
+
+-->   
+
  </sim>
+ 
+ 
+
+ <autopilot>
+   <config>
+     <min-climb-speed-kt type="float">200.0</min-climb-speed-kt>
+     <best-climb-speed-kt type="float">300.0</best-climb-speed-kt>
+     
+	 <target-climb-rate-fpm type="float">3000.0</target-climb-rate-fpm>
+     <target-descent-rate-fpm type="float">1500.0</target-descent-rate-fpm>
+     
+	 <elevator-adj-factor type="float">5500.0</elevator-adj-factor>
+     <integral-contribution type="float">0.007</integral-contribution>
+     
+	 <zero-pitch-throttle type="float">0.60</zero-pitch-throttle>
+     <zero-pitch-trim-full-throttle type="float">0.14</zero-pitch-trim-full-throttle>
+  
+	 <max-aileron type="float">10</max-aileron>
+     <max-roll-deg type="float">45.0</max-roll-deg>
+
+     <roll-out-deg type="float">2</roll-out-deg>
+     <roll-out-smooth-deg type="float">15.0</roll-out-smooth-deg>
+
+   </config>
+ </autopilot>
+
+<!-- *************** set properties **********************-->
+
+<!--parking brake ON --> 
+<!-- nosewheel lock OFF -->
+ <controls>
+  <gear>
+   <brake-parking>1</brake-parking>
+   <tailwheel-lock>true</tailwheel-lock>
+  </gear>
+  <flight>
+    <flaps-alternate-extension type="double">1</flaps-alternate-extension>
+  </flight> 
+  </controls>
+ 
+ <!-- hsi heading bug and source select-->
+ <instrumentation>
+    <heading-indicator>
+	   <heading-bug-deg type="double">95</heading-bug-deg>
+	   <heading-source type="bool">true</heading-source>
+    </heading-indicator>
+	<dme>
+		<frequencies>
+			<selected-mhz>115.8</selected-mhz>
+		</frequencies>
+	</dme>
+	<adf>
+		<frequencies>
+			<selected-khz>379</selected-khz>
+			<standby-khz>341</standby-khz>
+		</frequencies>
+	</adf>
+ </instrumentation>
+ 
+ <!-- radio dme switch ON -->
+ <radios>
+ 	<dme>
+		<switch-position>1</switch-position>	
+	</dme>
+ </radios>
+
+<!-- map keyboard input -->
+ <input>
+  <keyboard>
+  <!-- map keys for airbrake interlock -->
+  <key n="2">
+  <name>Ctrl-B</name>
+  <desc>Toggle speedbrake.</desc>
+  <binding>
+    <condition>
+      <equals>
+        <property>/gear/gear/position-norm</property>
+	    <value>0</value>
+      </equals>
+    </condition> 
+    <command>property-toggle</command>
+    <property>/controls/flight/speedbrake</property>
+  </binding>
+  </key>
+  <!-- map keys for emergency flap lowering -->
+  <key n="6">
+  <name>Ctrl-F</name>
+  <desc>Emergency Flap Lowering.</desc>
+  <binding>
+   <command>property-assign</command>
+   <property>/controls/flight/flaps-alternate-extension</property>
+   <value type="double">0</value>
+  </binding>
+  <binding>
+    <command>property-assign</command>
+    <property>/controls/flight/flaps</property>
+	<value type="double">1</value>
+  </binding>
+  </key>
+  <!-- map keys for arrestor hook -->
+  <key n="72">
+  <name>H</name>
+  <desc>Hook down.</desc>
+   <binding>
+     <command>property-assign</command>
+     <property>/controls/gear/tailhook</property>
+      <value type="double">1.0</value>
+    </binding>
+   </key>
+   <key n="104">
+   <name>h</name>
+   <desc>Hook Up.</desc>
+    <binding>
+     <command>property-assign</command>
+     <property>/controls/gear/tailhook</property>
+     <value type="double">0.0</value>
+    </binding>
+   </key>
+   <!-- map keys for wing fold -->
+   <key n="70">
+   <name>F</name>
+   <desc>Wing Fold Down.</desc>
+    <binding>
+     <command>property-assign</command>
+     <property>/controls/flight/wing-fold</property>
+     <value type="double">1.0</value>
+    </binding>
+   </key>
+   <key n="102">
+   <name>f</name>
+   <desc>Wing Fold Up.</desc>
+    <binding>
+     <command>property-assign</command>
+     <property>/controls/flight/wing-fold</property>
+     <value type="double">0.0</value>
+    </binding>
+   </key>
+   <!-- map keys for 10 deg flap steps -->
+   <key n="91">
+   <name>[</name>
+   <desc>Decrease flaps.</desc>
+   <binding>
+	 <condition>
+	   <equals>
+        <property>controls/flight/flaps-alternate-extension</property>
+	    <value>1</value>
+      </equals>
+     </condition> 
+	 <command>property-adjust</command>
+	 <property>/controls/flight/flaps</property>
+	 <step type="double">-0.10</step>
+   </binding>
+  </key>
+  <key n="93">
+  <name>]</name>
+  <desc>Increase flaps.</desc>
+  <binding>
+   <condition>
+	   <equals>
+        <property>controls/flight/flaps-alternate-extension</property>
+	    <value>1</value>
+      </equals>
+    </condition> 
+   <command>property-adjust</command>
+   <property>/controls/flight/flaps</property>
+   <step type="double">0.10</step>
+  </binding>
+  </key>
+  </keyboard>
+  
+ </input>
+
+  
+
+
 </PropertyList>
