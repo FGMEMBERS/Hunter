@@ -22,13 +22,13 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
   <virtual-cockpit archive="y">true</virtual-cockpit>
 
   <flight-model>yasim</flight-model>
-  <aero>Hunter-yasim-2t</aero>
+  <aero>hunter-yasim-2t</aero>
   <fuel-fraction>1.0</fuel-fraction>
 
   <systems>
    <!--   -->
 	 <autopilot>
-    <path>Aircraft/seahawk/Systems/hunter-autopilot.xml</path>
+    <path>Aircraft/Hunter/Systems/hunter-autopilot.xml</path>
    </autopilot>
    
    <electrical>

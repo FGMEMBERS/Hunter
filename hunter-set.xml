@@ -102,7 +102,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 <!-- nosewheel lock OFF -->
  <controls>
   <gear>
-   <parking-brake>1</parking-brake>
+   <brake-parking>1</brake-parking>
    <tailwheel-lock>true</tailwheel-lock>
   </gear>
   <flight>
