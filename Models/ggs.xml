@@ -4,13 +4,13 @@
 
 <PropertyList>
 
- <path>ggs.ac</path>
+ <path>ggs-mod1.ac</path>
 
-<!-- *** LoD *** -->
+<!-- *** LoD *** 
  <animation>
   <type>range</type>
   <min-m>0</min-m>
   <max-m>100</max-m>
  </animation>
-
+-->
 </PropertyList>

@@ -22,13 +22,13 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
   <virtual-cockpit archive="y">true</virtual-cockpit>
 
   <flight-model>yasim</flight-model>
-  <aero>hunter-yasim</aero>
+  <aero>Hunter-yasim-2t</aero>
   <fuel-fraction>1.0</fuel-fraction>
 
   <systems>
    <!--   -->
 	 <autopilot>
-    <path>Aircraft/seahawk/Systems/seahawk-autopilot.xml</path>
+    <path>Aircraft/seahawk/Systems/hunter-autopilot.xml</path>
    </autopilot>
    
    <electrical>
@@ -55,7 +55,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
   </hud>
 
   <model>
-   <path>Aircraft/Hunter/Models/hunter-model.xml</path>
+   <path>Aircraft/Hunter/Models/hunter-model-2t.xml</path>
   </model>
 
   <view n="0">
@@ -72,7 +72,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 </sim>
  
  
-<!--   
+<!--  
  <autopilot>
    <config>
      <min-climb-speed-kt type="float">200.0</min-climb-speed-kt>
@@ -95,7 +95,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 
    </config>
  </autopilot>
--->
+ -->
 <!-- *************** set properties **********************-->
 
 <!--parking brake ON --> 
@@ -323,7 +323,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
   </key>
 	
 	<!-- map keys for jettison stores  -->
-	<!-- not used right now 
+	<!-- not used right now -->
    <key n="73">
    <name>J</name>
    <desc>Jettison Outer Pylon Stores.</desc>
@@ -344,8 +344,8 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 	</key>
    <key n="10">
    <name>Ctrl-J</name>
-   <desc>Jettison Inner and Outer Pylon Stores.</desc>-->
-   <!-- port inner 
+   <desc>Jettison Inner and Outer Pylon Stores.</desc>
+   <!-- port inner -->
    <binding>
      <command>property-assign</command>
      <property>/controls/armament/station[0]/jettison-all</property>
@@ -355,8 +355,8 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
      <command>property-assign</command>
      <property>/yasim/weights/tank-100gal-lbs[0]</property>
      <value type="double">0.0</value>
-    </binding>-->
-	<!-- stbd inner 
+    </binding>
+	<!-- stbd inner -->
 	<binding>
       <command>property-assign</command>
       <property>/controls/armament/station[1]/jettison-all</property>
@@ -367,7 +367,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
       <property>/yasim/weights/tank-100gal-lbs[1]</property>
       <value type="double">0.0</value>
     </binding>
-  </key>-->
+  </key>
 	
   </keyboard>
   

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<!-- drop tank 100 gals -->
+
+<PropertyList>
+
+ <path>droptank-100gal.ac</path>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>Droptank</object-name>
+  <condition>
+   <not>
+   <equals>
+    <property>/sim/current-view/y-offset-m</property>
+    <value>0.81</value>
+   </equals>
+   </not>
+  </condition>
+ 
+ </animation> 
+
+<!-- *** LoD ***
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>100</max-m>
+ </animation>
+ -->
+</PropertyList>

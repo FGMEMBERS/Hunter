@@ -51,99 +51,14 @@
 
  <actions>
 
-  <!-- attitude indicator -->
-  <!--
-  <action>
-   <name></name>
-   <button>0</button>
-   <x>95</x>
-   <y>100</y>
-   <w>60</w>
-   <h>52</h>
-   <binding>
-    <command>property-toggle</command>
-    <property>/instrumentation/attitude-indicator/serviceable</property>
-   </binding>
-  </action>
-  -->
-  <!-- gyro compass hotspots -->
-  <!--
-  <action>
-   <name></name>
-   <button>0</button>
-   <x>-190</x>
-   <y>125</y>
-   <w>20</w>
-   <h>32</h>
-   <binding>
-    <command>property-adjust</command>
-    <property>/instrumentation/heading-indicator/offset-deg</property>
-    <step>-1</step>
-    <min>0</min>
-    <max>360</max>
-    <wrap>true</wrap>
-   </binding>
-  </action>
   
-  <action>
-   <name></name>
-   <button>1</button>
-   <x>-190</x>
-   <y>125</y>
-   <w>20</w>
-   <h>32</h>
-   <binding>
-    <command>property-adjust</command>
-    <property>/instrumentation/heading-indicator/offset-deg</property>
-    <step>-5</step>
-    <min>0</min>
-    <max>360</max>
-    <wrap>1</wrap>
-   </binding>
-  </action>
-
-  <action>
-   <name></name>
-   <button>0</button>
-   <x>-170</x>
-   <y>125</y>
-   <w>20</w>
-   <h>32</h>
-   <binding>
-    <command>property-adjust</command>
-    <property>/instrumentation/heading-indicator/offset-deg</property>
-    <step>1</step>
-    <min>0</min>
-    <max>360</max>
-    <wrap>true</wrap>
-   </binding>
-  </action>
-  
-  <action>
-   <name></name>
-   <button>1</button>
-   <x>-170</x>
-   <y>125</y>
-   <w>20</w>
-   <h>32</h>
-   <binding>
-    <command>property-adjust</command>
-    <property>/instrumentation/heading-indicator/offset-deg</property>
-    <step>5</step>
-    <min>0</min>
-    <max>360</max>
-    <wrap>1</wrap>
-   </binding>
-  </action>
--->
-
   <!-- ************** hsi hotspots ************** -->
   
   <!-- left knob heading-bug -->
   <action>
    <name>ccw-fine</name>
    <button>0</button>
-   <x>-125</x>
+   <x>-100</x>
    <y>100</y>
    <w>50</w>
    <h>50</h>
@@ -160,7 +75,7 @@
   <action>
    <name>ccw-coarse</name>
    <button>1</button>
-   <x>-125</x>
+   <x>-100</x>
    <y>100</y>
    <w>50</w>
    <h>50</h>
@@ -177,7 +92,7 @@
   <action>
    <name>cw-fine</name>
    <button>0</button>
-   <x>-75</x>
+   <x>-40</x>
    <y>100</y>
    <w>50</w>
    <h>50</h>
@@ -195,7 +110,7 @@
   <action>
    <name>cw-coarse</name>
    <button>1</button>
-   <x>-75</x>
+   <x>-40</x>
    <y>100</y>
    <w>50</w>
    <h>50</h>
@@ -213,8 +128,8 @@
   <action>
    <name>source select</name>
    <button>0</button>
-   <x>50</x>
-   <y>125</y>
+   <x>40</x>
+   <y>115</y>
    <w>30</w>
    <h>30</h>
    <binding>
@@ -227,7 +142,7 @@
   <action>
    <name>calibrate fine</name>
    <button>0</button>
-   <x>-250</x>
+   <x>-170</x>
    <y>150</y>
    <w>50</w>
    <h>50</h>
@@ -244,7 +159,7 @@
   <action>
    <name>calibrate coarse</name>
    <button>1</button>
-   <x>-250</x>
+   <x>-170</x>
    <y>150</y>
    <w>50</w>
    <h>50</h>
@@ -261,7 +176,7 @@
   <action>
    <name>calibrate fine</name>
    <button>0</button>
-   <x>-200</x>
+   <x>-120</x>
    <y>150</y>
    <w>50</w>
    <h>50</h>
@@ -278,7 +193,7 @@
   <action>
    <name>calibrate coarse</name>
    <button>1</button>
-   <x>-200</x>
+   <x>-120</x>
    <y>150</y>
    <w>50</w>
    <h>50</h>
@@ -335,7 +250,7 @@
   <action>
    <name>extend</name>
    <button>0</button>
-   <x>-500</x>
+   <x>-290</x>
    <y>100</y>
    <w>30</w>
    <h>80</h>
@@ -358,7 +273,7 @@
   <action>
    <name>retract</name>
    <button>0</button>
-   <x>-500</x>
+   <x>-290</x>
    <y>200</y>
    <w>30</w>
    <h>50</h>
@@ -383,7 +298,7 @@
   <action>
    <name>emergy flap lowering</name>
    <button>0</button>
-   <x>-530</x>
+   <x>-320</x>
    <y>250</y>
    <w>30</w>
    <h>40</h>
@@ -399,8 +314,49 @@
    </binding>
   </action>
 
+<!-- gear control -->
+ 
+  <action>
+   <name>extend</name>
+   <button>0</button>
+   <x>-380</x>
+   <y>150</y>
+   <w>40</w>
+   <h>40</h>
+   <binding>
+   <!--   <condition>disable normal gear control if emgy lowering used 
+	    <equals>
+          <property>controls/gear/gear-alternate-extension</property>
+	      <value>1</value>
+       </equals>
+      </condition> -->
+      <command>property-assign</command>
+        <property>/controls/gear/gear-down</property>
+        <value type="double">1.0</value>
+   </binding>
+  </action>
 
-   </actions>
+  <action>
+   <name>retract</name>
+   <button>0</button>
+   <x>-380</x>
+   <y>225</y>
+   <w>40</w>
+   <h>40</h>
+   <binding>
+ <!--    <condition> disable normal gear control if emgy lowering used 
+	    <equals>
+          <property>controls/gear/gear-alternate-extension</property>
+	      <value>1</value>
+       </equals>
+      </condition> -->
+      <command>property-assign</command>
+        <property>/controls/gear/gear-down</property>
+        <value type="double">0</value>
+   </binding>
+  </action>
+   
+	 </actions>
 
   </instrument>
 

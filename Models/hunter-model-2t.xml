@@ -5,14 +5,12 @@
 <!-- Ver 0.1.0 -->
 
 <PropertyList>
-
- <path>hunter-ga11.ac</path> 
-<!--
+   <path>hunter-ga11.ac</path> 
+<!--<path>new-hunter-20.ac</path> -->
  <offsets>
    <z-m>0.0</z-m>
    <pitch-deg>0</pitch-deg>
  </offsets>
--->
 
 <!-- ***************** Cockpit *************************** --> 
  
@@ -234,6 +232,8 @@
   <object-name>Elevator-L</object-name>
   <object-name>Flap-R</object-name>
   <object-name>Flap-L</object-name>
+	<object-name>Tail-Assembly-R</object-name>
+	<object-name>Tail-Assembly-L</object-name>
   <object-name>UC-Nose</object-name>
   <object-name>UC-Main-L</object-name>
   <object-name>UC-Main-R</object-name>
@@ -256,7 +256,9 @@
   <object-name>Pilot</object-name>
   <object-name>Wing-R</object-name>
   <object-name>Wing-L</object-name>
-  <object-name>Aileron-R</object-name>
+	<object-name>Tank-F-R</object-name>
+	<object-name>Tank-F-L</object-name>
+	<object-name>Aileron-R</object-name>
   <object-name>Aileron-L</object-name>
   <object-name>Intake-R</object-name>
   <object-name>Intake-L</object-name>
@@ -271,21 +273,7 @@
   </condition>
 </animation> 
 
-<!-- hide droptanks in all views-->
-	<animation>
-		<type>select</type>
-		<object-name>Pylon-L</object-name>
-		<object-name>Pylon-R</object-name>
-		<object-name>Droptank-R</object-name>
-		<object-name>Droptank-L</object-name>
-		<condition>
-			<less-than>
-				<property>/sim/current-view/view-number</property>
-				<value>0</value>
-			</less-than>
-		</condition>
-	 </animation>
-  
+
  <!-- **************************** Pilot ******************************* --> 
  <!--  conceal Pilot Head etc in Cockpit View-->
  <animation>
@@ -1678,7 +1666,7 @@
  <!-- separate -->
  <animation>
   <type>translate</type>
-  <object-name>Droptank-L</object-name>
+  <object-name>Tank-F-L</object-name>
   <object-name>Tail-Assembly-L</object-name>
   <property>/gear/droptank[0]/position-norm</property>
   <interpolation>
@@ -1694,7 +1682,7 @@
  <!-- fall away -->
  <animation>
   <type>rotate</type>
-  <object-name>Droptank-L</object-name>
+  <object-name>Tank-F-L</object-name>
   <object-name>Tail-Assembly-L</object-name>
   <property>/gear/droptank[0]/position-norm</property>
   <interpolation>
@@ -1717,7 +1705,7 @@
 <!--disappear --> 
  <animation>
   <type>select</type>
-  <object-name>Droptank-L</object-name>
+  <object-name>Tank-F-L</object-name>
   <object-name>Tail-Assembly-L</object-name>
   <condition>
     <less-than>
@@ -1731,7 +1719,7 @@
  <!-- separate -->
  <animation>
   <type>translate</type>
-  <object-name>Droptank-R</object-name>
+  <object-name>Tank-F-R</object-name>
   <object-name>Tail-Assembly-R</object-name>
   <property>/gear/droptank[1]/position-norm</property>
   <interpolation>
@@ -1747,7 +1735,7 @@
  <!-- fall away -->
  <animation>
   <type>rotate</type>
-  <object-name>Droptank-R</object-name>
+  <object-name>Tank-F-R</object-name>
   <object-name>Tail-Assembly-R</object-name>
   <property>/gear/droptank[1]/position-norm</property>
   <interpolation>
@@ -1770,7 +1758,7 @@
 <!--disappear --> 
  <animation>
   <type>select</type>
-  <object-name>Droptank-R</object-name>
+  <object-name>Tank-F-R</object-name>
   <object-name>Tail-Assembly-R</object-name>
   <condition>
     <less-than>
