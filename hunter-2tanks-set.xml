@@ -16,6 +16,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
   <PropertyList> 
     <sim> 
       <description>Hawker Hunter(YASim)</description>
+      <status>early-production</status>
       <virtual-cockpit archive="y">true</virtual-cockpit>
       <flight-model>yasim</flight-model>
       <aero>hunter-yasim-2t</aero>
