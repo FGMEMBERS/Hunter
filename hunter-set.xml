@@ -38,7 +38,6 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
   </systems> 
  
   <sound>
-   <audible>true</audible>
    <path>Aircraft/Hunter/Sounds/hunter-sound.xml</path>
   </sound>
 
