@@ -323,7 +323,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 	
 	<!-- map keys for jettison stores  -->
 	<!-- not used right now -->
-   <key n="73">
+   <key n="74">
    <name>J</name>
    <desc>Jettison Outer Pylon Stores.</desc>
    </key>
