@@ -30,6 +30,11 @@
 	  <buoyancy>     Submodel's upward acceleration (fps) due to buoyancy in air. 32 is neutral
 	                 (contrails),  > 32 exhaust gas, smoke. 
 	  <wind>		 If true, Submodel is affected by local wind. Defaults to false.
+	  <cd>           The Coeffient of Drag. Varies with submodel shape - 0.295 for a bullet, 
+	                 0.045 for an airfoil. Enter an appropriate value. Defaults to 0.295.
+	  <eda>          Effective drag area (sq ft). Usually the cross-sectional area of the submodel 
+	  				 normal to the airflow.
+      <weight>       The weight of the submodel (lbs). Defaults to 0.25	 
 -->
   <PropertyList> 
     <submodel> 
@@ -44,13 +49,14 @@
       <z-offset>-2.39</z-offset>
       <yaw-offset>0</yaw-offset>
       <pitch-offset>0</pitch-offset>
-      <wind>true</wind>
-      <eda>1.2</eda>
+      <wind>false</wind>
+      <eda>2.11348887</eda>
+	  <weight>170</weight>
+	  <cd>0.045</cd>
     </submodel>
     <submodel> 
       <name>droptank-r</name>
       <model>Aircraft/Hunter/Models/droptank-100gal.ac</model>
-      <!-- 	  <model>Models/Geometry/tracer.ac</model>-->
       <trigger>controls/armament/station[1]/jettison-all</trigger>
       <speed>0</speed>
       <repeat>false</repeat>
@@ -60,7 +66,9 @@
       <z-offset>-2.39</z-offset>
       <yaw-offset>0</yaw-offset>
       <pitch-offset>0</pitch-offset>
-      <eda>1.2</eda>
-      <wind>true</wind>
+      <wind>false</wind>
+	  <eda>2.11348887</eda>
+	  <weight>170</weight>
+	  <cd>0.045</cd>
     </submodel>
   </PropertyList>
