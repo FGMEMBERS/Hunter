@@ -53,6 +53,7 @@
       <eda>2.11348887</eda>
 	  <weight>170</weight>
 	  <cd>0.045</cd>
+	  <contents>consumables/fuel/tank[2]/level-lbs</contents>
     </submodel>
     <submodel> 
       <name>droptank-r</name>
@@ -70,5 +71,6 @@
 	  <eda>2.11348887</eda>
 	  <weight>170</weight>
 	  <cd>0.045</cd>
+	  <contents>consumables/fuel/tank[3]/level-lbs</contents>
     </submodel>
   </PropertyList>
