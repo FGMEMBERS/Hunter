@@ -22,6 +22,8 @@
   <control-setting axis="/controls/flight/flaps" value="1.0"/>
   <control-setting axis="/controls/gear/gear-down" value="1"/>
   <control-setting axis="/controls/flight/speedbrake" value="0"/>
+  <solve-weight idx="0" weight="170"/>
+  <solve-weight idx="1" weight="170"/>
 </approach>
 
 <!-- Cruise configuration.   -->
@@ -30,6 +32,8 @@
   <control-setting axis="/controls/flight/flaps" value="0.0"/>
   <control-setting axis="/controls/gear/gear-down" value="0"/>
   <control-setting axis="/controls/flight/speedbrake" value="0"/>
+  <solve-weight idx="0" weight="170"/>
+  <solve-weight idx="1" weight="170"/>
 </cruise>
 
 <!-- pilot eyepoint -->
@@ -195,6 +199,6 @@ drop tanks and the 2 outer unoccupied. This is the configuration modelled here.
 <weight x="-6.75" y="2.83" z="-0.72" size="0.5" 
         mass-prop="/yasim/weights/tank-100gal-lbs[0]"/><!-- port droptank - dry wt -->
 <weight x="-6.75" y="-2.83" z="-0.72" size="0.5" 
-        mass-prop="/yasim/weights/tank-100gal-lbs[0]"/><!-- stbd droptank - dry wt -->
+        mass-prop="/yasim/weights/tank-100gal-lbs[1]"/><!-- stbd droptank - dry wt -->
 
 </airplane>
