@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<!-- airbake warning -->
+
+<PropertyList>
+
+ <path>airbrake-warning.ac</path>
+
+<!-- **************** lamp **************** -->
+<!-- airbrake out -->
+ <animation>
+  <type>select</type>
+  <object-name>disk-airbrake</object-name>
+  <condition>
+   <equals>
+    <property>surface-positions/speedbrake-pos-norm</property>
+	<value>1</value>
+   </equals>
+  </condition>
+ </animation>
+ 
+ <!-- gear warning -->
+ 
+ <animation>
+  <type>select</type>
+  <object-name>disk-gear</object-name>
+  <condition>
+   <equals>
+    <property>controls/gear/gear-down</property>
+	<value>true</value>
+   </equals>
+  </condition>
+ </animation>
+ 
+ <!-- *** LoD *** -->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+ 
+ </PropertyList>
+
+
+

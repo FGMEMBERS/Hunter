@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<PropertyList include="hunter-yasim-set.xml">
+ <sim>
+  <description>Alias for hunter-yasim.</description>
+ </sim>
+</PropertyList>
