@@ -55,6 +55,35 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
           <default-field-of-view-deg>60</default-field-of-view-deg>
         </config>
       </view>
+      <help>
+       <title>Hawker Hunter</title>
+       <key>
+        <name>Ctrl-F</name>
+        <desc>emergency flap lowering</desc>
+       </key>
+       <key>
+        <name>Ctrl-B</name>
+        <desc>toggle speedbrake</desc>
+       </key>
+       <key>
+        <name>f/F</name>
+        <desc>canopy open/close</desc>
+       </key>
+       <key>
+        <name>l/L</name>
+        <desc>seat down/up</desc>
+       </key>
+       <key>
+        <name>Ctrl-L</name>
+        <desc>seat default</desc>
+       </key>
+       <key>
+        <name>o/O</name>
+        <desc>hook up/down</desc>
+       </key>
+       <line>approach speed (full flaps): 140 kts IAS</line>
+       <line>touchdown speed: 130 kts IAS</line>
+      </help>
     </sim>
     <!-- *************** set properties **********************-->
     <!--parking brake ON -->
