@@ -1521,6 +1521,27 @@
    </greater-than>
   </condition>
  </animation>
+ 
+ <!-- nose wheel castering -->
+	
+	<animation> 
+      <type>rotate</type>
+      <object-name>F-Wheel</object-name>
+	  <object-name>F-Lower-Leg</object-name>
+	  <object-name>F-Arm</object-name>
+	  <object-name>F-DArm</object-name>
+      <property>gear/gear/caster-angle-deg</property>
+      <factor>1</factor>
+      <axis> 
+	    <x1-m>-5.23</x1-m>
+        <y1-m>0</y1-m>
+        <z1-m>-0.67</z1-m>
+        <x2-m>-5.23</x2-m>
+        <y2-m>0</y2-m>
+        <z2-m>-1.03</z2-m>
+       
+      </axis>
+	 </animation>
 
 <!--
 <animation>
