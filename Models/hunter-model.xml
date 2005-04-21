@@ -1543,7 +1543,7 @@
 	  <object-name>F-Arm</object-name>
 	  <object-name>F-DArm</object-name>
       <property>gear/gear/caster-angle-deg</property>
-      <factor>1</factor>
+      <factor>-1</factor>
       <axis> 
 	    <x1-m>-5.23</x1-m>
         <y1-m>0</y1-m>
@@ -1555,31 +1555,61 @@
       </axis>
 	 </animation>
 
-<!--
+<!-- spin wheels -->
+ 
+ <animation>
+  <type>spin</type>
+  <object-name>F-Wheel</object-name>
+  <property>gear/gear/rollspeed-ms</property>
+  <factor>42.7261</factor>
+  <center>
+    <x-m>-5.08547</x-m>
+    <y-m>0</y-m>
+    <z-m>-1.35518</z-m>
+  </center>
+  <axis>
+     <x>0.0</x>
+     <y>-1.0</y>
+     <z>0.0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+   <type>spin</type>
+   <object-name>UC-L-Hub</object-name>
+   <object-name>UC-L-Tyre</object-name>
+   <property>gear/gear[1]/rollspeed-ms</property>
+   <factor>28.0862</factor>
+   <center>
+     <x-m>-0.10194</x-m>
+     <y-m>-2.24904</y-m>
+     <z-m>-1.1593</z-m>
+   </center>
+   <axis>
+     <x>0.0</x>
+     <y>-1.0</y>
+     <z>0.0</z>
+   </axis>
+ </animation>
+ 
 <animation>
   <type>spin</type>
   <object-name>UC-R-Hub</object-name>
   <object-name>UC-R-Tyre</object-name> 
-  <condition>
-   <greater-than> 
-    <property>/velocities/uBody-fps</property>
-	<value>5</value>
-   </greater-than>
-  </condition> 
-  <factor>1.5</factor>
+  <property>gear/gear[2]/rollspeed-ms</property>
+  <factor>28.0862</factor>
   <center>
-   <x-m>-0.08</x-m>
-   <y-m>2.27</y-m>
-   <z-m>-1.24</z-m>
+    <x-m>-0.10194</x-m>
+    <y-m>2.24904</y-m>
+    <z-m>-1.1593</z-m>
   </center>
   <axis>
    <x>0.0</x>
    <y>-1.0</y>
    <z>0.0</z>
   </axis>
-  
   </animation>
--->
+
 <!-- ********************** Exhaust ******************* -->
 
  <animation>
