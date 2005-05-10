@@ -124,7 +124,8 @@ n1 = 100% -->
 <gear x="-1.70" y="0" z="-1.60" retract-time="8" compression="0.4" spring="0.8"
   castering="1">
 <!--<control-input axis="/controls/flight/rudder" control="STEER" square="true"/>-->
-  <control-input axis="/controls/gear/tailwheel-lock" control="CASTERING"/>
+  <control-input axis="/controls/gear/tailwheel-lock" src0="0" src1="1"
+                 dst0="1" dst1="0" control="CASTERING"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
   <control-speed control="EXTEND" transition-time="7"/>
