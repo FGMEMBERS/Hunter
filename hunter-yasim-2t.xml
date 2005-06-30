@@ -158,11 +158,10 @@ n1 = 100% -->
  </gear>
 
 <!-- Hook -->
-<gear x="-10.3" y="0.0" z="-1.49" compression="1" spring="0.15">
-  <control-input axis="/controls/gear/tailhook" control="EXTEND"/>
-  <control-speed control="EXTEND" transition-time="5"/>
-  <control-output control="EXTEND" prop="/gear/tailhook/position-norm"/>
-</gear>
+ <hook x="-10.92" y="0.0" z="-0.63" length="1.38" down-angle="87" up-angle="-3">
+  <control-input axis="/controls/gear/tailhook" control="HEXTEND"/>
+  <control-speed control="HEXTEND" transition-time="5"/>
+</hook>
 
 <!-- Canopy -->
  <gear x="-3.0" y="0.0" z="0.6" compression="1">
