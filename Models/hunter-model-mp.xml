@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<!-- Hunter model config file -->
+<!-- Vivian Meazza 2004/1/2 vivian.meazza@lineone.net -->
+<!-- Ver 0.1.0 -->
+
+<PropertyList include="hunter-model.xml">
+ 
+ <!-- Don't hide all of the model not visible from the cockpit -->
+ 
+ <animation>
+  <type>select</type>
+	<object-name>Fuselage</object-name>
+  <object-name>Tail</object-name>
+  <object-name>Tailplane-R</object-name>
+  <object-name>Tailplane-L</object-name>
+  <object-name>Elevator-R</object-name>
+  <object-name>Elevator-L</object-name>
+  <object-name>Flap-R</object-name>
+  <object-name>Flap-L</object-name>
+  <object-name>UC-Nose</object-name>
+  <object-name>UC-Main-L</object-name>
+  <object-name>UC-Main-R</object-name>
+  <object-name>Exhausts</object-name>
+  <condition>
+   <not>
+   <equals>
+    <property>/sim/current-view/view-number</property>
+    <value>0</value>
+   </equals>
+   </not>
+  </condition>
+ </animation>
+ 
+</PropertyList>
+
