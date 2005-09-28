@@ -222,7 +222,7 @@
  
 
  
- <!-- hide all of the model not visible from the cockpit -->
+ <!-- hide all of the model not visible from the cockpit 
  
  <animation>
   <type>select</type>
@@ -246,7 +246,7 @@
    </equals>
    </not>
   </condition>
- </animation>
+ </animation>-->
  
   <!-- make sure that all the rest of the aircraft is visible
  through the exhausts. -->
@@ -260,9 +260,9 @@
   <object-name>Aileron-L</object-name>
   <object-name>Intake-R</object-name>
   <object-name>Intake-L</object-name>
-	<object-name>Markings</object-name>
+  <object-name>noshadow.Markings</object-name>
   <object-name>Canopy</object-name>
-  <object-name>Exhausts</object-name>
+  <object-name>noshadow.Exhausts</object-name>
   <condition>
     <greater-than-equals>
       <property>/sim/current-view/view-number</property>
@@ -1137,7 +1137,7 @@
  
  <animation>
   <type>rotate</type>
-  <object-name>SerNo-Door2-L</object-name>
+  <object-name>noshadow.SerNo-Door2-L</object-name>
   <property>/gear/gear[1]/position-norm</property>
   <interpolation>
    <entry><ind>0</ind><dep>0</dep></entry>
@@ -1179,7 +1179,7 @@
  
  <animation>
   <type>rotate</type>
-  <object-name>SerNo-Door3-L</object-name>
+  <object-name>noshadow.SerNo-Door3-L</object-name>
 	<property>gear/gear[1]/position-norm</property>
 	<interpolation>
    <entry><ind>0</ind><dep>0</dep></entry>
@@ -1221,7 +1221,7 @@
  
  <animation>
   <type>rotate</type>
-  <object-name>SerNo-Door4-L</object-name>
+  <object-name>noshadow.SerNo-Door4-L</object-name>
   <property>/gear/gear[1]/position-norm</property>
   <interpolation>
    <entry><ind>0</ind><dep>0</dep></entry>
@@ -1291,7 +1291,7 @@
  
  <animation>
   <type>translate</type>
-  <object-name>SerNo-Door2-L</object-name>
+  <object-name>noshadow.SerNo-Door2-L</object-name>
   <property>/gear/gear[1]/compression-norm</property>
   <factor>0.3</factor>
   <axis>
@@ -1359,7 +1359,7 @@
  
  <animation>
   <type>rotate</type>
-  <object-name>SerNo-Door2-R</object-name>
+  <object-name>noshadow.SerNo-Door2-R</object-name>
   <property>/gear/gear[2]/position-norm</property>
   <interpolation>
    <entry><ind>0</ind><dep>0</dep></entry>
@@ -1401,7 +1401,7 @@
  
  <animation>
   <type>rotate</type>
-	<object-name>SerNo-Door3-R</object-name>
+	<object-name>noshadow.SerNo-Door3-R</object-name>
 	<property>/gear/gear[2]/position-norm</property>
   <interpolation>
    <entry><ind>0</ind><dep>0</dep></entry>
@@ -1443,7 +1443,7 @@
  
  <animation>
   <type>rotate</type>
-  <object-name>SerNo-Door4-R</object-name>
+  <object-name>noshadow.SerNo-Door4-R</object-name>
   <property>/gear/gear[2]/position-norm</property>
   <interpolation>
    <entry><ind>0</ind><dep>0</dep></entry>
@@ -1513,7 +1513,7 @@
  
  <animation>
   <type>translate</type>
-  <object-name>SerNo-Door2-R</object-name>
+  <object-name>noshadow.SerNo-Door2-R</object-name>
   <property>/gear/gear[2]/compression-norm</property>
   <factor>0.3</factor>
   <axis>
@@ -1611,49 +1611,84 @@
   </animation>
 
 <!-- ********************** Exhaust ******************* -->
+<!-- -->
+ <animation>
+  <type>shader</type>
+  <shader>heat-haze</shader>
+  <object-name>noshadow.Exhausts</object-name>
+  <factor>0.12</factor>
+  <!-- factor-property>test/factor</factor-property -->
+  <speed-property>engines/engine/n1</speed-property>
+ </animation>
 
  <animation>
-  <type>spin</type>
-  <object-name>Exhausts</object-name>
-  <factor>67</factor>
+  <type>blend</type>
+  <object-name>noshadow.Exhaust3</object-name>
   <property>engines/engine/n1</property>
-  <center>
-   <x-m>-19</x-m>
-   <y-m>0</y-m>
-   <z-m>0</z-m>
-  </center>
-  <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
- </animation>
- 
- <animation>
-  <type>translate</type>
-  <object-name>Exhaust</object-name>
-  <object-name>Exhaust3</object-name>
-  <property>engines/engine[0]/n1</property>
-  <factor>.04</factor>
-  <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
+  <factor>.01</factor>
+  <offset>0.45</offset>
+  <max>0.9</max>
  </animation>
  
  <animation>
   <type>blend</type>
-  <object-name>Exhaust3</object-name>
+  <object-name>noshadow.Exhaust</object-name>
   <property>engines/engine/n1</property>
-  <factor>.01</factor>
-  <offset>0.4</offset>
-  <max>1.0</max>
+  <factor>-0.01</factor>
+  <offset>1</offset>
+  <max>0.99</max>
+  <min>0.4</min>
+ </animation>
+ 
+ <animation>
+  <type>scale</type>
+  <object-name>noshadow.Exhaust</object-name>
+  <property>engines/engine/n1</property>
+  <x-factor>0.01</x-factor>
+  <x-offset>0.5</x-offset>
+  <x-max>2</x-max>
+  <x-min>0.5</x-min>
+  <y-factor>0</y-factor>
+  <y-offset>1</y-offset>
+  <z-factor>0</z-factor>
+  <z-offset>1</z-offset>
+ </animation>
+ 
+ <animation>
+  <type>translate</type>
+  <object-name>noshadow.Exhaust3</object-name>
+  <property>engines/engine/n1</property>
+  <factor>-0.005</factor>
+  <offset-m>0</offset-m>
+  <max>3</max>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>scale</type>
+  <object-name>noshadow.Exhaust3</object-name>
+  <property>engines/engine/n1</property>
+  <x-factor>0.01</x-factor>
+  <x-offset>0.5</x-offset>
+  <x-max>2</x-max>
+  <x-min>0.5</x-min>
+  <y-factor>-0.01</y-factor>
+  <y-offset>1.45</y-offset>
+  <y-max>1</y-max>
+  <y-min>-1</y-min>
+  <z-factor>-0.01</z-factor>
+  <z-offset>1.45</z-offset>
+  <z-max>1</z-max>
+  <z-min>-1</z-min>
  </animation>
  
   <animation>
   <type>select</type>
-  <object-name>Exhaust3</object-name>
+  <object-name>noshadow.Exhaust3</object-name>
   <condition>
    <less-than>
     <property>velocities/airspeed-kt</property>
@@ -1661,7 +1696,6 @@
    </less-than>
   </condition>
  </animation>
-
 
 <!-- ***************** Canopy *********************** -->
  <animation>
@@ -1720,8 +1754,8 @@
    <z>0</z>
   </axis>
  </animation>
- 
  -->
+ 
  
  <!-- ************************ droptanks ********************** -->
  
