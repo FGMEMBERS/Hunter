@@ -70,11 +70,11 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
         <desc>canopy open/close</desc>
        </key>
        <key>
-        <name>l/L</name>
+        <name>u/U</name>
         <desc>seat down/up</desc>
        </key>
        <key>
-        <name>Ctrl-L</name>
+        <name>Ctrl-U</name>
         <desc>seat default</desc>
        </key>
        <key>
