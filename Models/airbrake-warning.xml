@@ -32,6 +32,20 @@
   </condition>
  </animation>
  
+ <animation> 
+      <type>material</type>
+	  <object-name>plate-gear</object-name>
+	  <object-name>cylinder-gear</object-name>
+	  <object-name>plate-airbrake</object-name>
+	  <object-name>cylinder-airbrake</object-name>
+      <emission> 
+        <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.25</green>
+        <blue>0.25</blue>
+      </emission>
+    </animation>
+ 
  <!-- *** LoD *** -->
  <animation>
   <type>range</type>

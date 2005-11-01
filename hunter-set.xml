@@ -14,10 +14,10 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 ************************************************************************
 -->
   <PropertyList> 
-    <sim> 
+    <sim include="help.xml"> 
       <author>Vivian Meazza</author>
       <description>Hawker Hunter(YASim)</description>
-      <status>early-production</status>
+      <status>production</status>
       <virtual-cockpit archive="y">true</virtual-cockpit>
       <flight-model>yasim</flight-model>
       <aero>hunter-yasim</aero>
@@ -55,35 +55,6 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
           <default-field-of-view-deg>60</default-field-of-view-deg>
         </config>
       </view>
-      <help>
-       <title>Hawker Hunter</title>
-       <key>
-        <name>Ctrl-F</name>
-        <desc>emergency flap lowering</desc>
-       </key>
-       <key>
-        <name>Ctrl-B</name>
-        <desc>toggle speedbrake</desc>
-       </key>
-       <key>
-        <name>f/F</name>
-        <desc>canopy open/close</desc>
-       </key>
-       <key>
-        <name>u/U</name>
-        <desc>seat down/up</desc>
-       </key>
-       <key>
-        <name>Ctrl-U</name>
-        <desc>seat default</desc>
-       </key>
-       <key>
-        <name>o/O</name>
-        <desc>hook up/down</desc>
-       </key>
-       <line>approach speed (full flaps): 140 kts IAS</line>
-       <line>touchdown speed: 130 kts IAS</line>
-      </help>
     </sim>
     <!-- *************** set properties **********************-->
     <!--parking brake ON -->
@@ -91,11 +62,14 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
     <controls> 
       <gear> 
         <brake-parking>1</brake-parking>
-        <tailwheel-lock>true</tailwheel-lock>
+        <tailwheel-lock>falsse</tailwheel-lock>
       </gear>
       <flight> 
         <flaps-alternate-extension type="double">1</flaps-alternate-extension>
       </flight>
+      <lighting> 
+        <nav-lights>false</nav-lights>
+      </lighting>
     </controls>
     <!-- hsi heading bug and source select-->
     <instrumentation> 
@@ -103,21 +77,6 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
         <heading-bug-deg type="double">95</heading-bug-deg>
         <heading-source type="bool">true</heading-source>
       </heading-indicator>
-      <dme> 
-        <frequencies> 
-          <selected-mhz>115.8</selected-mhz>
-        </frequencies>
-      </dme>
-      <adf> 
-        <frequencies> 
-          <selected-khz>379</selected-khz>
-          <standby-khz>341</standby-khz>
-        </frequencies>
-      </adf>
-      <!-- radio dme switch ON -->
-      <dme> 
-        <switch-position>1</switch-position>
-      </dme>
     </instrumentation>
     <!-- map keyboard input -->
     <input> 
@@ -348,4 +307,10 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
   </key>-->
       </keyboard>
     </input>
+    <!-- nasal stuff -->
+    <nasal> 
+      <hunter> 
+        <file>Aircraft/Hunter/Models/hunter.nas</file>
+      </hunter>
+    </nasal>
   </PropertyList>

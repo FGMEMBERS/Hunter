@@ -13,6 +13,8 @@
     <property>/engines/engine/prop-thrust</property>
     <type>lin</type>
     <factor>0.0002353</factor> <!-- Scales to 0-2 for 8500lb engine -->
+	<min>0.1</min>
+    <max>0.9</max>
    </volume>
   </engine>
 
@@ -30,6 +32,8 @@
     <property>/engines/engine/n1</property>
     <type>log</type>
     <factor>0.1</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
+	<min>0.1</min>
+    <max>0.9</max>
    </volume>
   </engine>
 
@@ -48,6 +52,8 @@
     <property>/velocities/airspeed-kt</property>
     <type>lin</type>
     <factor>.012</factor>
+	<min>0.1</min>
+    <max>0.9</max>
    </volume>
   </rumble>
 
@@ -60,6 +66,8 @@
     <internal>dt_play</internal>
     <offset>1.0</offset>
     <factor>-0.001</factor>
+	<min>0.1</min>
+    <max>0.9</max>
    </pitch>
   </gear>
 
@@ -106,7 +114,7 @@
    <volume>
     <internal>dt_stop</internal>
     <factor>0.05</factor>
-    <max>1.0</max>
+    <max>0.9</max>
    </volume>
    <pitch>
     <property>/velocities/airspeed-kt</property>
@@ -121,7 +129,10 @@
    <path>Sounds/flaps.wav</path>
    <property>/surface-positions/flap-pos-norm</property>
    <volume>
+    <factor>1</factor>
     <offset>0.25</offset>
+	<min>0.1</min>
+    <max>0.9</max>
    </volume>
   </flap>
 
@@ -135,13 +146,13 @@
     <factor>-0.000015</factor>
     <offset>1.0</offset>
     <min>0.1</min>
-    <max>1.0</max>
+    <max>0.9</max>
    </volume>
    <volume>
      <property>/velocities/airspeed-kt</property>
      <factor>0.0015</factor>
      <min>0.03</min>
-     <max>0.25</max>
+     <max>0.5</max>
    </volume>
    <pitch>
     <property>/velocities/airspeed-kt</property>
@@ -156,7 +167,8 @@
    <property>/sim/alarms/stall-warning</property>
    <volume>
     <property>/velocities/airspeed-kt</property>
-    <min>30.0</min>
+    <min>0.1</min>
+    <max>0.9</max>
    </volume>
   </stall>
   
@@ -167,6 +179,8 @@
    <property>/surface-positions/speedbrake-pos-norm</property>
    <volume>
     <offset>0.125</offset>
+	<min>0.1</min>
+    <max>0.9</max>
    </volume>
   </speedbrake>
   
@@ -193,12 +207,32 @@
    </volume>
   </rumble>
  
-<!-- no binding yet?
-  <click>
-   <name>click</name>
-   <path>Sounds/click.wav</path>
-  </click>
--->
+<click> 
+        <name>nav lights click down</name>
+        <path>Aircraft/Hunter/Sounds/click.wav</path>
+        <condition> 
+          <property>controls/lighting/nav-lights</property>
+        </condition>
+        <volume> 
+          <factor>1.0</factor>
+		  <min>0.1</min>
+          <max>0.9</max>
+        </volume>
+      </click>
+      <click> 
+        <name>nav lights click up</name>
+        <path>Aircraft/Hunter/Sounds/click.wav</path>
+        <condition> 
+          <not> 
+            <property>controls/lighting/nav-lights</property>
+          </not>
+        </condition>
+        <volume> 
+          <factor>1.0</factor>
+		  <min>0.1</min>
+          <max>0.9</max>
+        </volume>
+      </click>
 
 </fx>
  

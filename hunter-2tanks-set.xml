@@ -15,37 +15,30 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 -->
   <PropertyList> 
     <sim> 
-      <description>Hawker Hunter(YASim)</description>
+      <description>Hawker Hunter 2 Tanks</description>
       <status>early-production</status>
       <virtual-cockpit archive="y">true</virtual-cockpit>
       <flight-model>yasim</flight-model>
       <aero>hunter-yasim-2t</aero>
       <fuel-fraction>1.0</fuel-fraction>
-	  <ai> 
-        <scenario>ship_demo</scenario>
-		<carrier>
-		  <path>Aircraft/Hunter/Models/carrier.xml</path>
-		</carrier>
-      </ai>
       <systems> 
-        <!--   -->
         <autopilot> 
           <path>Aircraft/Hunter/Systems/hunter-autopilot.xml</path>
         </autopilot>
         <electrical> 
           <path>Aircraft/Hunter/Systems/hunter-electrical.xml</path>
         </electrical>
-		<submodels> 
-          <serviceable type="bool">true</serviceable>
-          <path>Aircraft/Hunter/Models/hunter-submodels.xml</path>
-        </submodels>
       </systems>
+      <submodels> 
+        <serviceable type="bool">true</serviceable>
+        <path>Aircraft/Hunter/Models/hunter-submodels.xml</path>
+      </submodels>
       <sound> 
         <path>Aircraft/Hunter/Sounds/hunter-sound.xml</path>
       </sound>
       <!-- hide the 2D panel -->
       <panel> 
-        <visibility archive="n">false</visibility>
+        <visibility archive="y">false</visibility>
       </panel>
       <!-- no HUD -->
       <hud> 
@@ -65,38 +58,8 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
           <default-field-of-view-deg>60</default-field-of-view-deg>
         </config>
       </view>
-      <help>
-       <title>Hawker Hunter</title>
-       <key>
-        <name>Ctrl-F</name>
-        <desc>emergency flap lowering</desc>
-       </key>
-       <key>
-        <name>Ctrl-B</name>
-        <desc>toggle speedbrake</desc>
-       </key>
-       <key>
-        <name>f/F</name>
-        <desc>canopy open/close</desc>
-       </key>
-       <key>
-        <name>l/L</name>
-        <desc>seat down/up</desc>
-       </key>
-       <key>
-        <name>Ctrl-L</name>
-        <desc>seat default</desc>
-       </key>
-       <key>
-        <name>o/O</name>
-        <desc>hook up/down</desc>
-       </key>
-       <line>approach speed (full flaps): 140 kts IAS</line>
-       <line>touchdown speed: 130 kts IAS</line>
-      </help>
     </sim>
-    
- <consumables> 
+    <consumables> 
       <fuel> 
         <tank n="0"> 
           <name type="string">Port</name>
@@ -108,7 +71,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
           <level-lbs>1500</level-lbs>
           <selected type="bool">1</selected>
         </tank>
-		<tank n="2"> 
+        <tank n="2"> 
           <name type="string">Port Drop</name>
           <level-lbs>800</level-lbs>
           <selected type="bool">1</selected>
@@ -126,11 +89,14 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
     <controls> 
       <gear> 
         <brake-parking>1</brake-parking>
-        <tailwheel-lock>true</tailwheel-lock>
+        <tailwheel-lock>false</tailwheel-lock>
       </gear>
       <flight> 
         <flaps-alternate-extension type="double">1</flaps-alternate-extension>
       </flight>
+	  <lighting> 
+        <nav-lights>false</nav-lights>
+      </lighting>
     </controls>
     <!-- hsi heading bug and source select-->
     <instrumentation> 
@@ -138,21 +104,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
         <heading-bug-deg type="double">95</heading-bug-deg>
         <heading-source type="bool">true</heading-source>
       </heading-indicator>
-      <dme> 
-        <frequencies> 
-          <selected-mhz>115.8</selected-mhz>
-        </frequencies>
-      </dme>
-      <adf> 
-        <frequencies> 
-          <selected-khz>379</selected-khz>
-          <standby-khz>341</standby-khz>
-        </frequencies>
-      </adf>
-      <!-- radio dme switch ON -->
-      <dme> 
-        <switch-position>1</switch-position>
-      </dme>
+      
     </instrumentation>
     <!-- map keyboard input -->
     <input> 
@@ -349,11 +301,11 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
             <property>/yasim/weights/tank-100gal-lbs[0]</property>
             <value type="double">0.0</value>
           </binding>
-         <binding> 
+          <binding> 
             <command>property-assign</command>
             <property>/yasim/weights/tank-100gal-lbs[1]</property>
             <value type="double">0.0</value>
-          </binding> 
+          </binding>
         </key>
         <key n="10"> 
           <name>Ctrl-J</name>
@@ -369,7 +321,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
             <property>/yasim/weights/tank-100gal-lbs[0]</property>
             <value type="double">0.0</value>
           </binding>
-<!--	  <binding> 
+          <!--	  <binding> 
             <command>property-assign</command>
             <property>consumables/fuel/tank[2]/level-gal_us</property>
             <value type="double">0.0</value>
@@ -385,7 +337,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
             <property>/yasim/weights/tank-100gal-lbs[1]</property>
             <value type="double">0.0</value>
           </binding>
-<!--		  <binding> 
+          <!--		  <binding> 
             <command>property-assign</command>
             <property>consumables/fuel/tank[3]/level-gal_us</property>
             <value type="double">0.0</value>
@@ -396,18 +348,22 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
     <yasim> 
       <weights> 
         <tank-100gal-lbs type="double">170</tank-100gal-lbs>
-		<tank-100gal-lbs type="double">170</tank-100gal-lbs>
+        <tank-100gal-lbs type="double">170</tank-100gal-lbs>
       </weights>
     </yasim>
-	<!-- nasal stuff -->
+    <!-- nasal stuff -->
     <nasal> 
       <hunter-fuel> 
         <module>fuel</module>
         <file>Aircraft/Hunter/Models/hunter-fuel.nas</file>
       </hunter-fuel>
-	  <hunter-gui>
-	    <module>gui</module>
+	  <hunter> 
+	    <module>g-force</module>
+        <file>Aircraft/Hunter/Models/hunter.nas</file>
+      </hunter>
+      <hunter-gui> 
+        <module>gui</module>
         <file>Aircraft/Hunter/Models/hunter-gui.nas</file>
-	  </hunter-gui>
+      </hunter-gui>
     </nasal>
   </PropertyList>

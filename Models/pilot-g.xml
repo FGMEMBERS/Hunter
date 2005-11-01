@@ -11,7 +11,8 @@
   <object-name>accel-Needle1</object-name>
   <property>accelerations/pilot-g</property>
   <interpolation>
-   <entry><ind>-4</ind><dep>112.5</dep></entry>
+   <entry><ind>-5</ind><dep>-202.5</dep></entry>
+   <entry><ind>-4</ind><dep>-112.5</dep></entry>
    <entry><ind>-3</ind><dep>-90</dep></entry>
    <entry><ind>-1</ind><dep>-45</dep></entry>
    <entry><ind>0</ind><dep>-22.5</dep></entry>
@@ -33,6 +34,17 @@
    <z>0</z>
   </axis>
  </animation>
+ 
+  <animation> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.25</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation>
+ 
 
 
 <!-- *** LoD *** -->

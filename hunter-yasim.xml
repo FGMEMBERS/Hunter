@@ -5,9 +5,14 @@
 	  location of some of the masses, which have been adjusted to make the model fly 
 	  correctly.
 	  
-     Vivian Meazza. vivian.meazza@linone.net
+      Author: Vivian Meazza. vivian.meazza@linone.net
 	 
-	 Ver 0.1.1
+	  Ver 0.1.1
+	 
+	  Ver 0.1.2  2005/01/24 - add a working arrester hook - WARNING the Hunter only used the 
+	             hook on wire-equipped Royal Naval Air Stations. It is not equipped with a 
+				 catapult launch mechanism. You can land on a carrier, but you can't take 
+				 off again.  
 	 
 	 	 
 -->
@@ -42,8 +47,9 @@
 		  
 <!--The wing length is from tips to fuselage, including intakes. -->
 
-<wing x="-5.90" y="0.66" z="0.01" taper=".47" incidence="1.0"
-      length="5.5287" chord="4.25" sweep="36" dihedral="-2" twist="0">
+<wing x="-5.90" y="0.66" z="0.01" taper=".47" incidence="2.0"
+      length="5.5287" chord="4.25" sweep="36" dihedral="-2" twist="-3"
+	  effectiveness = "1.0">
   <stall aoa="21" width="8" peak="1.3"/>
   <flap0 start="0.11" end="0.56" lift="1.4" drag="1.6"/>
   <flap1 start="0.56" end="1" lift="1.2" drag="1.2"/>
@@ -59,10 +65,10 @@
   <control-speed control="FLAP1" transition-time="1"/>
 </wing>
 
-<hstab x="-11.268" y="0.0762" z="1.016" taper=".54" incidence="-2"
+<hstab x="-11.268" y="0.0762" z="1.016" taper=".54" 
        length="2.1336" chord="1.67" sweep="38" effectiveness = "2">
   <stall aoa="27" width="10" peak="1.5"/>
-  <flap0 start="0" end="1" lift="1.5" drag="1.2"/>
+  <flap0 start="0" end="1" lift="1.5" drag="1.3"/>
   <control-input axis="/controls/flight/elevator" control="FLAP0"/>
   <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
   <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
@@ -78,7 +84,7 @@
 <vstab x="-11.5824" y="0" z="0.6096" taper=".3177"
        length="2.57" chord="3.11" sweep="28" >
   <stall aoa="27" width="10" peak="1.5"/>
-  <flap0 start="0" end=".8" lift="1.2" drag="1.2"/>
+  <flap0 start="0" end=".8" lift="1.3" drag="1.3"/>
   <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
   <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
   <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
@@ -96,23 +102,29 @@ n1 100% -->
 
 <!-- gear -->
 <!-- nose -->
-<gear x="-1.70" y="0" z="-1.60" retract-time="8" compression="0.3" spring="0.6" 
-damp="2" castering="1">
-<!--<control-input axis="/controls/flight/rudder" control="STEER" square="true"/>-->
-  <control-input axis="/controls/gear/tailwheel-lock" src0="0" src1="1"
-                 dst0="1" dst1="0" control="CASTERING"/>
+<gear x="-1.70" y="0" z="-1.49" 
+      retract-time="8" 
+	  compression="0.3" upx="0" upy="0" upz="0.3"
+	  spring="0.6"
+	  damp="2" 
+	  castering="1"
+	  >
+  <control-input axis="/controls/gear/tailwheel-lock" 
+             src0="0" src1="1" dst0="1" dst1="1" control="CASTERING"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
   <control-speed control="EXTEND" transition-time="7"/>
 </gear>
 
 <!-- left main -->
-<gear x="-7.0" y="2.337" z="-1.50" retract-time="8" compression="0.4" spring="0.8"
-      damp="3">
-<!--   <control-input axis="/controls/gear/wheel[0]/brake" control="BRAKE"/>-->
- <control-input axis="/controls/gear/brake-left" control="BRAKE"/> 	
-<!--  <control-input axis="/controls/gear/parking-brake" control="BRAKE" />-->
-	<control-input axis="/controls/gear/brake-parking" control="BRAKE" /> 
+<gear x="-7.0" y="2.30" z="-1.48"
+      retract-time="8" 
+	  compression="0.2" upx="-0.02" upy="-0.1" upz="0.19"
+	  spring="0.8"
+      damp="3"
+	  >
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE" /> 
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
   <control-speed control="EXTEND" transition-time="8"/>
@@ -120,31 +132,33 @@ damp="2" castering="1">
 </gear>
 
 <!-- right main -->
- <gear x="-7.0" y="-2.337" z="-1.50" retract-time="8" compression="0.4" spring="0.8"
-      damp="3">
- <!-- <control-input axis="/controls/gear/wheel[1]/brake" control="BRAKE"/>-->
-<control-input axis="/controls/gear/brake-right" control="BRAKE"/> 
- <!-- <control-input axis="/controls/gear/parking-brake" control="BRAKE" />-->
-	<control-input axis="/controls/gear/brake-parking" control="BRAKE" /> 
+ <gear x="-7.0" y="-2.30" z="-1.48" 
+       retract-time="8" 
+	   compression="0.2" upx="-0.02" upy="0.01" upz="0.19"
+	   spring="0.8"
+	   damp="3"
+	   >
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/> 
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE" /> 
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
   <control-speed control="EXTEND" transition-time="8"/>
   <control-speed control="BRAKE" transition-time="1"/>
  </gear>
-
-<!-- Hook -->
-<gear x="-10.3" y="0.0" z="-1.49" compression="1" spring="0.15">
-  <control-input axis="/controls/gear/tailhook" control="EXTEND"/>
-  <control-speed control="EXTEND" transition-time="5"/>
-  <control-output control="EXTEND" prop="/gear/tailhook/position-norm"/>
-</gear>
-
+ 
 <!-- Canopy -->
  <gear x="-3.0" y="0.0" z="0.6" compression="1">
   <control-input axis="/controls/flight/wing-fold" control="EXTEND"/>
   <control-speed control="EXTEND" transition-time="5"/>
   <control-output control="EXTEND" prop="/gear/canopy/position-norm"/>
  </gear>
+
+<!-- Hook -->
+ <hook x="-10.92" y="0.0" z="-0.63" length="1.38" down-angle="87" up-angle="-3">
+  <control-input axis="/controls/gear/tailhook" control="HEXTEND"/>
+  <control-speed control="HEXTEND" transition-time="5"/>
+</hook>
+
 
 <!-- Hunter GA11 had 1500 lbs of fuel in each of 2 wing tanks. I have been unable
 to establish the exact location of the tanks, but discussions with a former pilot 

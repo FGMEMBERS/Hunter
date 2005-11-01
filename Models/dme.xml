@@ -9,7 +9,7 @@
  <animation>
   <type>rotate</type>
   <object-name>dme-Needle1</object-name>
-  <property>instrumentation/dme/indicated-distance-nm</property>
+  <property>instrumentation/tacan/indicated-distance-nm</property>
   
   <interpolation>
    <entry><ind>0</ind><dep>-150</dep></entry>
@@ -30,6 +30,16 @@
    <z>0</z>
   </axis>
  </animation>
+ 
+ <animation> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.25</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation>
 
 
 <!-- *** LoD *** -->

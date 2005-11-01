@@ -7,6 +7,7 @@ OBJECT poly
 name "face"
 loc 0.00417813 3.95812e-008 2.04099e-005
 texture "hunter-adf.rgb"
+crease 61.000000
 numvert 17
 0.000632482 2.33907e-008 -0.0344046
 0.000632483 0.013166 -0.0317856
@@ -126,6 +127,7 @@ kids 0
 OBJECT poly
 name "adf-Needle1"
 loc 0.00575351 0.017985 0.0104374
+crease 61.000000
 numvert 9
 0.000632485 -0.0178925 -0.010417
 0.000632485 0.00823535 -0.0101228
@@ -173,6 +175,7 @@ OBJECT poly
 name "bezeloutside"
 loc 0.00633316 0.00283017 0.00156156
 texture "hunter-large-bezel.rgb"
+crease 61.000000
 numvert 128
 0.00246256 -0.00271089 -0.0375169
 0.00246256 0.00444004 -0.0368246
@@ -916,6 +919,7 @@ OBJECT poly
 name "bezelinside"
 loc 0.00322773 -0.00017954 2.03699e-005
 texture "hunter-large-bezel.rgb"
+crease 61.000000
 numvert 96
 0.00055882 0.00679431 0.0322859
 0.00055882 0.000301653 0.0329184
@@ -1403,6 +1407,7 @@ OBJECT poly
 name "mount"
 loc 0.00288471 -0.00020628 2.03699e-005
 texture "hunter-large-bezel.rgb"
+crease 61.000000
 numvert 36
 0.000632488 0.034481 0.034458
 -0.00281316 0.034481 0.034458

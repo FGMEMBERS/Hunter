@@ -1,16 +1,17 @@
 <?xml version="1.0"?>
+  <!-- gyro gun sight -->
+  <PropertyList> 
+    <path>ggs-mod1.ac</path>
+    
+	<animation> 
+      <type>material</type>
+      <emission> 
+        <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.4</red>
+        <green>0.20</green>
+        <blue>0.20</blue>
+      </emission>
+    </animation>
+    
 
-<!-- gyro gun sight -->
-
-<PropertyList>
-
- <path>ggs-mod1.ac</path>
-
-<!-- *** LoD *** 
- <animation>
-  <type>range</type>
-  <min-m>0</min-m>
-  <max-m>100</max-m>
- </animation>
--->
-</PropertyList>
+  </PropertyList>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+  <PropertyList> 
+    <help> 
+      <title>Hawker Hunter</title>
+      <key> 
+        <name>Ctrl-F</name>
+        <desc>emergency flap lowering</desc>
+      </key>
+      <key> 
+        <name>Ctrl-B</name>
+        <desc>toggle speedbrake</desc>
+      </key>
+      <key> 
+        <name>f/F</name>
+        <desc>canopy open/close</desc>
+      </key>
+      <key> 
+        <name>u/U</name>
+        <desc>seat down/up</desc>
+      </key>
+      <key> 
+        <name>Ctrl-U</name>
+        <desc>seat default</desc>
+      </key>
+	  <key> 
+        <name>Ctrl-J</name>
+        <desc>Jettison drop-tanks</desc>
+      </key>
+      <key> 
+        <name>o/O</name>
+        <desc>hook up/down</desc>
+      </key>
+      <line>approach speed (full flaps): 140 kts IAS</line>
+      <line>touchdown speed: 130 kts IAS</line>
+    </help>
+  </PropertyList>
