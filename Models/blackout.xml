@@ -36,7 +36,7 @@
           </equals>
        </condition>
     </animation>
-<!-- 	
+	
 	<animation> 
       <type>select</type>
       <object-name>Redout-Sphere</object-name>
@@ -47,5 +47,5 @@
           </equals>
        </condition>
     </animation>
-      	-->
+      
   </PropertyList>
