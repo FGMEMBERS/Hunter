@@ -87,7 +87,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
     <controls> 
       <gear> 
         <brake-parking>1</brake-parking>
-        <tailwheel-lock>falsse</tailwheel-lock>
+        <tailwheel-lock>false</tailwheel-lock>
       </gear>
       <flight> 
         <flaps-alternate-extension type="double">1</flaps-alternate-extension>
