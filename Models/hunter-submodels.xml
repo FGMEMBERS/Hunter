@@ -27,14 +27,15 @@
                      nose.  Right is positive.
       <pitch-offset> Submodel's initial elevation, in degrees, relative to user aircraft's
                      pitch.  Up is positive.
-	  <buoyancy>     Submodel's upward acceleration (fps) due to buoyancy in air. 32 is neutral
-	                 (contrails),  > 32 exhaust gas, smoke. 
-	  <wind>		 If true, Submodel is affected by local wind. Defaults to false.
-	  <cd>           The Coeffient of Drag. Varies with submodel shape - 0.295 for a bullet, 
-	                 0.045 for an airfoil. Enter an appropriate value. Defaults to 0.295.
-	  <eda>          Effective drag area (sq ft). Usually the cross-sectional area of the submodel 
-	  				 normal to the airflow.
-      <weight>       The weight of the submodel (lbs). Defaults to 0.25	 
+			<buoyancy>     Submodel's upward acceleration (fps) due to buoyancy in air. 32 is neutral
+										 (contrails),  > 32 exhaust gas, smoke. 
+			<wind>		     If true, Submodel is affected by local wind. Defaults to false.
+			<cd>           The Coeffient of Drag. Varies with submodel shape - 0.295 for a bullet, 
+										 0.045 for an airfoil. Enter an appropriate value. Defaults to 0.295.
+			<eda>          Effective drag area (sq ft). Usually the cross-sectional area of the                     submodel normal to the airflow.
+			<weight>       The weight of the submodel (lbs). Defaults to 0.25
+			<aero-stabilised> If true, the submodel aligns with the local airflow. Defaults to true
+				 
 -->
   <PropertyList> 
     <submodel> 
@@ -55,6 +56,7 @@
 	  <cd>0.045</cd>
 	  <contents>consumables/fuel/tank[2]/level-lbs</contents>
     </submodel>
+		
     <submodel> 
       <name>droptank-r</name>
       <model>Aircraft/Hunter/Models/droptank-100gal.ac</model>
@@ -73,4 +75,5 @@
 	  <cd>0.045</cd>
 	  <contents>consumables/fuel/tank[3]/level-lbs</contents>
     </submodel>
+		
   </PropertyList>

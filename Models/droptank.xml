@@ -6,19 +6,19 @@
 
  <path>droptank-100gal.ac</path>
  
+ 
+ 
+ <!--disappear --> 
  <animation>
   <type>select</type>
   <object-name>Droptank</object-name>
-  <condition>
-   <not>
-   <equals>
-    <property>/sim/current-view/y-offset-m</property>
-    <value>0.81</value>
+   <condition>
+    <equals>
+    <property>controls/armament/station[0]/jettison-all</property>
+    <value>0</value>
    </equals>
-   </not>
   </condition>
- 
- </animation> 
+ </animation>
 
 <!-- *** LoD ***
  <animation>

@@ -4,10 +4,7 @@
   <!-- Ver 0.1.0 -->
   <PropertyList> 
     <path>hunter-ga11.ac</path>
-    <offsets>
-      <x-m>7.0</x-m>
-      <pitch-deg>0</pitch-deg>
-    </offsets>
+    
     <!-- ***************** Cockpit *************************** -->
     <!-- Front hotspots -->
     <panel> 
@@ -353,14 +350,12 @@
       </condition>
     </animation>
     
-	<!-- hide droptanks in all views-->
+	<!-- hide droptank pylons in all views-->
 	
     <animation> 
       <type>select</type>
       <object-name>Pylon-L</object-name>
       <object-name>Pylon-R</object-name>
-      <object-name>Droptank-R</object-name>
-      <object-name>Droptank-L</object-name>
       <condition> 
         <less-than> 
           <property>/sim/current-view/view-number</property>
@@ -2205,152 +2200,7 @@
       </axis>
     </animation>
    
-    <!-- ************************ droptanks ********************** -->
-    <!-- port -->
-    <!-- separate -->
-    <animation> 
-      <type>translate</type>
-      <object-name>Droptank-L</object-name>
-      <object-name>Tail-Assembly-L</object-name>
-      <property>/gear/droptank[0]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-        <entry>
-          <ind>0.02</ind>
-          <dep>-0.3</dep>
-        </entry>
-      </interpolation>
-      <axis> 
-        <x>0</x>
-        <y>0</y>
-        <z>1</z>
-      </axis>
-    </animation>
-    
-	<!-- fall away -->
-    <animation> 
-      <type>rotate</type>
-      <object-name>Droptank-L</object-name>
-      <object-name>Tail-Assembly-L</object-name>
-      <property>/gear/droptank[0]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-        <entry>
-          <ind>0.02</ind>
-          <dep>0</dep>
-        </entry>
-        <entry>
-          <ind>0.5</ind>
-          <dep>-30</dep>
-        </entry>
-        <entry>
-          <ind>1</ind>
-          <dep>-70</dep>
-        </entry>
-      </interpolation>
-      <center> 
-        <x-m>20</x-m>
-        <y-m>2.83</y-m>
-        <z-m>-0.9</z-m>
-      </center>
-      <axis> 
-        <x>0</x>
-        <y>1</y>
-        <z>0</z>
-      </axis>
-    </animation>
-    
-	<!--disappear -->
-    <animation> 
-      <type>select</type>
-      <object-name>Droptank-L</object-name>
-      <object-name>Tail-Assembly-L</object-name>
-      <condition> 
-        <less-than> 
-          <property>/gear/droptank[0]/position-norm</property>
-          <value>0.9</value>
-        </less-than>
-      </condition>
-    </animation>
-    
-	<!-- starboard -->
-    <!-- separate -->
-    <animation> 
-      <type>translate</type>
-      <object-name>Droptank-R</object-name>
-      <object-name>Tail-Assembly-R</object-name>
-      <property>/gear/droptank[1]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-        <entry>
-          <ind>0.02</ind>
-          <dep>-0.3</dep>
-        </entry>
-      </interpolation>
-      <axis> 
-        <x>0</x>
-        <y>0</y>
-        <z>1</z>
-      </axis>
-    </animation>
-    
-	<!-- fall away -->
-    <animation> 
-      <type>rotate</type>
-      <object-name>Droptank-R</object-name>
-      <object-name>Tail-Assembly-R</object-name>
-      <property>/gear/droptank[1]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-        <entry>
-          <ind>0.02</ind>
-          <dep>0</dep>
-        </entry>
-        <entry>
-          <ind>0.5</ind>
-          <dep>-30</dep>
-        </entry>
-        <entry>
-          <ind>1</ind>
-          <dep>-70</dep>
-        </entry>
-      </interpolation>
-      <center> 
-        <x-m>20</x-m>
-        <y-m>2.83</y-m>
-        <z-m>-0.9</z-m>
-      </center>
-      <axis> 
-        <x>0</x>
-        <y>1</y>
-        <z>0</z>
-      </axis>
-    </animation>
-    
-	<!--disappear -->
-    <animation> 
-      <type>select</type>
-      <object-name>Droptank-R</object-name>
-      <object-name>Tail-Assembly-R</object-name>
-      <condition> 
-        <less-than> 
-          <property>/gear/droptank[1]/position-norm</property>
-          <value>0.9</value>
-        </less-than>
-      </condition>
-    </animation>
+<!-- ************ Panel Lighting ************** -->
     
 	<animation> 
       <type>material</type>

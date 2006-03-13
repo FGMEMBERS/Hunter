@@ -285,7 +285,28 @@
         <z-m>0.86</z-m>
       </offsets>
     </model>
-    
+		
+		<!-- drop tanks -->
+    <model> 
+      <path>Aircraft/Hunter/Models/droptank.xml</path>
+      <name>Drop-Tank-Port</name>
+      <offsets> 
+        <x-m>-0.25</x-m>
+        <y-m>-2.93</y-m>
+        <z-m>-0.73</z-m>
+      </offsets>
+    </model>
+		
+		<model> 
+      <path>Aircraft/Hunter/Models/droptank.xml</path>
+      <name>Drop-Tank-Port</name>
+      <offsets> 
+        <x-m>-0.25</x-m>
+        <y-m>2.93</y-m>
+        <z-m>-0.73</z-m>
+      </offsets>
+    </model>
+		
 	<!-- hide all of the model not visible from the cockpit -->
     <!-- order objects -->
     
@@ -355,25 +376,9 @@
       </condition>
     </animation>
     
-	<!-- hide droptanks in all views
-	
-    <animation> 
-      <type>select</type>
-      <object-name>Pylon-L</object-name>
-      <object-name>Pylon-R</object-name>
-      <object-name>Droptank-R</object-name>
-      <object-name>Droptank-L</object-name>
-      <condition> 
-        <less-than> 
-          <property>/sim/current-view/view-number</property>
-          <value>0</value>
-        </less-than>
-      </condition>
-    </animation>
-	-->
-    <!-- **************************** Pilot ******************************* -->
-    <!--  conceal Pilot Head etc in Cockpit View-->
-    
+<!-- **************************** Pilot ******************************* -->
+<!--  conceal Pilot Head etc in Cockpit View-->
+
 	<animation> 
       <type>select</type>
       <object-name>Pilot-Head</object-name>
@@ -2207,39 +2212,6 @@
       </axis>
     </animation>
    
-    <!-- ************************ droptanks ********************** -->
-    <!-- ************************ droptanks ********************** -->
- 
- <!-- port -->
- 
-<!--disappear --> 
- <animation>
-  <type>select</type>
-  <object-name>Tank-F-L</object-name>
-  <object-name>Tail-Assembly-L</object-name>
-  <condition>
-    <less-than>
-    <property>controls/armament/station[0]/jettison-all</property>
-    <value>0.1</value>
-   </less-than>
-  </condition>
- </animation>
- 
-<!-- starboard -->
- 
-<!--disappear --> 
- <animation>
-  <type>select</type>
-  <object-name>Tank-F-R</object-name>
-  <object-name>Tail-Assembly-R</object-name>
-  <condition>
-    <less-than>
-    <property>controls/armament/station[1]/jettison-all</property>
-    <value>0.1</value>
-   </less-than>
-  </condition>
- </animation>
-
 	    
 	<!-- *** LoD for the whole model *** -->
     <animation> 
