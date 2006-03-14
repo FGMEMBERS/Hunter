@@ -1,9 +1,13 @@
 <?xml version="1.0"?>
   <!-- Hunter model config file -->
   <!-- Vivian Meazza 2004/1/2 vivian.meazza@lineone.net -->
-  <!-- Ver 0.1.0 -->
+  <!-- Ver 0.1.1-->
   <PropertyList> 
     <path>hunter-ga11.ac</path>
+		
+		<offsets>
+			<x-m>7.0</x-m>
+		</offsets>
     
     <!-- ***************** Cockpit *************************** -->
     <!-- Front hotspots -->

@@ -4,12 +4,11 @@
   <!-- Ver 0.1.0 -->
   <PropertyList> 
     <path>hunter-ga11.ac</path>
-    <!--
- <offsets>
-   <x-m>-7.0</x-m>
-   <pitch-deg>0</pitch-deg>
- </offsets>
--->
+    
+		<offsets>
+			<x-m>7.0</x-m>
+		</offsets>
+
     <!-- ***************** Cockpit *************************** -->
     <!-- Front hotspots -->
     <panel> 
