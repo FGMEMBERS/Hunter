@@ -45,7 +45,7 @@
       <speed>0</speed>
       <repeat>false</repeat>
       <count>1</count>
-      <x-offset>0.820</x-offset>
+      <x-offset>-22.145879</x-offset>
       <y-offset>-9.61</y-offset>
       <z-offset>-2.39</z-offset>
       <yaw-offset>0</yaw-offset>
@@ -64,7 +64,7 @@
       <speed>0</speed>
       <repeat>false</repeat>
       <count>1</count>
-      <x-offset>0.820</x-offset>
+      <x-offset>-22.145879</x-offset>
       <y-offset>9.61</y-offset>
       <z-offset>-2.39</z-offset>
       <yaw-offset>0</yaw-offset>
