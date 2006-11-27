@@ -4,23 +4,19 @@
 
 <PropertyList>
 
- <path>fuel-left.ac</path>
+ <path>fuel.ac</path>
 
  <animation>
   <type>rotate</type>
   <object-name>fuel-Needle1</object-name>
   <property>consumables/fuel/tank/level-lbs</property>
   <interpolation>
-   <entry><ind>0</ind><dep>-125</dep></entry>
-   <entry><ind>200</ind><dep>-85</dep></entry>
-   <entry><ind>400</ind><dep>-45</dep></entry>
-   <entry><ind>600</ind><dep>-15</dep></entry>
-   <entry><ind>700</ind><dep>0</dep></entry>
-   <entry><ind>800</ind><dep>15</dep></entry>
-   <entry><ind>1000</ind><dep>50</dep></entry>
-   <entry><ind>1200</ind><dep>80</dep></entry>
-   <entry><ind>1400</ind><dep>110</dep></entry>
-   <entry><ind>1500</ind><dep>125</dep></entry>
+   <entry><ind>0</ind><dep>-160</dep></entry>
+   <entry><ind>1000</ind><dep>-90</dep></entry>
+   <entry><ind>2000</ind><dep>-20</dep></entry>
+   <entry><ind>3000</ind><dep>50</dep></entry>
+   <entry><ind>4000</ind><dep>120</dep></entry>
+   <entry><ind>5000</ind><dep>155</dep></entry>
   </interpolation>
   <center>
    <x-m>0</x-m>
