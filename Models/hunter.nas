@@ -304,4 +304,110 @@ updateCasterAngle();
 
 # ======================================= end Gear stuff ============================
 
+# ======================================= auto-switch off shadows ========================
+
+current_view_internal = props.globals.getNode("/sim/current-view/internal", 1);
+shadow_state_ac = props.globals.getNode("/sim/rendering/shadows-ac", 1);
+shadow_state_ac_transp = props.globals.getNode("/sim/rendering/shadows-ac-transp", 1);
+shadow_auto = props.globals.getNode("/sim/rendering/shadows-auto", 1);
+
+var set_state_ac = shadow_state_ac.getValue() ;
+var set_state_ac_transp = shadow_state_ac_transp.getValue() ;
+#shadow_auto.setBoolValue(0) ;
+
+print("set_state_ac " , set_state_ac, " set_state_ac_transp " , set_state_ac_transp);
+
+updateShadowState = func {
+		var internal = current_view_internal.getValue(); 
+		var state_ac = shadow_state_ac.getValue() ;
+		var state_ac_transp = shadow_state_ac_transp.getValue() ;
+		var auto = shadow_auto.getValue() ;
+		
+		if ( state_ac == nil or state_ac_transp == nil or !auto ) {return;}
+		if ( internal == 1 ) {   
+		  state = 0;
+		} else {
+		  state = 1;
+		}
+		
+		state_ac = shadow_state_ac.setValue(state) ;
+		var state_ac_transp = shadow_state_ac_transp.setValue(state) ;
+		
+		
+print("shadow " , internal, " state " , state);
+        
+} #end func updateShadowState()
+
+setlistener( current_view_internal , updateShadowState );
+
 # end 
+
+# ======================================= jet exhaust ========================
+
+speed_node = props.globals.getNode("velocities/uBody-fps", 1);
+exhaust_node = props.globals.getNode("sim/ai/aircraft/exhaust", 1);
+
+exhaust_node.setBoolValue(1) ;
+
+updateExhaustState = func {
+		var speed = speed_node.getValue(); 
+		var exhaust = exhaust_node.getValue() ;
+		
+		if (speed == nil) {return;}
+		if (speed >= 90) {   
+		  exhaust = 0;
+		} else {
+		  exhaust = 1;
+		}
+		
+		exhaust_node.setBoolValue(exhaust) ;
+		
+#        print("exhaust " , exhaust);
+        
+#        settimer(updateExhaustState, 0);
+        
+} #end func updateExhaustState()
+
+#settimer(updateExhaustState,0);
+
+# ================================== Steering =================================================
+
+controls.applyBrakes = func(v,which=0){
+
+	if (which == 0){setprop("sim/model/lightning/controls/gear/braking", v);}
+	elsif (which < 0) {setprop("/controls/gear/brake-left", v);}
+	elsif (which > 0) {setprop("/controls/gear/brake-right", v);}
+ 
+} # end function
+
+steering = func{
+
+	applied = cmdarg().getValue();
+	rudder_pos = getprop("controls/flight/rudder");
+
+	if (applied == 0 ) {
+		setprop('controls/gear/brake-left', 0);
+		setprop('controls/gear/brake-right', 0);	# Release brakes
+	}
+	elsif (rudder_pos > 0.3 ) {
+		setprop('controls/gear/brake-right', rudder_pos);
+		setprop('controls/gear/brake-left', 0);
+		return settimer(steering,0);	# Brake right and continue watching 
+	}
+	elsif (rudder_pos < -0.3 ) {
+		applied_left = rudder_pos * -1;
+		setprop('controls/gear/brake-left', applied_left);
+		setprop('controls/gear/brake-right', 0);
+		return settimer(steering,0);	# Brake left and continue watching 
+	}
+	else {
+		setprop('controls/gear/brake-left', 1);
+		setprop('controls/gear/brake-right', 1);
+		return settimer(steering,0);	# Brake centrally and continue watching 
+	}	
+		
+} # end function
+setlistener("sim/model/lightning/controls/gear/braking", steering);
+
+# end 
+

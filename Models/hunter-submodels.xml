@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-  <!--  Submodels are objects which can be dropped or launched from the user aircraft.
+<!--  Submodels are objects which can be dropped or launched from the user aircraft.
       The trigger is a boolean property, which you define, which when "true" causes
       the submodel to be released/launched. 
       A submodel will create an AIBallistic object which will follow a ballistic path.
@@ -32,48 +32,75 @@
 			<wind>		     If true, Submodel is affected by local wind. Defaults to false.
 			<cd>           The Coeffient of Drag. Varies with submodel shape - 0.295 for a bullet, 
 										 0.045 for an airfoil. Enter an appropriate value. Defaults to 0.295.
-			<eda>          Effective drag area (sq ft). Usually the cross-sectional area of the                     submodel normal to the airflow.
+			<eda>          Effective drag area (sq ft). Usually the cross-sectional area of the
+				             submodel normal to the airflow.
 			<weight>       The weight of the submodel (lbs). Defaults to 0.25
 			<aero-stabilised> If true, the submodel aligns with the local airflow. Defaults to true
 				 
 -->
-  <PropertyList> 
-    <submodel> 
-      <name>droptank-l</name>
-      <model>Aircraft/Hunter/Models/droptank-100gal.ac</model>
-      <trigger>controls/armament/station[0]/jettison-all</trigger>
-      <speed>0</speed>
-      <repeat>false</repeat>
-      <count>1</count>
-      <x-offset>-22.145879</x-offset>
-      <y-offset>-9.61</y-offset>
-      <z-offset>-2.39</z-offset>
-      <yaw-offset>0</yaw-offset>
-      <pitch-offset>0</pitch-offset>
-      <wind>false</wind>
-      <eda>2.11348887</eda>
-	  <weight>170</weight>
-	  <cd>0.045</cd>
-	  <contents>consumables/fuel/tank[2]/level-lbs</contents>
-    </submodel>
-		
-    <submodel> 
-      <name>droptank-r</name>
-      <model>Aircraft/Hunter/Models/droptank-100gal.ac</model>
-      <trigger>controls/armament/station[1]/jettison-all</trigger>
-      <speed>0</speed>
-      <repeat>false</repeat>
-      <count>1</count>
-      <x-offset>-22.145879</x-offset>
-      <y-offset>9.61</y-offset>
-      <z-offset>-2.39</z-offset>
-      <yaw-offset>0</yaw-offset>
-      <pitch-offset>0</pitch-offset>
-      <wind>false</wind>
-	  <eda>2.11348887</eda>
-	  <weight>170</weight>
-	  <cd>0.045</cd>
-	  <contents>consumables/fuel/tank[3]/level-lbs</contents>
-    </submodel>
-		
-  </PropertyList>
+<PropertyList>
+
+	<submodel>
+		<name>engine exhaust</name>
+		<model>Aircraft/Hunter/Models/contrail.xml</model>
+		<trigger>sim/ai/aircraft/exhaust</trigger>
+		<speed-node>engines/engine/n1</speed-node>
+		<speed>10</speed>
+		<repeat>true</repeat>
+		<delay>0.1</delay>
+		<count>-1</count>
+		<x-offset>-46.0</x-offset>
+		<y-offset>0.0</y-offset>
+		<z-offset>0.0</z-offset>
+		<yaw-offset>180</yaw-offset>
+		<!--<pitch-offset>90</pitch-offset>-->
+		<life>10</life>
+		<buoyancy>128</buoyancy>
+		<aero-stabilised>0</aero-stabilised>
+		<wind>true</wind>
+		<eda>1</eda>
+		<cd>0.95</cd>
+		<weight>1</weight>
+		<random>1</random>
+	</submodel>
+
+	<submodel>
+		<name>droptank-l</name>
+		<model>Aircraft/Hunter/Models/droptank-100gal.ac</model>
+		<trigger>controls/armament/station[0]/jettison-all</trigger>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<count>1</count>
+		<x-offset>-22.145879</x-offset>
+		<y-offset>-9.61</y-offset>
+		<z-offset>-2.39</z-offset>
+		<yaw-offset>0</yaw-offset>
+		<pitch-offset>0</pitch-offset>
+		<wind>false</wind>
+		<eda>2.11348887</eda>
+		<weight>170</weight>
+		<cd>0.045</cd>
+		<contents>consumables/fuel/tank[2]/level-lbs</contents>
+	</submodel>
+
+	<submodel>
+		<name>droptank-r</name>
+		<model>Aircraft/Hunter/Models/droptank-100gal.ac</model>
+		<trigger>controls/armament/station[1]/jettison-all</trigger>
+		<speed>0</speed>
+		<repeat>false</repeat>
+		<count>1</count>
+		<x-offset>-22.145879</x-offset>
+		<y-offset>9.61</y-offset>
+		<z-offset>-2.39</z-offset>
+		<yaw-offset>0</yaw-offset>
+		<pitch-offset>0</pitch-offset>
+		<wind>false</wind>
+		<eda>2.11348887</eda>
+		<weight>170</weight>
+		<cd>0.045</cd>
+		<contents>consumables/fuel/tank[3]/level-lbs</contents>
+	</submodel>
+
+	
+</PropertyList>

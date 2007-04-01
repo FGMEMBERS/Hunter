@@ -6,7 +6,7 @@
       <type>rotate</type>
       <object-name>Face-m</object-name>
       <object-name>Needle1-m</object-name>
-      <property>orientation/heading-magnetic-deg</property>
+      <property>instrumentation/heading-indicator-fg/indicated-heading-deg</property>
       <interpolation> 
         <entry>
           <ind>0</ind>
@@ -39,7 +39,6 @@
       <type>select</type>
       <object-name>Face-m</object-name>
       <object-name>Needle1-m</object-name>
-      --> 
       <condition> 
         <property>instrumentation/heading-indicator/heading-source</property>
       </condition>

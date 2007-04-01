@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>contrail_simple.ac</path>
+
+	<animation>
+		<type>select</type>
+		<object-name>sphere2</object-name>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>sphere</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>/sim/current-view/view-number</property>
+				<value>0</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<!-- this animation only works in plib -->
+	<animation>
+		<type>shader</type>
+		<shader>heat-haze</shader>
+		<object-name>sphere</object-name>
+		<factor>0.15</factor>
+		<speed-prop>/engines/engine/n1</speed-prop>
+	</animation>
+
+	<animation>
+		<type>spin</type>
+		<object-name>sphere</object-name>
+		<property>sim/time/elapsed-sec</property>
+		<factor>10</factor>
+		<offset>10</offset>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<object-name>sphere</object-name>
+		<property>/engines/engine/n1</property>
+		<offset>1</offset>
+		<x-min>1</x-min>
+		<y-min>1</y-min>
+		<z-min>1</z-min>
+		<x-max>10</x-max>
+		<y-max>1.0</y-max>
+		<z-max>1.0</z-max>
+		<x-factor>0.01</x-factor>
+		<y-factor>0.01</y-factor>
+		<z-factor>0.01</z-factor>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>sphere</object-name>
+		<property>/velocities/uBody-fps</property>
+		<offset-m>-1</offset-m>
+		<factor>0.015</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+	<animation>
+		<type>scale</type>
+		<object-name>sphere</object-name>
+		<property>/velocities/uBody-fps</property>
+		<offset>1</offset>
+		<x-min>1</x-min>
+		<y-min>1</y-min>
+		<z-min>1</z-min>
+		<x-max>10</x-max>
+		<y-max>1.5</y-max>
+		<z-max>1.5</z-max>
+		<x-factor>0.02</x-factor>
+		<y-factor>0.02</y-factor>
+		<z-factor>0.02</z-factor>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<object-name>sphere</object-name>
+		<property>sim/time/elapsed-sec</property>
+		<offset>1</offset>
+		<x-min>1</x-min>
+		<y-min>1</y-min>
+		<z-min>1</z-min>
+		<x-factor>2</x-factor>
+		<y-factor>2</y-factor>
+		<z-factor>2</z-factor>
+	</animation>
+
+	<animation>
+		<type>blend</type>
+		<object-name>sphere</object-name>
+		<property>sim/time/elapsed-sec</property>
+		<factor>0.3</factor>
+		<offset>0.5</offset>
+		<min>0.95</min>
+		<max>1</max>
+	</animation>
+
+</PropertyList>
