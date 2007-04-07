@@ -15,8 +15,9 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 -->
 <PropertyList>
 	<sim>
-		<description>Hawker Hunter 2 Tanks</description>
-		<status>early-production</status>
+		<description type="string" >Hawker Hunter 2 Tanks</description>
+		<author type="string">Vivian Meazza</author>
+		<status type="string">early-production</status>
 		<virtual-cockpit archive="y">true</virtual-cockpit>
 		<flight-model>yasim</flight-model>
 		<aero>hunter-yasim-2t</aero>
@@ -361,12 +362,6 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 					<property>/yasim/weights/tank-100gal-lbs[0]</property>
 					<value type="double">0.0</value>
 				</binding>
-				<!--	  <binding> 
-            <command>property-assign</command>
-            <property>consumables/fuel/tank[2]/level-gal_us</property>
-            <value type="double">0.0</value>
-          </binding> -->
-				<!-- stbd inner -->
 				<binding>
 					<command>property-assign</command>
 					<property>controls/armament/station[1]/jettison-all</property>
@@ -377,11 +372,6 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 					<property>/yasim/weights/tank-100gal-lbs[1]</property>
 					<value type="double">0.0</value>
 				</binding>
-				<!--		  <binding> 
-            <command>property-assign</command>
-            <property>consumables/fuel/tank[3]/level-gal_us</property>
-            <value type="double">0.0</value>
-          </binding>-->
 			</key>
 		</keyboard>
 	</input>
