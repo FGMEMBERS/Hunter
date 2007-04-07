@@ -15,18 +15,9 @@
 		<condition>
 			<greater-than-equals>
 				<property>/sim/current-view/view-number</property>
-				<value>0</value>
+				<value>1</value>
 			</greater-than-equals>
 		</condition>
-	</animation>
-
-	<!-- this animation only works in plib -->
-	<animation>
-		<type>shader</type>
-		<shader>heat-haze</shader>
-		<object-name>sphere</object-name>
-		<factor>0.15</factor>
-		<speed-prop>/engines/engine/n1</speed-prop>
 	</animation>
 
 	<animation>
@@ -71,7 +62,6 @@
 		</axis>
 	</animation>
 
-
 	<animation>
 		<type>scale</type>
 		<object-name>sphere</object-name>
@@ -110,5 +100,15 @@
 		<min>0.95</min>
 		<max>1</max>
 	</animation>
+	
+		<!-- this animation only works in plib -->
+	<animation>
+		<type>shader</type>
+		<shader>heat-haze</shader>
+		<object-name>sphere</object-name>
+		<factor>0.15</factor>
+		<speed-prop>/engines/engine/n1</speed-prop>
+	</animation>
+
 
 </PropertyList>
