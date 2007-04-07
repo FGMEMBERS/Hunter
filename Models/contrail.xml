@@ -32,6 +32,19 @@
 			<z>0</z>
 		</axis>
 	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>sphere</object-name>
+		<property>/velocities/uBody-fps</property>
+		<offset-m>-1</offset-m>
+		<factor>0.015</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
 	<animation>
 		<type>scale</type>
@@ -47,19 +60,6 @@
 		<x-factor>0.01</x-factor>
 		<y-factor>0.01</y-factor>
 		<z-factor>0.01</z-factor>
-	</animation>
-
-	<animation>
-		<type>translate</type>
-		<object-name>sphere</object-name>
-		<property>/velocities/uBody-fps</property>
-		<offset-m>-1</offset-m>
-		<factor>0.015</factor>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
 	</animation>
 
 	<animation>

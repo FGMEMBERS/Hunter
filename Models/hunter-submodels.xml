@@ -40,7 +40,7 @@
 -->
 <PropertyList>
 
-	<submodel>
+	<submodel> 
 		<name>engine exhaust</name>
 		<model>Aircraft/Hunter/Models/contrail.xml</model>
 		<trigger>sim/ai/aircraft/exhaust</trigger>
@@ -53,8 +53,7 @@
 		<y-offset>0.0</y-offset>
 		<z-offset>0.0</z-offset>
 		<yaw-offset>180</yaw-offset>
-		<!--<pitch-offset>90</pitch-offset>-->
-		<life>10</life>
+		<life>2</life>
 		<buoyancy>128</buoyancy>
 		<aero-stabilised>0</aero-stabilised>
 		<wind>true</wind>
@@ -81,7 +80,7 @@
 		<weight>170</weight>
 		<cd>0.045</cd>
 		<contents>consumables/fuel/tank[2]/level-lbs</contents>
-	</submodel>
+	</submodel> 
 
 	<submodel>
 		<name>droptank-r</name>

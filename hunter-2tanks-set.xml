@@ -400,7 +400,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 
 	<environment>
 		<params>
-			<contrail-altitude type="double">50000</contrail-altitude>
+			<contrail-altitude type="double">40000</contrail-altitude>
 		</params>
 	</environment>
 </PropertyList>
