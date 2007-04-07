@@ -374,7 +374,7 @@ updateExhaustState = func {
 
 controls.applyBrakes = func(v,which=0){
 
-	if (which == 0){setprop("sim/model/lightning/controls/gear/braking", v);}
+	if (which == 0){setprop("sim/model/controls/gear/braking", v);}
 	elsif (which < 0) {setprop("/controls/gear/brake-left", v);}
 	elsif (which > 0) {setprop("/controls/gear/brake-right", v);}
  
@@ -407,7 +407,8 @@ steering = func{
 	}	
 		
 } # end function
-setlistener("sim/model/lightning/controls/gear/braking", steering);
+
+setlistener("sim/model/controls/gear/braking", steering);
 
 # end 
 
