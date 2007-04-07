@@ -22,6 +22,9 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
     <flight-model>yasim</flight-model>
     <aero>hunter-yasim</aero>
     <fuel-fraction>1.0</fuel-fraction>
+		<rendering>
+			<shadows-auto>true</shadows-auto>
+		</rendering>
     <systems>
       <autopilot>
         <path>Aircraft/seahawk/Systems/seahawk-autopilot.xml</path>
@@ -30,6 +33,9 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
         <path>Aircraft/Hunter/Systems/hunter-electrical.xml</path>
       </electrical>
     </systems>
+    <instrumentation>
+      <path>Aircraft/Hunter/Systems/instrumentation.xml</path>
+    </instrumentation>
     <sound>
       <path>Aircraft/Hunter/Sounds/hunter-sound.xml</path>
     </sound>
