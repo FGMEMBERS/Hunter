@@ -296,15 +296,41 @@
 		</offsets>
 	</model>
 
+	<!--disappear -->
+	<animation>
+  <type>select</type>
+  <object-name>Drop-Tank-Port</object-name>
+   <condition>
+    <equals>
+    <property>controls/armament/station[0]/jettison-all</property>
+    <value>0</value>
+   </equals>
+  </condition>
+ </animation>
+
+
 	<model>
 		<path>Aircraft/Hunter/Models/droptank.xml</path>
-		<name>Drop-Tank-Port</name>
+		<name>Drop-Tank-Stbd</name>
 		<offsets>
 			<x-m>-0.25</x-m>
 			<y-m>2.93</y-m>
 			<z-m>-0.73</z-m>
 		</offsets>
-	</model>
+	</model>	
+	
+	<!--disappear -->
+	<animation>
+  <type>select</type>
+  <object-name>Drop-Tank-Stbd</object-name>
+   <condition>
+    <equals>
+    <property>controls/armament/station[1]/jettison-all</property>
+    <value>0</value>
+   </equals>
+  </condition>
+ </animation>
+
 
 	<!-- hide all of the model not visible from the cockpit -->
 	<!-- order objects -->
