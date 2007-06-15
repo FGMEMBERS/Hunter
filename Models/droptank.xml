@@ -1,30 +1,8 @@
 <?xml version="1.0"?>
 
-<!-- drop tank 100 gals -->
-
 <PropertyList>
+	<path>droptank-100gal.ac</path>
 
- <path>droptank-100gal.ac</path>
- 
- 
- 
- <!--disappear --> 
- <animation>
-  <type>select</type>
-  <object-name>Droptank</object-name>
-   <condition>
-    <equals>
-    <property>controls/armament/station[0]/jettison-all</property>
-    <value>0</value>
-   </equals>
-  </condition>
- </animation>
-
-<!-- *** LoD ***
- <animation>
-  <type>range</type>
-  <min-m>0</min-m>
-  <max-m>100</max-m>
- </animation>
- -->
+	
+		
 </PropertyList>
