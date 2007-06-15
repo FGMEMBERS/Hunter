@@ -14,7 +14,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 ************************************************************************
 -->
 <PropertyList>
-	<sim>
+	<sim include="help.xml">
 		<description type="string" >Hawker Hunter 2 Tanks</description>
 		<author type="string">Vivian Meazza</author>
 		<status type="string">early-production</status>
@@ -235,8 +235,8 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 				</binding>
 			</key>
 			<!-- map keys for seat vertical adjust -->
-			<key n="12">
-				<name>CTRL-L</name>
+			<key n="21">
+				<name>CTRL-U</name>
 				<desc>Seat Default.</desc>
 				<binding>
 					<command>property-assign</command>
@@ -255,13 +255,13 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 					<value type="double">0.8</value>
 				</binding>
 			</key>
-			<key n="76">
-				<name>L</name>
-				<desc>Seat Up.</desc>
+			<key n="85">
+				<name>U</name>
+				<desc>Seat Down.</desc>
 				<binding>
 					<command>property-adjust</command>
 					<property>/controls/seat/vertical-adjust</property>
-					<step type="double">0.01</step>
+					<step type="double">-0.01</step>
 					<min type="double">-0.05</min>
 					<max type="double">0.05</max>
 				</binding>
@@ -274,18 +274,18 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 					</condition>
 					<command>property-adjust</command>
 					<property>sim/current-view/y-offset-m</property>
-					<step type="double">0.01</step>
+					<step type="double">-0.01</step>
 					<min type="double">0.75</min>
 					<max type="double">0.85</max>
 				</binding>
 			</key>
-			<key n="108">
-				<name>l</name>
-				<desc>Seat Down.</desc>
+			<key n="117">
+				<name>u</name>
+				<desc>Seat Up.</desc>
 				<binding>
 					<command>property-adjust</command>
 					<property>controls/seat/vertical-adjust</property>
-					<step type="double">-0.01</step>
+					<step type="double">0.01</step>
 					<min type="double">-0.05</min>
 					<max type="double">0.05</max>
 				</binding>
@@ -298,7 +298,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 					</condition>
 					<command>property-adjust</command>
 					<property>sim/current-view/y-offset-m</property>
-					<step type="double">-0.01</step>
+					<step type="double">0.01</step>
 					<min type="double">0.75</min>
 					<max type="double">0.85</max>
 				</binding>
@@ -398,10 +398,6 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 			<module>g-force</module>
 			<file>Aircraft/Hunter/Models/hunter.nas</file>
 		</hunter>
-		<hunter-gui>
-			<module>gui</module>
-			<file>Aircraft/Hunter/Models/hunter-gui.nas</file>
-		</hunter-gui>
 	</nasal>
 
 	<environment>
