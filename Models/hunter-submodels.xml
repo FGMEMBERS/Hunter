@@ -36,11 +36,12 @@
 				             submodel normal to the airflow.
 			<weight>       The weight of the submodel (lbs). Defaults to 0.25
 			<aero-stabilised> If true, the submodel aligns with the local airflow. Defaults to true
-				 
+			<impact>			 If true an impact point on the terrain/sea is calculated 
 -->
 <PropertyList>
 
-	<submodel> 
+
+	<!--<submodel>
 		<name>engine exhaust</name>
 		<model>Aircraft/Hunter/Models/contrail.xml</model>
 		<trigger>sim/ai/aircraft/exhaust</trigger>
@@ -53,6 +54,7 @@
 		<y-offset>0.0</y-offset>
 		<z-offset>0.0</z-offset>
 		<yaw-offset>180</yaw-offset>
+		<pitch-offset>90</pitch-offset>
 		<life>2</life>
 		<buoyancy>128</buoyancy>
 		<aero-stabilised>0</aero-stabilised>
@@ -61,11 +63,11 @@
 		<cd>0.95</cd>
 		<weight>1</weight>
 		<random>1</random>
-	</submodel>
+	</submodel>-->
 
 	<submodel>
 		<name>droptank-l</name>
-		<model>Aircraft/Hunter/Models/droptank-100gal.ac</model>
+		<model>Aircraft/Hunter/Models/droptank.xml</model>
 		<trigger>controls/armament/station[0]/jettison-all</trigger>
 		<speed>0</speed>
 		<repeat>false</repeat>
@@ -78,13 +80,15 @@
 		<wind>false</wind>
 		<eda>2.11348887</eda>
 		<weight>170</weight>
-		<cd>0.045</cd>
+		<cd>0.035</cd>
 		<contents>consumables/fuel/tank[2]/level-lbs</contents>
-	</submodel> 
+		<impact>true</impact>
+		<impact-reports>sim/ai/aircraft/impact/droptank</impact-reports>
+	</submodel>
 
 	<submodel>
 		<name>droptank-r</name>
-		<model>Aircraft/Hunter/Models/droptank-100gal.ac</model>
+		<model>Aircraft/Hunter/Models/droptank.xml</model>
 		<trigger>controls/armament/station[1]/jettison-all</trigger>
 		<speed>0</speed>
 		<repeat>false</repeat>
@@ -97,9 +101,10 @@
 		<wind>false</wind>
 		<eda>2.11348887</eda>
 		<weight>170</weight>
-		<cd>0.045</cd>
+		<cd>0.035</cd>
 		<contents>consumables/fuel/tank[3]/level-lbs</contents>
+		<impact>true</impact>
+		<impact-reports>sim/ai/aircraft/impact/droptank</impact-reports>
 	</submodel>
 
-	
 </PropertyList>
