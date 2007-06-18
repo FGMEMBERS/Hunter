@@ -383,8 +383,8 @@ droptanks = func {
 			var node = props.globals.getNode(cmdarg().getValue(), 1);
 print (" droptank ", droptank, " lon " , node.getNode("impact/longitude-deg").getValue(),);
 			geo.put_model("Aircraft/Hunter/Models/droptank.xml",
-					node.getNode("impact/longitude-deg").getValue(),
 					node.getNode("impact/latitude-deg").getValue(),
+					node.getNode("impact/longitude-deg").getValue(),
 					node.getNode("impact/elevation-m").getValue()+ 0.25,
 					node.getNode("impact/heading-deg").getValue(),
 						0,
