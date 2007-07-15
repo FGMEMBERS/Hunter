@@ -351,7 +351,7 @@
 		<object-name>noshadow.Exhausts</object-name>
 		<condition>
 			<greater-than-equals>
-				<property>/sim/current-view/view-number</property>
+				<property>sim/current-view/view-number</property>
 				<value>0</value>
 			</greater-than-equals>
 		</condition>
@@ -375,7 +375,7 @@
 		<object-name>noshadow.Markings</object-name>
 		<condition>
 			<greater-than-equals>
-				<property>/sim/current-view/view-number</property>
+				<property>sim/current-view/view-number</property>
 				<value>0</value>
 			</greater-than-equals>
 		</condition>
@@ -395,7 +395,7 @@
 		<object-name>noshadow.Exhausts</object-name>
 		<condition>
 			<greater-than-equals>
-				<property>/sim/current-view/view-number</property>
+				<property>sim/current-view/view-number</property>
 				<value>0</value>
 			</greater-than-equals>
 		</condition>
@@ -439,7 +439,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Pilot-RLArm</object-name>
-		<property>/controls/flight/aileron</property>
+		<property>controls/flight/aileron</property>
 		<interpolation>
 			<entry>
 				<ind>-1</ind>
@@ -469,7 +469,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Pilot-RLArm</object-name>
-		<property>/controls/flight/aileron</property>
+		<property>controls/flight/aileron</property>
 		<interpolation>
 			<entry>
 				<ind>-1</ind>
@@ -499,7 +499,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Pilot-RUArm</object-name>
-		<property>/controls/flight/aileron</property>
+		<property>controls/flight/aileron</property>
 		<interpolation>
 			<entry>
 				<ind>-1</ind>
@@ -530,7 +530,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Pilot-RLArm</object-name>
-		<property>/controls/flight/elevator</property>
+		<property>controls/flight/elevator</property>
 		<interpolation>
 			<entry>
 				<ind>-1</ind>
@@ -560,7 +560,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Pilot-RLArm</object-name>
-		<property>/controls/flight/elevator</property>
+		<property>controls/flight/elevator</property>
 		<interpolation>
 			<entry>
 				<ind>-1</ind>
@@ -590,7 +590,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Pilot-RLArm</object-name>
-		<property>/controls/flight/elevator</property>
+		<property>controls/flight/elevator</property>
 		<interpolation>
 			<entry>
 				<ind>-1</ind>
@@ -619,7 +619,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Pilot-RUArm</object-name>
-		<property>/controls/flight/elevator</property>
+		<property>controls/flight/elevator</property>
 		<interpolation>
 			<entry>
 				<ind>-1</ind>
@@ -650,7 +650,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Pilot-LLArm</object-name>
-		<property>/controls/engines/engine/throttle</property>
+		<property>controls/engines/engine/throttle</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -676,7 +676,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Pilot-LLArm</object-name>
-		<property>/controls/engines/engine/throttle</property>
+		<property>controls/engines/engine/throttle</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -702,7 +702,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Pilot-LUArm</object-name>
-		<property>/controls/engines/engine/throttle</property>
+		<property>controls/engines/engine/throttle</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -994,7 +994,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>C-Stick</object-name>
-		<property>/controls/flight/elevator</property>
+		<property>controls/flight/elevator</property>
 		<offset-deg>0</offset-deg>
 		<factor>-10</factor>
 		<center>
@@ -1014,7 +1014,7 @@
 		<type>rotate</type>
 		<object-name>C-Stick-U</object-name>
 		<object-name>C-Stick-Handle</object-name>
-		<property>/controls/flight/aileron</property>
+		<property>controls/flight/aileron</property>
 		<offset-deg>0</offset-deg>
 		<factor>-10</factor>
 		<center>
@@ -1033,7 +1033,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Throttle</object-name>
-		<property>/controls/engines/engine/throttle</property>
+		<property>controls/engines/engine/throttle</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1061,7 +1061,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>Pedal-L</object-name>
-		<property>/controls/flight/rudder</property>
+		<property>controls/flight/rudder</property>
 		<interpolation>
 			<entry>
 				<ind>-1</ind>
@@ -1087,7 +1087,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>Pedal-R</object-name>
-		<property>/controls/flight/rudder</property>
+		<property>controls/flight/rudder</property>
 		<interpolation>
 			<entry>
 				<ind>-1</ind>
@@ -1114,7 +1114,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Rudder</object-name>
-		<property>/surface-positions/rudder-pos-norm</property>
+		<property>surface-positions/rudder-pos-norm</property>
 		<factor>-15</factor>
 		<center>
 			<x-m>5.59</x-m>
@@ -1133,7 +1133,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Aileron-L</object-name>
-		<property>/surface-positions/left-aileron-pos-norm</property>
+		<property>surface-positions/left-aileron-pos-norm</property>
 		<factor>10</factor>
 		<center>
 			<x-m>1.57</x-m>
@@ -1151,7 +1151,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Aileron-R</object-name>
-		<property>/surface-positions/right-aileron-pos-norm</property>
+		<property>surface-positions/right-aileron-pos-norm</property>
 		<factor>-10</factor>
 		<center>
 			<x-m>1.57</x-m>
@@ -1170,7 +1170,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Elevator-L</object-name>
-		<property>/surface-positions/elevator-pos-norm</property>
+		<property>surface-positions/elevator-pos-norm</property>
 		<factor>-15</factor>
 		<center>
 			<x-m>5.57</x-m>
@@ -1188,7 +1188,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Elevator-R</object-name>
-		<property>/surface-positions/elevator-pos-norm</property>
+		<property>surface-positions/elevator-pos-norm</property>
 		<factor>-15</factor>
 		<center>
 			<x-m>5.57</x-m>
@@ -1207,7 +1207,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Flap-L</object-name>
-		<property>/surface-positions/flap-pos-norm</property>
+		<property>surface-positions/flap-pos-norm</property>
 		<factor>-80</factor>
 		<center>
 			<x-m>0.44</x-m>
@@ -1225,7 +1225,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Flap-R</object-name>
-		<property>/surface-positions/flap-pos-norm</property>
+		<property>surface-positions/flap-pos-norm</property>
 		<factor>-80</factor>
 		<center>
 			<x-m>0.44</x-m>
@@ -1244,7 +1244,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Airbrake</object-name>
-		<property>/surface-positions/speedbrake-pos-norm</property>
+		<property>surface-positions/speedbrake-pos-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1273,7 +1273,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>F-Lower-Leg</object-name>
-		<property>/gear/gear[0]/position-norm</property>
+		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1305,7 +1305,7 @@
 		<object-name>F-Upper-Leg</object-name>
 		<object-name>F-DArm</object-name>
 		<object-name>F-Wheel</object-name>
-		<property>/gear/gear[0]/position-norm</property>
+		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1337,7 +1337,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>R-Door</object-name>
-		<property>/gear/gear[0]/position-norm</property>
+		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1368,7 +1368,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>F-Door</object-name>
-		<property>/gear/gear/position-norm</property>
+		<property>gear/gear/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1432,7 +1432,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>F-Lower-Leg</object-name>
-		<property>/gear/gear[0]/compression-norm</property>
+		<property>gear/gear[0]/compression-norm</property>
 		<factor>0.3</factor>
 		<axis>
 			<x>0</x>
@@ -1445,7 +1445,7 @@
 		<type>rotate</type>
 		<object-name>F-Arm</object-name>
 		<object-name>F-Wheel</object-name>
-		<property>/gear/gear[0]/compression-norm</property>
+		<property>gear/gear[0]/compression-norm</property>
 		<offset-deg>-10</offset-deg>
 		<factor>-50</factor>
 		<min-deg>-35</min-deg>
@@ -1466,7 +1466,7 @@
 		<object-name>F-Leg-Assembly</object-name>
 		<condition>
 			<greater-than>
-				<property>/gear/gear[0]/position-norm</property>
+				<property>gear/gear[0]/position-norm</property>
 				<value>0.02</value>
 			</greater-than>
 		</condition>
@@ -1477,7 +1477,7 @@
 		<object-name>F-Wheel</object-name>
 		<condition>
 			<greater-than>
-				<property>/gear/gear[0]/position-norm</property>
+				<property>gear/gear[0]/position-norm</property>
 				<value>0.02</value>
 			</greater-than>
 		</condition>
@@ -1488,7 +1488,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-Main-L-Assembly</object-name>
-		<property>/gear/gear[1]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1518,7 +1518,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Door2-L</object-name>
-		<property>/gear/gear[1]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1548,7 +1548,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>noshadow.SerNo-Door2-L</object-name>
-		<property>/gear/gear[1]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1637,7 +1637,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Door4-L</object-name>
-		<property>/gear/gear[1]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1667,7 +1667,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>noshadow.SerNo-Door4-L</object-name>
-		<property>/gear/gear[1]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1697,7 +1697,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Door1-L</object-name>
-		<property>/gear/gear[1]/position-norm</property>
+		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1730,7 +1730,7 @@
 		<object-name>UC-L-Lower-Leg</object-name>
 		<object-name>UC-L-Hub</object-name>
 		<object-name>UC-L-Tyre</object-name>
-		<property>/gear/gear[1]/compression-norm</property>
+		<property>gear/gear[1]/compression-norm</property>
 		<factor>0.19</factor>
 		<axis>
 			<x>0.02</x>
@@ -1742,7 +1742,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>Door2-L</object-name>
-		<property>/gear/gear[1]/compression-norm</property>
+		<property>gear/gear[1]/compression-norm</property>
 		<factor>0.2</factor>
 		<axis>
 			<x>0</x>
@@ -1754,7 +1754,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>noshadow.SerNo-Door2-L</object-name>
-		<property>/gear/gear[1]/compression-norm</property>
+		<property>gear/gear[1]/compression-norm</property>
 		<factor>0.2</factor>
 		<axis>
 			<x>0</x>
@@ -1769,7 +1769,7 @@
 		<object-name>UC-Main-L-Assembly</object-name>
 		<condition>
 			<greater-than>
-				<property>/gear/gear[0]/position-norm</property>
+				<property>gear/gear[0]/position-norm</property>
 				<value>0.02</value>
 			</greater-than>
 		</condition>
@@ -1780,7 +1780,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-Main-R-Assembly</object-name>
-		<property>/gear/gear[2]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1810,7 +1810,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Door2-R</object-name>
-		<property>/gear/gear[2]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1840,7 +1840,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>noshadow.SerNo-Door2-R</object-name>
-		<property>/gear/gear[2]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1870,7 +1870,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Door3-R</object-name>
-		<property>/gear/gear[2]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1900,7 +1900,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>noshadow.SerNo-Door3-R</object-name>
-		<property>/gear/gear[2]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1930,7 +1930,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Door4-R</object-name>
-		<property>/gear/gear[2]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1960,7 +1960,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>noshadow.SerNo-Door4-R</object-name>
-		<property>/gear/gear[2]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -1990,7 +1990,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Door1-R</object-name>
-		<property>/gear/gear[2]/position-norm</property>
+		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -2023,7 +2023,7 @@
 		<object-name>UC-R-Lower-Leg</object-name>
 		<object-name>UC-R-Hub</object-name>
 		<object-name>UC-R-Tyre</object-name>
-		<property>/gear/gear[2]/compression-norm</property>
+		<property>gear/gear[2]/compression-norm</property>
 		<factor>0.19</factor>
 		<axis>
 			<x>0.02</x>
@@ -2034,7 +2034,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>Door2-R</object-name>
-		<property>/gear/gear[2]/compression-norm</property>
+		<property>gear/gear[2]/compression-norm</property>
 		<factor>0.2</factor>
 		<axis>
 			<x>0</x>
@@ -2045,7 +2045,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>noshadow.SerNo-Door2-R</object-name>
-		<property>/gear/gear[2]/compression-norm</property>
+		<property>gear/gear[2]/compression-norm</property>
 		<factor>0.2</factor>
 		<axis>
 			<x>0</x>
@@ -2058,7 +2058,7 @@
 		<object-name>UC-Main-R-Assembly</object-name>
 		<condition>
 			<greater-than>
-				<property>/gear/gear[0]/position-norm</property>
+				<property>gear/gear[0]/position-norm</property>
 				<value>0.02</value>
 			</greater-than>
 		</condition>
