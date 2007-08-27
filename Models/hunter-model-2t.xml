@@ -349,10 +349,12 @@
 		<object-name>UC-Main-R</object-name>
 		<object-name>noshadow.Exhausts</object-name>
 		<condition>
-			<greater-than-equals>
-				<property>sim/current-view/view-number</property>
-				<value>0</value>
-			</greater-than-equals>
+			<not>
+				<equals>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+				</equals>
+			</not>
 		</condition>
 	</animation>
 
