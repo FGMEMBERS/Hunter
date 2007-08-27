@@ -300,10 +300,12 @@
 		<type>select</type>
 		<object-name>Drop-Tank-Port</object-name>
 		<condition>
-			<equals>
-				<property>controls/armament/station[0]/jettison-all</property>
-				<value>0</value>
-			</equals>
+			<not>
+				<equals>
+					<property>controls/armament/station[0]/jettison-all</property>
+					<value>1</value>
+				</equals>
+			</not>
 		</condition>
 	</animation>
 
@@ -323,10 +325,12 @@
 		<type>select</type>
 		<object-name>Drop-Tank-Stbd</object-name>
 		<condition>
-			<equals>
-				<property>controls/armament/station[1]/jettison-all</property>
-				<value>0</value>
-			</equals>
+			<not>
+				<equals>
+					<property>controls/armament/station[0]/jettison-all</property>
+					<value>1</value>
+				</equals>
+			</not>
 		</condition>
 	</animation>
 
