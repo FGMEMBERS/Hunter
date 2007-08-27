@@ -31,7 +31,6 @@
 	</panel>
 
 
-
 	<!-- **************** Instruments ********************* -->
 	<!-- **************** Main Panel ********** -->
 
@@ -298,15 +297,15 @@
 
 	<!--disappear -->
 	<animation>
-  <type>select</type>
-  <object-name>Drop-Tank-Port</object-name>
-   <condition>
-    <equals>
-    <property>controls/armament/station[0]/jettison-all</property>
-    <value>0</value>
-   </equals>
-  </condition>
- </animation>
+		<type>select</type>
+		<object-name>Drop-Tank-Port</object-name>
+		<condition>
+			<equals>
+				<property>controls/armament/station[0]/jettison-all</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
 
 
 	<model>
@@ -317,19 +316,19 @@
 			<y-m>2.93</y-m>
 			<z-m>-0.73</z-m>
 		</offsets>
-	</model>	
-	
+	</model>
+
 	<!--disappear -->
 	<animation>
-  <type>select</type>
-  <object-name>Drop-Tank-Stbd</object-name>
-   <condition>
-    <equals>
-    <property>controls/armament/station[1]/jettison-all</property>
-    <value>0</value>
-   </equals>
-  </condition>
- </animation>
+		<type>select</type>
+		<object-name>Drop-Tank-Stbd</object-name>
+		<condition>
+			<equals>
+				<property>controls/armament/station[1]/jettison-all</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
 
 
 	<!-- hide all of the model not visible from the cockpit -->
@@ -360,7 +359,7 @@
 	<!-- make sure that all the rest of the aircraft is visible
  through the exhausts. -->
 
-	<animation>
+	<!--<animation>
 		<type>select</type>
 		<object-name>Pilot</object-name>
 		<object-name>Wing-R</object-name>
@@ -379,9 +378,9 @@
 				<value>0</value>
 			</greater-than-equals>
 		</condition>
-	</animation>
+	</animation>-->
 
-	<animation>
+	<!--<animation>
 		<type>select</type>
 		<object-name>Turn</object-name>
 		<object-name>Gunsight</object-name>
@@ -399,7 +398,7 @@
 				<value>0</value>
 			</greater-than-equals>
 		</condition>
-	</animation>
+	</animation>-->
 
 	<animation>
 		<type>select</type>
@@ -411,7 +410,7 @@
 			</equals>
 		</condition>
 	</animation>
-	
+
 
 	<!-- **************************** Pilot ******************************* -->
 	<!--  conceal Pilot Head etc in Cockpit View-->
@@ -2118,8 +2117,6 @@
 	</animation>
 
 	<!-- ********************** Exhaust ******************* -->
-	<!-- -->
-
 	<animation>
 		<type>shader</type>
 		<shader>heat-haze</shader>
@@ -2204,8 +2201,6 @@
 		</condition>
 	</animation>
 
-	
-	
 
 	<!-- ************************ arrestor hook ********************** -->
 	<!-- lower/raise -->
