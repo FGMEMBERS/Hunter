@@ -365,8 +365,7 @@
 	<!-- make sure that all the rest of the aircraft is visible
  through the exhausts. -->
 
-	<!--<animation>
-		<type>select</type>
+	<animation>
 		<object-name>Pilot</object-name>
 		<object-name>Wing-R</object-name>
 		<object-name>Wing-L</object-name>
@@ -378,16 +377,9 @@
 		<object-name>Stbd-Light</object-name>
 		<object-name>Tail-Light</object-name>
 		<object-name>noshadow.Markings</object-name>
-		<condition>
-			<greater-than-equals>
-				<property>sim/current-view/view-number</property>
-				<value>0</value>
-			</greater-than-equals>
-		</condition>
-	</animation>-->
+	</animation>
 
-	<!--<animation>
-		<type>select</type>
+	<animation>
 		<object-name>Turn</object-name>
 		<object-name>Gunsight</object-name>
 		<object-name>Undercarriage-Control</object-name>
@@ -398,13 +390,7 @@
 		<object-name>Canopy</object-name>
 		<object-name>Blackout</object-name>
 		<object-name>noshadow.Exhausts</object-name>
-		<condition>
-			<greater-than-equals>
-				<property>sim/current-view/view-number</property>
-				<value>0</value>
-			</greater-than-equals>
-		</condition>
-	</animation>-->
+	</animation>
 
 	<animation>
 		<type>select</type>

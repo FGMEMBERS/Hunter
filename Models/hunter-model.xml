@@ -314,7 +314,6 @@
  through the exhausts. -->
 
   <animation>
-    <type>select</type>
     <object-name>Pilot</object-name>
     <object-name>Wing-R</object-name>
     <object-name>Wing-L</object-name>
@@ -326,16 +325,9 @@
     <object-name>Stbd-Light</object-name>
     <object-name>Tail-Light</object-name>
     <object-name>noshadow.Markings</object-name>
-    <condition>
-      <greater-than-equals>
-        <property>sim/current-view/view-number</property>
-        <value>0</value>
-      </greater-than-equals>
-    </condition>
   </animation>
 
   <animation>
-    <type>select</type>
     <object-name>Turn</object-name>
     <object-name>Gunsight</object-name>
     <object-name>Undercarriage-Control</object-name>
@@ -346,16 +338,10 @@
     <object-name>Canopy</object-name>
     <object-name>Blackout</object-name>
     <object-name>noshadow.Exhausts</object-name>
-    <condition>
-      <greater-than-equals>
-        <property>sim/current-view/view-number</property>
-        <value>0</value>
-      </greater-than-equals>
-    </condition>
   </animation>
 
   <!-- hide droptank pylons in all views-->
-
+	
   <animation>
     <type>select</type>
     <object-name>Pylon-L</object-name>
