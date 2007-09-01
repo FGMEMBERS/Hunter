@@ -1,196 +1,148 @@
-# This is aminor amendment of fuel.nas which changes the logic so that the 
-# code no longer changes the selection state of tanks.
-
-
-
 # Properties under /consumables/fuel/tank[n]:
 # + level-gal_us    - Current fuel load.  Can be set by user code.
 # + level-lbs       - OUTPUT ONLY property, do not try to set
 # + selected        - boolean indicating tank selection.
 # + density-ppg     - Fuel density, in lbs/gallon.
-# + capacity-gal_us - Tank capacity 
+# + capacity-gal_us - Tank capacity
 #
 # Properties under /engines/engine[n]:
 # + fuel-consumed-lbs - Output from the FDM, zeroed by this script
 # + out-of-fuel       - boolean, set by this code.
 
-UPDATE_PERIOD = 0.3;
 
-# ============================== Register timer ===========================================
+var UPDATE_PERIOD = 0.3;
 
-registerTimer = func {
 
-    settimer(fuelUpdate, UPDATE_PERIOD);
-    
-}# end func
+update = func {
+	if (fuel_freeze) {
+		return;
+	}
 
-# ============================= end Register timer =======================================
+	var consumed_fuel = 0;
+	foreach (var e; engines) {
+		var fuel = e.getNode("fuel-consumed-lbs");
+		consumed_fuel += fuel.getValue();
+		fuel.setDoubleValue(0);
+	}
 
-# =================================== Fuel Update ========================================
+	if (!consumed_fuel) {
+		return;
+	}
 
-fuelUpdate = func {
+	var selected_tanks = [];
+	foreach (var t; tanks) {
+		var cap = t.getNode("capacity-gal_us").getValue();
+		if (cap > 0.01 and t.getNode("selected").getBoolValue()) {
+			append(selected_tanks, t);
+		}
+	}
 
-    if(getprop("/sim/freeze/fuel")) { return registerTimer(); }
+	# Subtract fuel from tanks, set auxilliary properties.  Set out-of-fuel
+	# when any one tank is dry.
+	var out_of_fuel = 0;
+	if (size(selected_tanks) == 0) {
+		out_of_fuel = 1;
+	} else {
+		var fuel_per_tank = consumed_fuel / size(selected_tanks);
+		foreach (var t; selected_tanks) {
+			var ppg = t.getNode("density-ppg").getValue();
+			var lbs = t.getNode("level-gal_us").getValue() * ppg;
+			lbs = lbs - fuel_per_tank;
+			if (lbs < 0) {
+				lbs = 0;
+				# Kill the engines if we're told to, otherwise simply
+				# deselect the tank.
+				if (t.getNode("kill-when-empty", 1).getBoolValue()) {
+					out_of_fuel = 1;
+				} else {
+					t.getNode("selected").setBoolValue(0);
+				}
+			}
+			var gals = lbs / ppg;
+			t.getNode("level-gal_us").setDoubleValue(gals);
+			t.getNode("level-lbs").setDoubleValue(lbs);
+		}
+	}
 
-    if (flag and !done) {print("fuel running"); done = 1};
+	# Total fuel properties
+	var lbs = 0;
+	var gals = 0;
+	var cap = 0;
 
-    AllEngines = props.globals.getNode("engines").getChildren("engine");
-    
-    AllEnginescontrols = props.globals.getNode("controls/engines").getChildren("engine");
+	foreach (var t; tanks) {
+#		var level = t.getNode("level-gal_us").getValue();
+#		var density = t.getNode("density-ppg").getValue();
+#		t.getNode("level-lbs").setDoubleValue(level * density);
+#		print ("level " , level, " density " , density, " lbs ", level * density);
+		lbs += t.getNode("level-lbs").getValue();
+		gals += t.getNode("level-gal_us").getValue();
+		cap += t.getNode("capacity-gal_us").getValue();
+	}
 
-    # Sum the consumed fuel
-    total = 0;
-    foreach(e; AllEngines) {
-        fuel = e.getNode("fuel-consumed-lbs", 1);
-        consumed = fuel.getValue();
-        if(consumed == nil) { consumed = 0; }
-        total = total + consumed;
-        fuel.setDoubleValue(0);
-    }
+	total_lbs.setDoubleValue(lbs);
+	total_gals.setDoubleValue(gals);
+	total_norm.setDoubleValue(gals / cap);
 
-    # Unfortunately, FDM initialization hasn't happened when we start
-    # running.  Wait for the FDM to start running before we set any output
-    # properties.  This also prevents us from mucking with FDMs that
-    # don't support this fuel scheme.
-    if(total == 0 and !flag) {  # this relies on 'total'
-        return registerTimer(); #  not being quite 0 at startup,
-        }else{                  # and therefore keeps the function running,
-        flag = 1;               # once it has run once.
-    }
-        
-    if(!initialized) { initialize(); }
+	foreach (var e; engines) {
+		e.getNode("out-of-fuel").setBoolValue(out_of_fuel);
+	}
+}
 
-    AllTanks = props.globals.getNode("consumables/fuel").getChildren("tank");
 
-    # Build a list of available tanks. An available tank is both selected and has 
-    # fuel remaining.  Note the filtering for "zero-capacity" tanks.  The FlightGear
-    # code likes to define zombie tanks that have no meaning to the FDM,
-    # so we have to take measures to ignore them here. 
-    availableTanks = [];
-    
-    foreach(t; AllTanks) {
-        cap = t.getNode("capacity-gal_us", 1).getValue();
-        contents = t.getNode("level-gal_us", 1).getValue();
-        if(cap != nil and cap > 0.01 ) {
-            if(t.getNode("selected", 1).getBoolValue() and contents > 0) {
-                append(availableTanks, t);
-            }
-        }
-    }
+loop = func {
+	update();
+	settimer(loop, UPDATE_PERIOD);
+}
 
-    # Subtract fuel from tanks, set auxilliary properties.  Set out-of-fuel
-    # when all tanks are dry. 
-    outOfFuel = 0;
-    
-	if(size(availableTanks) == 0) {
-            outOfFuel = 1;
-        } else {
-        fuelPerTank = total / size(availableTanks);
-        foreach(t; availableTanks) {
-            ppg = t.getNode("density-ppg").getValue();
-          # lbs = t.getNode("level-gal_us").getValue() * ppg;
-		    lbs = t.getNode("level-lbs").getValue();
-            lbs = lbs - fuelPerTank;
-            if(lbs < 0) {
-                lbs = 0; 
-                # Kill the engines if we're told to, otherwise simply
-                # deselect the tank.
-                if(t.getNode("kill-when-empty", 1).getBoolValue()) { outOfFuel = 1; }
-                else { t.getNode("selected", 1).setBoolValue(0); }
-             }
-             gals = lbs / ppg;
-             t.getNode("level-gal_us").setDoubleValue(gals);
-             t.getNode("level-lbs").setDoubleValue(lbs);
-        }
-    }
-	
-	# set all tanks 
-	foreach(t; AllTanks) {
-	    ppg = t.getNode("density-ppg").getValue();
-        t.getNode("level-gal_us").setValue(t.getNode("level-lbs").getValue() / ppg);
-    }
-	
-    
-    # Total fuel properties
-    gals = lbs = cap = 0;
-    foreach(t; AllTanks) {
-        cap = cap + t.getNode("capacity-gal_us").getValue();
-        gals = gals + t.getNode("level-gal_us").getValue();
-        lbs = lbs + t.getNode("level-lbs").getValue();
-    }
-    
-    setprop("/consumables/fuel/total-fuel-gals", gals);
-    setprop("/consumables/fuel/total-fuel-lbs", lbs);
-    setprop("/consumables/fuel/total-fuel-norm", gals/cap);
 
-    foreach(e; AllEngines) {
-        e.getNode("out-of-fuel").setBoolValue(outOfFuel);
-    }
-    
-    registerTimer();
-    
-}# end func
-
-# ================================ end Fuel Update ================================
-
-# ================================ Initalize ====================================== 
-# Make sure all needed properties are present and accounted
-# for, and that they have sane default values.
-flag = 0;
-done = 0;
-initialized = 0;
+init_double_prop = func(node, prop, val) {
+	if (node.getNode(prop) != nil) {
+		val = num(node.getNode(prop).getValue());
+	}
+	node.getNode(prop, 1).setDoubleValue(val);
+}
 
 
 
-initialize = func {
+var tanks = [];
+var engines = [];
+var fuel_freeze = nil;
+var total_gals = nil;
+var total_lbs = nil;
+var total_norm = nil;
 
-    AllEngines = props.globals.getNode("engines").getChildren("engine");
-    AllTanks = props.globals.getNode("consumables/fuel").getChildren("tank");
-    AllEnginescontrols = props.globals.getNode("controls/engines").getChildren("engine");
 
-    foreach(e; AllEngines) {
-        e.getNode("fuel-consumed-lbs", 1).setDoubleValue(0);
-        e.getNode("out-of-fuel", 1).setBoolValue(0);
-    }
+var L = _setlistener("/sim/signals/fdm-initialized", func {
+	removelistener(L);
 
-    foreach(t; AllTanks) {
-        initDoubleProp(t, "level-gal_us", 0);
-        initDoubleProp(t, "level-lbs", 0);
-        initDoubleProp(t, "capacity-gal_us", 0.01); # Not zero (div/zero issue)
-        initDoubleProp(t, "density-ppg", 6.0); # gasoline
+	setlistener("/sim/freeze/fuel", func { fuel_freeze = cmdarg().getBoolValue() }, 1);
 
-        if(t.getNode("selected") == nil) {
-            t.getNode("selected", 1).setBoolValue(1);
-        }
-    }
-    
-    foreach(e; AllEnginescontrols) {
-        if(e.getNode("mixture-lever") == nil) {
-            e.getNode("mixture-lever", 1).setDoubleValue(0);
-        }
-    }
-    
-    
-    initialized = 1;
-    
-}# end func
+	total_gals = props.globals.getNode("/consumables/fuel/total-fuel-gals", 1);
+	total_lbs = props.globals.getNode("/consumables/fuel/total-fuel-lbs", 1);
+	total_norm = props.globals.getNode("/consumables/fuel/total-fuel-norm", 1);
 
-# ================================ end Initalize ================================== 
+	engines = props.globals.getNode("engines", 1).getChildren("engine");
+	foreach (var e; engines) {
+		e.getNode("fuel-consumed-lbs", 1).setDoubleValue(0);
+		e.getNode("out-of-fuel", 1).setBoolValue(0);
+	}
 
-# =============================== Utility Function ================================
+	foreach (var t; props.globals.getNode("/consumables/fuel", 1).getChildren("tank")) {
+		if (!size(t.getChildren())) {
+			continue;           # skip native_fdm.cxx generated zombie tanks
+		}
+		append(tanks, t);
+		init_double_prop(t, "level-gal_us", 0.0);
+		init_double_prop(t, "level-lbs", 0.0);
+		init_double_prop(t, "capacity-gal_us", 0.01); # not zero (div/zero issue)
+		init_double_prop(t, "density-ppg", 6.0);      # gasoline
 
-initDoubleProp = func {
+		if (t.getNode("selected") == nil) {
+			t.getNode("selected", 1).setBoolValue(1);
+		}
+	}
 
-    node = arg[0]; prop = arg[1]; val = arg[2];
-    if(node.getNode(prop) != nil) {
-        val = num(node.getNode(prop).getValue());
-    }
-    node.getNode(prop, 1).setDoubleValue(val);
+	loop();
+});
 
-}# end func
 
-# =========================== end Utility Function ================================
-
-# Fire it up
-
-registerTimer();
