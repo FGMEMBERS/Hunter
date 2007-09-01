@@ -122,15 +122,15 @@ file, these values will be used (they are hardcoded).
     <static-port>/systems/static</static-port>
   </vertical-speed-indicator>
 
-  <gps>
+  <!--<gps>
     <name>gps</name>
     <number>0</number>
-  </gps>
+  </gps>-->
 
-  <radar>
+  <!--<radar>
     <name>wxradar</name>
     <number>0</number>
-  </radar>
+  </radar>-->
 
   <tacan>
     <name>tacan</name>

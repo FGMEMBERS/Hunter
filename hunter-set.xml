@@ -30,6 +30,9 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 				<path>Aircraft/Hunter/Systems/hunter-electrical.xml</path>
 			</electrical>
 		</systems>
+		<instrumentation>
+			<path>Aircraft/Hunter/Systems/instrumentation.xml</path>
+		</instrumentation>
 		<ai>
 			<aircraft>
 				<exhaust type="bool">false</exhaust>
