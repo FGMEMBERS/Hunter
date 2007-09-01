@@ -55,7 +55,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 			<visibility>false</visibility>
 		</hud>
 		<model>
-			<path>Aircraft/Hunter/Models/hunter-model-2t.xml</path>
+			<path>Aircraft/Hunter/Models/hunter-model.xml</path>
 		</model>
 		<view n="0">
 			<internal archive="y">true</internal>
