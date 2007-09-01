@@ -2274,7 +2274,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>Main</object-name>
-		<property>gear/canopy/position-norm</property>
+		<property>canopy/position-norm</property>
 		<factor>0.6</factor>
 		<axis>
 			<x>1</x>
