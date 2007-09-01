@@ -282,7 +282,7 @@ n1 100% -->
 		<control-speed control="EXTEND"
 									 transition-time="5"/>
 		<control-output control="EXTEND"
-										prop="/gear/canopy/position-norm"/>
+										prop="/canopy/position-norm"/>
 	</gear>
 
 	<!-- Hook -->
