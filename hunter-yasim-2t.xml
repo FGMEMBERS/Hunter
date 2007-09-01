@@ -25,7 +25,7 @@
 	<approach speed="130"
 						aoa="3">
 		<control-setting axis="/controls/engines/engine[0]/throttle"
-										 value="0.7"/>
+										 value="0.6"/>
 		<control-setting axis="/controls/flight/flaps"
 										 value="1.0"/>
 		<control-setting axis="/controls/gear/gear-down"
@@ -34,10 +34,14 @@
 										 value="0"/>
 		<solve-weight idx="0"
 									weight="200"/>
+		<solve-weight idx="1"
+									weight="170"/>
+		<solve-weight idx="2"
+									weight="170"/>
 	</approach>
 
 	<!-- Cruise configuration.   -->
-	<cruise speed="540"
+	<cruise speed="520"
 					alt="36000">
 		<control-setting axis="/controls/engines/engine[0]/throttle"
 										 value="1"/>
@@ -49,12 +53,17 @@
 										 value="0"/>
 		<solve-weight idx="0"
 									weight="200"/>
+		<solve-weight idx="1"
+									weight="170"/>
+		<solve-weight idx="2"
+									weight="170"/>
 	</cruise>
 
 	<!-- pilot eyepoint -->
 	<cockpit x="-2.72"
 					 y="0.0"
-					 z=".80"/>
+					 z="0.7839"/>
+
 
 	<!-- fuselage -->
 	<fuselage ax="0"
@@ -135,7 +144,7 @@
 		<control-output control="FLAP0"
 										prop="/surface-positions/elevator-pos-norm"/>
 		<control-speed control="FLAP0"
-									 transition-time="1"/>
+									 transition-time="2"/>
 		<!-- flap1 simulates the airbrake -->
 		<flap1 start="0"
 					 end="0.25"
@@ -302,19 +311,34 @@ n1 100% -->
 to establish the exact location of the tanks, but discussions with a former pilot 
 and based on my own limited experience of the Hunter T8, there was almost no trim 
 change as fuel was used, so I have placed them close to the CofG -->
-
+	
+<!-- port wing tank -->
 	<tank x="-6.8"
 				y="1"
 				z="-0.1"
 				jet="true"
 				capacity="1500"/>
-	<!-- left wing tank -->
+	
+<!-- stbd wing tank -->
 	<tank x="-6.8"
 				y="-1"
 				z="-0.1"
 				jet="true"
 				capacity="1500"/>
-	<!-- right wing tank -->
+
+	<!-- port drop tank -->
+	<tank x="0.20067"
+				y="-2.99431"
+				z="-0.70"
+				jet="true"
+				capacity="800"/>
+
+<!-- stbd drop tank -->
+	<tank x="0.20067"
+				y="2.99431"
+				z="-0.70"
+				jet="true"
+				capacity="800"/>
 
 	<!-- ballast -->
 	<ballast x="-3.05"

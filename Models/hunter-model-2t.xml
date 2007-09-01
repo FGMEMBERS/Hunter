@@ -150,7 +150,6 @@
 			<y-m>0.15</y-m>
 			<z-m>0.30</z-m>
 		</offsets>
-
 	</model>
 
 	<!-- **************** Right Panel *********** -->
@@ -424,13 +423,213 @@
 		</condition>
 	</animation>
 
+	<!-- Pitch -->
+	<!--  Control Stick  -->
+	<animation>
+		<type>rotate</type>
+		<object-name>C-Stick-U</object-name>
+		<object-name>C-Stick-Handle</object-name>
+		<object-name>C-Stick-L</object-name>
+		<object-name>Cover</object-name>
+		<property>controls/flight/elevator</property>
+		<offset-deg>0</offset-deg>
+		<factor>-10</factor>
+		<center>
+			<x-m>-4.61041</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-0.228074</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RLArm</object-name>
+		<property>controls/flight/elevator</property>
+		<offset-deg>0</offset-deg>
+		<factor>-10</factor>
+		<center>
+			<x-m>-4.61041</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-0.228074</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RLArm</object-name>
+		<property>controls/flight/elevator</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-5</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.63211</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.3127</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RLArm</object-name>
+		<property>controls/flight/elevator</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-15</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>7.5</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.63211</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.3127</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation>
+
 	<!-- Right arm -->
 	<!-- Roll -->
+
+	<!-- control stick -->
+	<animation>
+		<type>rotate</type>
+		<object-name>C-Stick-U</object-name>
+		<object-name>C-Stick-Handle</object-name>
+		<object-name>Pilot-RLArm</object-name>
+		<property>controls/flight/aileron</property>
+		<offset-deg>0</offset-deg>
+		<factor>-20</factor>
+		<center>
+			<x-m>-4.64448</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.096915</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!--<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RLArm</object-name>
+		<property>controls/flight/aileron</property>
+		<offset-deg>0</offset-deg>
+		<factor>-20</factor>
+		<center>
+			<x-m>-4.64448</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.096915</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>-->
 
 	<animation>
 		<type>rotate</type>
 		<object-name>Pilot-RLArm</object-name>
 		<property>controls/flight/aileron</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>7.5</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-15</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.63211</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.3127</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RLArm</object-name>
+		<property>controls/flight/aileron</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-1</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>7.5</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.63211</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.3127</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RUArm</object-name>
+		<property>controls/flight/elevator</property>
 		<interpolation>
 			<entry>
 				<ind>-1</ind>
@@ -442,13 +641,13 @@
 			</entry>
 			<entry>
 				<ind>1</ind>
-				<dep>-10</dep>
+				<dep>-6</dep>
 			</entry>
 		</interpolation>
 		<center>
-			<x-m>-4.65</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-0.04</z-m>
+			<x-m>-4.19271</x-m>
+			<y-m>0.125018</y-m>
+			<z-m>0.565065</z-m>
 		</center>
 		<axis>
 			<x>1</x>
@@ -459,156 +658,6 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>Pilot-RLArm</object-name>
-		<property>controls/flight/aileron</property>
-		<interpolation>
-			<entry>
-				<ind>-1</ind>
-				<dep>-5</dep>
-			</entry>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>1</ind>
-				<dep>3</dep>
-			</entry>
-		</interpolation>
-		<center>
-			<x-m>-4.65</x-m>
-			<y-m>0.01</y-m>
-			<z-m>0.23</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>-1</z>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>rotate</type>
-		<object-name>Pilot-RUArm</object-name>
-		<property>controls/flight/aileron</property>
-		<interpolation>
-			<entry>
-				<ind>-1</ind>
-				<dep>2</dep>
-			</entry>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>1</ind>
-				<dep>-3</dep>
-			</entry>
-		</interpolation>
-		<center>
-			<x-m>-4.14</x-m>
-			<y-m>0.14</y-m>
-			<z-m>0.63</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>.7</z>
-		</axis>
-	</animation>
-
-	<!-- Pitch -->
-	<animation>
-		<type>rotate</type>
-		<object-name>Pilot-RLArm</object-name>
-		<property>controls/flight/elevator</property>
-		<interpolation>
-			<entry>
-				<ind>-1</ind>
-				<dep>-10</dep>
-			</entry>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>1</ind>
-				<dep>10</dep>
-			</entry>
-		</interpolation>
-		<center>
-			<x-m>-4.65</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-0.42</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>rotate</type>
-		<object-name>Pilot-RLArm</object-name>
-		<property>controls/flight/elevator</property>
-		<interpolation>
-			<entry>
-				<ind>-1</ind>
-				<dep>-5</dep>
-			</entry>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>1</ind>
-				<dep>5</dep>
-			</entry>
-		</interpolation>
-		<center>
-			<x-m>-4.65</x-m>
-			<y-m>0.01</y-m>
-			<z-m>0.23</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>rotate</type>
-		<object-name>Pilot-RLArm</object-name>
-		<property>controls/flight/elevator</property>
-		<interpolation>
-			<entry>
-				<ind>-1</ind>
-				<dep>-2.0</dep>
-			</entry>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>1</ind>
-				<dep>5</dep>
-			</entry>
-		</interpolation>
-		<center>
-			<x-m>-4.65</x-m>
-			<y-m>0.01</y-m>
-			<z-m>0.23</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>-1</z>
-		</axis>
-	</animation>
-	<animation>
-		<type>rotate</type>
 		<object-name>Pilot-RUArm</object-name>
 		<property>controls/flight/elevator</property>
 		<interpolation>
@@ -622,40 +671,132 @@
 			</entry>
 			<entry>
 				<ind>1</ind>
-				<dep>12</dep>
+				<dep>13</dep>
 			</entry>
 		</interpolation>
 		<center>
-			<x-m>-4.14</x-m>
-			<y-m>0.14</y-m>
-			<z-m>0.63</z-m>
+			<x-m>-4.19271</x-m>
+			<y-m>0.125018</y-m>
+			<z-m>0.565065</z-m>
 		</center>
 		<axis>
 			<x>0</x>
 			<y>1</y>
-			<z>.7</z>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RUArm</object-name>
+		<property>controls/flight/aileron</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>2.5</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-5</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.19271</x-m>
+			<y-m>0.125018</y-m>
+			<z-m>0.565065</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RUArm</object-name>
+		<property>controls/flight/aileron</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>5</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-10</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.19271</x-m>
+			<y-m>0.125018</y-m>
+			<z-m>0.565065</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RUArm</object-name>
+		<property>controls/flight/aileron</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>12.5</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.19271</x-m>
+			<y-m>0.125018</y-m>
+			<z-m>0.565065</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
 		</axis>
 	</animation>
 
 	<!-- left arm - throttle -->
+	<!-- throttle -->
 	<animation>
 		<type>rotate</type>
+		<object-name>Throttle</object-name>
 		<object-name>Pilot-LLArm</object-name>
 		<property>controls/engines/engine/throttle</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
-				<dep>0</dep>
+				<dep>-10</dep>
 			</entry>
 			<entry>
 				<ind>1</ind>
-				<dep>45</dep>
+				<dep>35</dep>
 			</entry>
 		</interpolation>
 		<center>
-			<x-m>-4.71</x-m>
-			<y-m>-0.36</y-m>
-			<z-m>0.11</z-m>
+			<x-m>-4.69369</x-m>
+			<y-m>-0.356772</y-m>
+			<z-m>0.0907826</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -671,17 +812,17 @@
 		<interpolation>
 			<entry>
 				<ind>0</ind>
-				<dep>0</dep>
+				<dep>-5</dep>
 			</entry>
 			<entry>
 				<ind>1</ind>
-				<dep>30</dep>
+				<dep>35</dep>
 			</entry>
 		</interpolation>
 		<center>
-			<x-m>-4.68</x-m>
-			<y-m>-0.32</y-m>
-			<z-m>0.23</z-m>
+			<x-m>-4.63486</x-m>
+			<y-m>-0.277667</y-m>
+			<z-m>0.191996</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -697,17 +838,17 @@
 		<interpolation>
 			<entry>
 				<ind>0</ind>
-				<dep>0</dep>
+				<dep>-5</dep>
 			</entry>
 			<entry>
 				<ind>1</ind>
-				<dep>15</dep>
+				<dep>10</dep>
 			</entry>
 		</interpolation>
 		<center>
-			<x-m>-4.14</x-m>
-			<y-m>-0.15</y-m>
-			<z-m>0.61</z-m>
+			<x-m>-4.20111</x-m>
+			<y-m>-0.117579</y-m>
+			<z-m>0.571138</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -961,7 +1102,7 @@
 			<z-m>0.35</z-m>
 		</offsets>
 	</model>
-	<!-- -->
+	
 	<model>
 		<path>Aircraft/Hunter/Models/undercarriage-up-down.xml</path>
 		<name>Undercarriage-Control</name>
@@ -971,6 +1112,7 @@
 			<z-m>0.38</z-m>
 		</offsets>
 	</model>
+	
 	<model>
 		<path>Aircraft/Hunter/Models/flap-emrgy-lowering.xml</path>
 		<offsets>
@@ -979,73 +1121,6 @@
 			<z-m>0.41</z-m>
 		</offsets>
 	</model>
-
-	<!--  Control Stick  -->
-	<!-- pitch -->
-	<animation>
-		<type>rotate</type>
-		<object-name>C-Stick</object-name>
-		<property>controls/flight/elevator</property>
-		<offset-deg>0</offset-deg>
-		<factor>-10</factor>
-		<center>
-			<x-m>-4.65</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-0.42</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
-	</animation>
-
-	<!-- roll -->
-	<animation>
-		<type>rotate</type>
-		<object-name>C-Stick-U</object-name>
-		<object-name>C-Stick-Handle</object-name>
-		<property>controls/flight/aileron</property>
-		<offset-deg>0</offset-deg>
-		<factor>-10</factor>
-		<center>
-			<x-m>-4.64</x-m>
-			<y-m>0.0</y-m>
-			<z-m>-0.04</z-m>
-		</center>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
-
-	<!-- throttle -->
-	<animation>
-		<type>rotate</type>
-		<object-name>Throttle</object-name>
-		<property>controls/engines/engine/throttle</property>
-		<interpolation>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>1</ind>
-				<dep>45</dep>
-			</entry>
-		</interpolation>
-		<center>
-			<x-m>-4.71</x-m>
-			<y-m>-0.36</y-m>
-			<z-m>0.11</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
-	</animation>
 
 	<!-- rudder pedals -->
 	<!-- Left -->
@@ -1104,7 +1179,7 @@
 	<!-- *********** Rudder *************** -->
 	<animation>
 		<type>rotate</type>
-		<object-name>Rudder</object-name>
+		<object-name>Rudder-Assmbly</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
 		<factor>-15</factor>
 		<center>
@@ -1290,6 +1365,7 @@
 			<z>0</z>
 		</axis>
 	</animation>
+	
 	<animation>
 		<type>rotate</type>
 		<object-name>F-Arm</object-name>
@@ -1625,6 +1701,7 @@
 			<z>0</z>
 		</axis>
 	</animation>
+	
 	<animation>
 		<type>rotate</type>
 		<object-name>Door4-L</object-name>
@@ -2193,6 +2270,18 @@
 		</condition>
 	</animation>
 
+	<!-- ***************** Canopy *********************** -->
+	<animation>
+		<type>translate</type>
+		<object-name>Main</object-name>
+		<property>gear/canopy/position-norm</property>
+		<factor>0.6</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
 	<!-- ************************ arrestor hook ********************** -->
 	<!-- lower/raise -->
@@ -2226,6 +2315,17 @@
 		</axis>
 	</animation>
 
+	<!-- ************ Panel Lighting ************** -->
+	<animation>
+		<type>material</type>
+		<object-name>Panels</object-name>
+		<emission>
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.6</red>
+			<green>0.20</green>
+			<blue>0.20</blue>
+		</emission>
+	</animation>
 
 	<!-- *** LoD for the whole model *** -->
 	<animation>

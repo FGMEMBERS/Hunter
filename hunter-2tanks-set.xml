@@ -58,8 +58,8 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 			<internal archive="y">true</internal>
 			<config>
 				<x-offset-m archive="y">0</x-offset-m>
-				<y-offset-m archive="y">0.77</y-offset-m>
-				<z-offset-m archive="y">2.71</z-offset-m>
+				<y-offset-m archive="y">0.7839</y-offset-m>
+				<z-offset-m archive="y">2.72</z-offset-m>
 				<pitch-offset-deg>-15</pitch-offset-deg>
 				<default-field-of-view-deg>60</default-field-of-view-deg>
 			</config>
@@ -101,6 +101,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 			</config>
 		</view>
 	</sim>
+
 	<consumables>
 		<fuel>
 			<tank n="0">
@@ -116,15 +117,16 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 			<tank n="2">
 				<name type="string">Port Drop</name>
 				<level-lbs>800</level-lbs>
-				<selected type="bool">1</selected>
+				<selected type="bool">0</selected>
 			</tank>
 			<tank n="3">
 				<name type="string">Stbd Drop</name>
 				<level-lbs>800</level-lbs>
-				<selected type="bool">1</selected>
+				<selected type="bool">0</selected>
 			</tank>
 		</fuel>
 	</consumables>
+
 	<!-- *************** set properties **********************-->
 	<!--parking brake ON -->
 	<!-- nosewheel lock OFF -->
@@ -140,11 +142,13 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 			<nav-lights>false</nav-lights>
 		</lighting>
 	</controls>
+	
 	<engines>
 		<engine>
 			<smoking>true</smoking>
 		</engine>
 	</engines>
+	
 	<!-- hsi heading bug and source select-->
 	<instrumentation>
 		<heading-indicator>
@@ -212,7 +216,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 				<binding>
 					<command>property-assign</command>
 					<property>/controls/flight/wing-fold</property>
-					<value type="double">1.0</value>
+					<value type="bool">1.0</value>
 				</binding>
 			</key>
 			<key n="102">
@@ -221,7 +225,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 				<binding>
 					<command>property-assign</command>
 					<property>/controls/flight/wing-fold</property>
-					<value type="double">0.0</value>
+					<value type="bool">0.0</value>
 				</binding>
 			</key>
 			<!-- map keys for no action  -->
@@ -252,7 +256,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 					</condition>
 					<command>property-assign</command>
 					<property>sim/current-view/y-offset-m</property>
-					<value type="double">0.8</value>
+					<value type="double">0.7839</value>
 				</binding>
 			</key>
 			<key n="85">
@@ -275,8 +279,8 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 					<command>property-adjust</command>
 					<property>sim/current-view/y-offset-m</property>
 					<step type="double">-0.01</step>
-					<min type="double">0.75</min>
-					<max type="double">0.85</max>
+					<min type="double">0.7339</min>
+					<max type="double">0.8339</max>
 				</binding>
 			</key>
 			<key n="117">
@@ -381,6 +385,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 			</key>
 		</keyboard>
 	</input>
+
 	<yasim>
 		<weights>
 			<pilot-lb type="double">200</pilot-lb>
@@ -388,21 +393,18 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 			<tank-100gal-lbs type="double">170</tank-100gal-lbs>
 		</weights>
 	</yasim>
+
 	<!-- nasal stuff -->
 	<nasal>
-		<hunter-fuel>
-			<module>fuel</module>
-			<file>Aircraft/Hunter/Models/hunter-fuel.nas</file>
-		</hunter-fuel>
 		<hunter>
-			<module>g-force</module>
 			<file>Aircraft/Hunter/Models/hunter.nas</file>
 		</hunter>
 	</nasal>
 
 	<environment>
 		<params>
-			<contrail-altitude type="double">40000</contrail-altitude>
+			<contrail-altitude type="double">50000</contrail-altitude>
 		</params>
 	</environment>
+	
 </PropertyList>

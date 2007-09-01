@@ -50,7 +50,9 @@
 		<type>scale</type>
 		<object-name>sphere</object-name>
 		<property>/engines/engine/n1</property>
-		<offset>1</offset>
+		<x-offset>1</x-offset>
+		<y-offset>1</y-offset>
+		<z-offset>1</z-offset>
 		<x-min>1</x-min>
 		<y-min>1</y-min>
 		<z-min>1</z-min>
@@ -101,14 +103,14 @@
 		<max>1</max>
 	</animation>
 	
-		<!-- this animation only works in plib -->
+		<!-- this animation only works in plib --><!--
 	<animation>
 		<type>shader</type>
 		<shader>heat-haze</shader>
 		<object-name>sphere</object-name>
 		<factor>0.15</factor>
 		<speed-prop>/engines/engine/n1</speed-prop>
-	</animation>
+	</animation>-->
 
 
 </PropertyList>

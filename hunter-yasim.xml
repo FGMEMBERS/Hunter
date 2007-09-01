@@ -25,7 +25,7 @@
 	<approach speed="130"
 						aoa="3">
 		<control-setting axis="/controls/engines/engine[0]/throttle"
-										 value="0.7"/>
+										 value="0.6"/>
 		<control-setting axis="/controls/flight/flaps"
 										 value="1.0"/>
 		<control-setting axis="/controls/gear/gear-down"

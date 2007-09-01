@@ -81,7 +81,7 @@
 		<eda>2.11348887</eda>
 		<weight>170</weight>
 		<cd>0.035</cd>
-		<contents>consumables/fuel/tank[2]/level-lbs</contents>
+		<contents>consumables/fuel/tank[2]</contents>
 		<impact>true</impact>
 		<impact-reports>sim/ai/aircraft/impact/droptank</impact-reports>
 	</submodel>
@@ -102,7 +102,7 @@
 		<eda>2.11348887</eda>
 		<weight>170</weight>
 		<cd>0.035</cd>
-		<contents>consumables/fuel/tank[3]/level-lbs</contents>
+		<contents>consumables/fuel/tank[3]</contents>
 		<impact>true</impact>
 		<impact-reports>sim/ai/aircraft/impact/droptank</impact-reports>
 	</submodel>
