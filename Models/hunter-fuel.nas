@@ -112,7 +112,7 @@ var total_lbs = nil;
 var total_norm = nil;
 
 
-var L = _setlistener("/sim/signals/fdm-initialized", func {
+var L = setlistener("/sim/signals/fdm-initialized", func {
 	removelistener(L);
 
 	setlistener("/sim/freeze/fuel", func { fuel_freeze = cmdarg().getBoolValue() }, 1);
