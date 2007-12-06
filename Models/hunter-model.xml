@@ -307,7 +307,7 @@
 		<object-name>UC-Nose</object-name>
 		<object-name>UC-Main-L</object-name>
 		<object-name>UC-Main-R</object-name>
-		<object-name>noshadow.Exhausts</object-name>
+		<object-name>Exhausts</object-name>
 		<condition>
 			<not>
 				<equals>
@@ -332,7 +332,7 @@
 		<object-name>Port-Light</object-name>
 		<object-name>Stbd-Light</object-name>
 		<object-name>Tail-Light</object-name>
-		<object-name>noshadow.Markings</object-name>
+		<object-name>Markings</object-name>
 	</animation>
 
 	<animation>
@@ -345,18 +345,7 @@
 		<object-name>Tail-Cone</object-name>
 		<object-name>Canopy</object-name>
 		<object-name>Blackout</object-name>
-		<object-name>noshadow.Exhausts</object-name>
-	</animation>
-
-	<animation>
-		<type>select</type>
-		<object-name>noshadow.Exhausts</object-name>
-		<condition>
-			<equals>
-				<property>sim/ai/aircraft/exhaust</property>
-				<value>0</value>
-			</equals>
-		</condition>
+		<object-name>Exhausts</object-name>
 	</animation>
 
 
@@ -1571,7 +1560,7 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>noshadow.SerNo-Door2-L</object-name>
+		<object-name>SerNo-Door2-L</object-name>
 		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 			<entry>
@@ -1631,7 +1620,7 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>noshadow.SerNo-Door3-L</object-name>
+		<object-name>SerNo-Door3-L</object-name>
 		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 			<entry>
@@ -1691,7 +1680,7 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>noshadow.SerNo-Door4-L</object-name>
+		<object-name>SerNo-Door4-L</object-name>
 		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 			<entry>
@@ -1778,7 +1767,7 @@
 
 	<animation>
 		<type>translate</type>
-		<object-name>noshadow.SerNo-Door2-L</object-name>
+		<object-name>SerNo-Door2-L</object-name>
 		<property>gear/gear[1]/compression-norm</property>
 		<factor>0.2</factor>
 		<axis>
@@ -1864,7 +1853,7 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>noshadow.SerNo-Door2-R</object-name>
+		<object-name>SerNo-Door2-R</object-name>
 		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry>
@@ -1924,7 +1913,7 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>noshadow.SerNo-Door3-R</object-name>
+		<object-name>SerNo-Door3-R</object-name>
 		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry>
@@ -1984,7 +1973,7 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>noshadow.SerNo-Door4-R</object-name>
+		<object-name>SerNo-Door4-R</object-name>
 		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry>
@@ -2069,7 +2058,7 @@
 	</animation>
 	<animation>
 		<type>translate</type>
-		<object-name>noshadow.SerNo-Door2-R</object-name>
+		<object-name>SerNo-Door2-R</object-name>
 		<property>gear/gear[2]/compression-norm</property>
 		<factor>0.2</factor>
 		<axis>
@@ -2146,14 +2135,14 @@
 	<animation>
 		<type>shader</type>
 		<shader>heat-haze</shader>
-		<object-name>noshadow.Exhausts</object-name>
+		<object-name>Exhausts</object-name>
 		<factor>0.12</factor>
 		<speed-prop>engines/engine/n1</speed-prop>
 	</animation>
 
 	<animation>
 		<type>blend</type>
-		<object-name>noshadow.Exhaust3</object-name>
+		<object-name>Exhaust3</object-name>
 		<property>engines/engine/n1</property>
 		<factor>.01</factor>
 		<offset>0.45</offset>
@@ -2162,7 +2151,7 @@
 
 	<animation>
 		<type>blend</type>
-		<object-name>noshadow.Exhaust</object-name>
+		<object-name>Exhaust</object-name>
 		<property>engines/engine/n1</property>
 		<factor>-0.01</factor>
 		<offset>1</offset>
@@ -2172,7 +2161,7 @@
 
 	<animation>
 		<type>scale</type>
-		<object-name>noshadow.Exhaust</object-name>
+		<object-name>Exhaust</object-name>
 		<property>engines/engine/n1</property>
 		<x-factor>0.01</x-factor>
 		<x-offset>0.5</x-offset>
@@ -2186,7 +2175,7 @@
 
 	<animation>
 		<type>translate</type>
-		<object-name>noshadow.Exhaust3</object-name>
+		<object-name>Exhaust3</object-name>
 		<property>engines/engine/n1</property>
 		<factor>-0.005</factor>
 		<offset-m>0</offset-m>
@@ -2200,7 +2189,7 @@
 
 	<animation>
 		<type>scale</type>
-		<object-name>noshadow.Exhaust3</object-name>
+		<object-name>Exhaust3</object-name>
 		<property>engines/engine/n1</property>
 		<x-factor>0.01</x-factor>
 		<x-offset>0.5</x-offset>
@@ -2218,7 +2207,7 @@
 
 	<animation>
 		<type>select</type>
-		<object-name>noshadow.Exhaust3</object-name>
+		<object-name>Exhaust3</object-name>
 		<condition>
 			<less-than>
 				<property>velocities/airspeed-kt</property>
@@ -2282,6 +2271,16 @@
 			<green>0.20</green>
 			<blue>0.20</blue>
 		</emission>
+	</animation>
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>Exhausts</object-name>
+	</animation>
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>Markings</object-name>
 	</animation>
 
 	<!-- *** LoD for the whole model *** -->

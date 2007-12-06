@@ -13,7 +13,7 @@
 var UPDATE_PERIOD = 0.3;
 
 
-update = func {
+var update = func {
 	if (fuel_freeze) {
 		return;
 	}
@@ -37,8 +37,8 @@ update = func {
 		}
 	}
 
-	# Subtract fuel from tanks, set auxilliary properties.  Set out-of-fuel
-	# when any one tank is dry.
+# Subtract fuel from tanks, set auxilliary properties.  Set out-of-fuel
+# when any one tank is dry.
 	var out_of_fuel = 0;
 	if (size(selected_tanks) == 0) {
 		out_of_fuel = 1;
@@ -50,8 +50,8 @@ update = func {
 			lbs = lbs - fuel_per_tank;
 			if (lbs < 0) {
 				lbs = 0;
-				# Kill the engines if we're told to, otherwise simply
-				# deselect the tank.
+# Kill the engines if we're told to, otherwise simply
+# deselect the tank.
 				if (t.getNode("kill-when-empty", 1).getBoolValue()) {
 					out_of_fuel = 1;
 				} else {
@@ -64,7 +64,7 @@ update = func {
 		}
 	}
 
-	# Total fuel properties
+# Total fuel properties
 	var lbs = 0;
 	var gals = 0;
 	var cap = 0;
@@ -89,13 +89,13 @@ update = func {
 }
 
 
-loop = func {
+var loop = func {
 	update();
 	settimer(loop, UPDATE_PERIOD);
 }
 
 
-init_double_prop = func(node, prop, val) {
+var init_double_prop = func(node, prop, val) {
 	if (node.getNode(prop) != nil) {
 		val = num(node.getNode(prop).getValue());
 	}
@@ -135,11 +135,11 @@ var L = setlistener("/sim/signals/fdm-initialized", func {
 		init_double_prop(t, "level-gal_us", 0.0);
 		init_double_prop(t, "level-lbs", 0.0);
 		init_double_prop(t, "capacity-gal_us", 0.01); # not zero (div/zero issue)
-		init_double_prop(t, "density-ppg", 6.0);      # gasoline
+			init_double_prop(t, "density-ppg", 6.0);      # gasoline
 
-		if (t.getNode("selected") == nil) {
-			t.getNode("selected", 1).setBoolValue(1);
-		}
+			if (t.getNode("selected") == nil) {
+				t.getNode("selected", 1).setBoolValue(1);
+			}
 	}
 
 	loop();

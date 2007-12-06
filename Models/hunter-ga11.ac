@@ -74947,11 +74947,11 @@ refs 15
 22 0.918468 0.817893
 kids 0
 OBJECT group
-name "noshadow.Exhausts"
+name "Exhausts"
 loc 9.29019 -0.556749 0
 kids 2
 OBJECT poly
-name "noshadow.Exhaust3"
+name "Exhaust3"
 loc 0.356541 -1.11471 0
 texture "hh-noise3.rgb"
 crease 61.000000
@@ -75620,7 +75620,7 @@ refs 3
 73 12.7858 1.21789
 kids 0
 OBJECT poly
-name "noshadow.Exhaust"
+name "Exhaust"
 loc 0.136213 0.556753 0
 texture "hh-noise3.rgb"
 crease 61.000000
@@ -75914,11 +75914,11 @@ refs 3
 4 0.0281567 0.653737
 kids 0
 OBJECT group
-name "noshadow.Markings"
+name "Markings"
 loc 0.959526 -1.18157 -0.994669
 kids 16
 OBJECT poly
-name "noshadow.SerNo-Door3-R"
+name "SerNo-Door3-R"
 loc -0.565245 -0.689935 -1.82156
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -75952,7 +75952,7 @@ refs 7
 3 0.393233 0.529798
 kids 0
 OBJECT poly
-name "noshadow.SerNo-Door2-R"
+name "SerNo-Door2-R"
 loc -1.1763 -0.513673 -1.02392
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -76006,7 +76006,7 @@ refs 12
 16 0.428024 0.488406
 kids 0
 OBJECT poly
-name "noshadow.SerNo-Door4-R"
+name "SerNo-Door4-R"
 loc -0.63597 -0.510125 -1.52889
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -76030,7 +76030,7 @@ refs 3
 3 0.319014 0.550493
 kids 0
 OBJECT poly
-name "noshadow.SerNo-Wing-B"
+name "SerNo-Wing-B"
 loc -1.07429 -0.54586 -0.218411
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -76286,7 +76286,7 @@ refs 3
 12 0.613575 0.589124
 kids 0
 OBJECT poly
-name "noshadow.Ejection-Seat"
+name "Ejection-Seat"
 loc -0.147725 -0.488704 1.9098
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -76316,7 +76316,7 @@ refs 4
 1 0.974792 0.658573
 kids 0
 OBJECT poly
-name "noshadow.Wing-Roundel"
+name "Wing-Roundel"
 loc -0.383115 -0.442593 -1.75421
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -76476,7 +76476,7 @@ refs 4
 29 0.383907 0.697974
 kids 0
 OBJECT poly
-name "noshadow.SerNo-L"
+name "SerNo-L"
 loc 1.34137 1.19786 -0.724233
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -76495,7 +76495,7 @@ refs 4
 0 0.455078 0.347657
 kids 0
 OBJECT poly
-name "noshadow.SerNo-R"
+name "SerNo-R"
 loc 1.34137 1.19786 -0.724233
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -76514,7 +76514,7 @@ refs 4
 0 0.447266 0.367188
 kids 0
 OBJECT poly
-name "noshadow.RN-L"
+name "RN-L"
 loc 0.321505 0.298207 0.680172
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -76533,7 +76533,7 @@ refs 4
 3 0.03125 0.0431051
 kids 0
 OBJECT poly
-name "noshadow.RN-R"
+name "RN-R"
 loc 0.323135 0.264096 1.27808
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -76552,7 +76552,7 @@ refs 4
 2 0.945313 0.191406
 kids 0
 OBJECT poly
-name "noshadow.Roundel"
+name "Roundel"
 loc -1.05385 1.64048 4.41438
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -76618,7 +76618,7 @@ refs 4
 7 0.472656 0.892943
 kids 0
 OBJECT poly
-name "noshadow.Side_No"
+name "Side_No"
 loc -0.147726 -0.488704 1.91895
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -76666,7 +76666,7 @@ refs 4
 4 0.646485 0.272492
 kids 0
 OBJECT poly
-name "noshadow.Base"
+name "Base"
 loc 4.23433 0.864626 1.95135
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -76696,7 +76696,7 @@ refs 4
 4 0.836086 0.191406
 kids 0
 OBJECT poly
-name "noshadow.SerNo-Door2-L"
+name "SerNo-Door2-L"
 loc -1.1763 -0.536938 -1.01822
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -76750,7 +76750,7 @@ refs 12
 13 0.556197 0.583713
 kids 0
 OBJECT poly
-name "noshadow.SerNo-Door3-L"
+name "SerNo-Door3-L"
 loc -0.565245 -0.713199 -1.81586
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -76786,7 +76786,7 @@ refs 5
 3 0.390832 0.618282
 kids 0
 OBJECT poly
-name "noshadow.SerNo-Door4-L"
+name "SerNo-Door4-L"
 loc -0.63597 -0.533389 -1.52319
 texture "hunter-tx-01c.rgb"
 crease 61.000000
@@ -78338,7 +78338,7 @@ refs 4
 34 0.455078 0.273438
 kids 0
 OBJECT poly
-name "noshadow.FCanopy"
+name "FCanopy"
 loc -0.136573 -0.00541705 2.99513e-007
 crease 165.000000
 numvert 53
@@ -78578,7 +78578,7 @@ refs 3
 30 0 0
 kids 0
 OBJECT poly
-name "noshadow.FPanel"
+name "FPanel"
 loc -0.205701 -0.00360698 2.99513e-007
 crease 61.000000
 numvert 46
