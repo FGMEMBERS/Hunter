@@ -29,23 +29,23 @@
 	<animation>
 		<type>select</type>
 		<object-name>Blackout-Sphere</object-name>
-		<condition>
+		<!--<condition>
 			<equals>
 				<property>sim/current-view/view-number</property>
 				<value>0</value>
 			</equals>
-		</condition>
+		</condition>-->
 	</animation>
 
 	<animation>
 		<type>select</type>
 		<object-name>Redout-Sphere</object-name>
-		<condition>
+		<!--<condition>
 			<equals>
 				<property>sim/current-view/view-number</property>
 				<value>0</value>
 			</equals>
-		</condition>
+		</condition>-->
 	</animation>
 
 </PropertyList>

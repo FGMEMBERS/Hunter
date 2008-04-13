@@ -62,6 +62,10 @@ var last_xDivergence = 0;
 var last_yDivergence = 0;
 var last_zDivergence = 0;
 
+var old_xDivergence_damp = 0;
+var old_yDivergence_damp = 0;
+var old_zDivergence_damp = 0;
+
 # Make sure that some vital data exists and set some default values
 var enabledNode = props.globals.getNode("/sim/headshake/enabled", 1);
 enabledNode.setBoolValue(1);
@@ -114,6 +118,10 @@ yAccelNode.setDoubleValue( 0 );
 var zAccelNode = props.globals.getNode("/accelerations/pilot/z-accel-fps_sec",1);
 zAccelNode.setDoubleValue(-32 );
 
+xViewAxisNode = props.globals.getNode("/sim/current-view/z-offset-m");
+yViewAxisNode = props.globals.getNode("/sim/current-view/x-offset-m");
+zViewAxisNode = props.globals.getNode("/sim/current-view/y-offset-m");
+
 var headShake = func {
 
 	# First, we don't shake outside the vehicle. Inside, we boogie down.
@@ -127,9 +135,9 @@ var headShake = func {
 
 	if ( (enabled) and ( view_number == 0)) {
 	
-	var xConfig = xConfigNode.getValue();
-	var yConfig = yConfigNode.getValue();
-	var zConfig = zConfigNode.getValue();
+#	var xConfig = xConfigNode.getValue();
+#	var yConfig = yConfigNode.getValue();
+#	var zConfig = zConfigNode.getValue();
 
 	var xMax = xMaxNode.getValue();
 	var xMin = xMinNode.getValue();
@@ -250,15 +258,29 @@ var headShake = func {
 
 #print (sprintf("z-G=%0.5f, z total=%0.5f, z div damped=%0.5f",zAccel, zDivergence_total,zDivergence_damp));
 
-	setprop("/sim/current-view/z-offset-m", xConfig + xDivergence_damp );
-	setprop("/sim/current-view/x-offset-m", yConfig + yDivergence_damp );
-	setprop("/sim/current-view/y-offset-m", zConfig + zDivergence_damp + seat_vertical_adjust );
+# Now apply the divergence to the curent viewpoint
+		
+		var origin_z = xViewAxisNode.getValue() - old_xDivergence_damp;
+		var origin_x = yViewAxisNode.getValue() - old_yDivergence_damp;
+		var origin_y = zViewAxisNode.getValue() - old_zDivergence_damp;
+
+		xViewAxisNode.setDoubleValue(origin_z + xDivergence_damp );
+		yViewAxisNode.setDoubleValue(origin_x + yDivergence_damp );
+		zViewAxisNode.setDoubleValue(origin_y + zDivergence_damp + seat_vertical_adjust );
+
+		old_xDivergence_damp = xDivergence_damp;
+		old_yDivergence_damp = yDivergence_damp;
+		old_zDivergence_damp = zDivergence_damp + seat_vertical_adjust;
 	}
-	settimer(headShake,0 );
+	
+    settimer(headShake,0 );
 
 }
 
-headShake();
+setlistener("/sim/signals/fdm-initialized", func {
+	headShake();
+	}
+);
 
 # ============================== end Pilot G stuff ============================
 
