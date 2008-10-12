@@ -401,9 +401,9 @@ aircraft.steering.init();
 print("droptanks starting");
 var droptank_node = props.globals.getNode("sim/ai/aircraft/impact/droptank", 1);
 
-var droptanks = func {
+var droptanks = func(n) {
 	var droptank = droptank_node.getValue();
-	var node = props.globals.getNode(cmdarg().getValue(), 1);
+	var node = props.globals.getNode(n.getValue(), 1);
 # print (" droptank ", droptank, " lon " , node.getNode("impact/longitude-deg").getValue(),);
 	geo.put_model("Aircraft/Hunter/Models/droptank.xml",
 		node.getNode("impact/latitude-deg").getValue(),
