@@ -23,7 +23,8 @@
 
 	<!-- Approach configuration -->
 	<approach speed="130"
-						aoa="3">
+						aoa="3"
+						fuel="0.2">
 		<control-setting axis="/controls/engines/engine[0]/throttle"
 										 value="0.6"/>
 		<control-setting axis="/controls/flight/flaps"
@@ -42,7 +43,8 @@
 
 	<!-- Cruise configuration.   -->
 	<cruise speed="520"
-					alt="36000">
+					alt="36000"
+					fuel="0.5">
 		<control-setting axis="/controls/engines/engine[0]/throttle"
 										 value="1"/>
 		<control-setting axis="/controls/flight/flaps"
@@ -99,7 +101,7 @@
 		<flap1 start="0.56"
 					 end="1"
 					 lift="1.2"
-					 drag="1.2"/>
+					 drag="1.4"/>
 		<control-input axis="/controls/flight/flaps"
 									 control="FLAP0"/>
 		<control-input axis="/controls/flight/aileron"
@@ -164,7 +166,8 @@
 				 taper=".3177"
 				 length="2.57"
 				 chord="3.11"
-				 sweep="28" >
+				 sweep="28"
+				 effectiveness = "1.25">
 		<stall aoa="27"
 					 width="10"
 					 peak="1.5"/>

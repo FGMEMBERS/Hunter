@@ -58,6 +58,12 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 			<path>Aircraft/Hunter/Models/hunter-model.xml</path>
 		</model>
 		<rendering>
+			<redout>
+				<parameters>
+					<blackout-onset-g type="double">4.5</blackout-onset-g>
+					<blackout-complete-g type="double">6.0</blackout-complete-g>
+				</parameters>
+			</redout>
 			<camera-group>
 				<znear type="double">0.1</znear>
 			</camera-group>
@@ -159,13 +165,13 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 			<nav-lights>false</nav-lights>
 		</lighting>
 	</controls>
-	
+
 	<engines>
 		<engine>
 			<smoking>true</smoking>
 		</engine>
 	</engines>
-	
+
 	<!-- hsi heading bug and source select-->
 	<instrumentation>
 		<heading-indicator>
@@ -423,5 +429,5 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 			<contrail-altitude type="double">50000</contrail-altitude>
 		</params>
 	</environment>
-	
+
 </PropertyList>
