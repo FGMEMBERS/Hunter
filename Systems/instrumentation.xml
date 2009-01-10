@@ -25,15 +25,15 @@ file, these values will be used (they are hardcoded).
 
 <PropertyList>
 
-  <adf>
+  <!--<adf>
     <name>adf</name>
     <number>0</number>
-  </adf>
+  </adf>-->
 
-  <adf>
+  <!--<adf>
     <name>adf-radio</name>
     <number>0</number>
-  </adf>
+  </adf>-->
 
   <airspeed-indicator>
     <name>airspeed-indicator</name>
@@ -54,36 +54,36 @@ file, these values will be used (they are hardcoded).
     <vacuum-system>/systems/vacuum</vacuum-system>
   </attitude-indicator>
 
-  <clock>
+  <!--<clock>
     <name>clock</name>
     <number>0</number>
-  </clock>
+  </clock>-->
 
-  <dme>
+  <!--<dme>
     <name>dme</name>
     <number>0</number>
-  </dme>
+  </dme>-->
 
-  <encoder>
+  <!--<encoder>
     <name>encoder</name>
     <number>0</number>
     <static-port>/systems/static</static-port>
-  </encoder>
+  </encoder>-->
 
-  <marker-beacon>
+  <!--<marker-beacon>
     <name>marker-beacon</name>
     <number>0</number>
-  </marker-beacon>
+  </marker-beacon>-->
 
   <heading-indicator-fg>
     <name>heading-indicator-fg</name>
     <number>0</number>
   </heading-indicator-fg>
 
-  <KT-70>
+  <!--<KT-70>
     <name>kt-70</name>
     <number>0</number>
-  </KT-70>
+  </KT-70>-->
 
   <magnetic-compass>
     <name>magnetic-compass</name>
