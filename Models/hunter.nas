@@ -7,14 +7,18 @@ UPDATE_PERIOD = 0.3;
 # set the timer for the selected function
 
 var registerTimer = func {
-	
+
 	settimer(arg[0], UPDATE_PERIOD);
 
 } # end function 
 
-# =============================== end timer stuff ===========================================
+# =============================== end timer stuff ===============================
 
-# =============================== Pilot G stuff======================================
+# =============================== armament stuff ================================
+
+controls.trigger = func(v) setprop("/ai/submodels/trigger", v);
+
+# =============================== Pilot G stuff==================================
 
 var pilot_g = props.globals.getNode("accelerations/pilot-g", 1);
 var timeratio = props.globals.getNode("accelerations/timeratio", 1);
@@ -29,9 +33,9 @@ var damp = 0;
 var updatePilotG = func {
 	var n = timeratio.getValue(); 
 	var g = pilot_g.getValue() ;
-	#if (g == nil) { g = 0; }
+#if (g == nil) { g = 0; }
 	damp = ( g * n) + (damp * (1 - n));
-	
+
 	pilot_g_damped.setDoubleValue(damp);
 
 # print(sprintf("pilot_g_damped in=%0.5f, out=%0.5f", g, damp));
@@ -75,13 +79,13 @@ xMaxNode.setDoubleValue( 0.025 );
 
 var xMinNode = props.globals.getNode("/sim/headshake/x-min-m",1);
 xMinNode.setDoubleValue( -0.05 );
-	
+
 var yMaxNode = props.globals.getNode("/sim/headshake/y-max-m",1);
 yMaxNode.setDoubleValue( 0.025 );
 
 var yMinNode = props.globals.getNode("/sim/headshake/y-min-m",1);
 yMinNode.setDoubleValue( -0.025 );
-	
+
 var zMaxNode = props.globals.getNode("/sim/headshake/z-max-m",1);
 zMaxNode.setDoubleValue( 0.025 );
 
@@ -110,7 +114,7 @@ zThresholdNode.setDoubleValue( 0.02 );
 var xConfigNode = props.globals.getNode("/sim/view/config/z-offset-m");
 var yConfigNode = props.globals.getNode("/sim/view/config/x-offset-m");
 var zConfigNode = props.globals.getNode("/sim/view/config/y-offset-m");
-	
+
 var xAccelNode = props.globals.getNode("/accelerations/pilot/x-accel-fps_sec",1);
 xAccelNode.setDoubleValue( 0 );
 var yAccelNode = props.globals.getNode("/accelerations/pilot/y-accel-fps_sec",1);
@@ -124,142 +128,142 @@ zViewAxisNode = props.globals.getNode("/sim/current-view/y-offset-m");
 
 var headShake = func {
 
-	# First, we don't shake outside the vehicle. Inside, we boogie down.
-	# There are two coordinate systems here, one used for accelerations, and one used for the viewpoint.
-	# We will be using the one for accelerations.
+# First, we don't shake outside the vehicle. Inside, we boogie down.
+# There are two coordinate systems here, one used for accelerations, and one used for the viewpoint.
+# We will be using the one for accelerations.
 	var enabled = enabledNode.getValue();
 	var view_number= view_number_Node.getValue();
 	var n = timeratio.getValue(); 
 	var seat_vertical_adjust = seat_vertical_adjust_Node.getValue();
-	
+
 
 	if ( (enabled) and ( view_number == 0)) {
-	
+
 #	var xConfig = xConfigNode.getValue();
 #	var yConfig = yConfigNode.getValue();
 #	var zConfig = zConfigNode.getValue();
 
-	var xMax = xMaxNode.getValue();
-	var xMin = xMinNode.getValue();
-	var yMax = yMaxNode.getValue();
-	var yMin = yMinNode.getValue();
-	var zMax = zMaxNode.getValue();
-	var zMin = zMinNode.getValue();
+		var xMax = xMaxNode.getValue();
+		var xMin = xMinNode.getValue();
+		var yMax = yMaxNode.getValue();
+		var yMin = yMinNode.getValue();
+		var zMax = zMaxNode.getValue();
+		var zMin = zMinNode.getValue();
 
-	#work in G, not fps/s
-	var xAccel = xAccelNode.getValue()/32;
-	var yAccel = yAccelNode.getValue()/32;
-	var zAccel = (zAccelNode.getValue() + 32)/32; # We aren't counting gravity
- 
-	var xThreshold =  xThresholdNode.getValue();
-	var yThreshold =  yThresholdNode.getValue();
-	var zThreshold =  zThresholdNode.getValue();
-		
-	# Set viewpoint divergence and clamp
-	# Note that each dimension has it's own special ratio and +X is clamped at 1cm
-	# to simulate a headrest.
+#work in G, not fps/s
+		var xAccel = xAccelNode.getValue()/32;
+		var yAccel = yAccelNode.getValue()/32;
+		var zAccel = (zAccelNode.getValue() + 32)/32; # We aren't counting gravity
 
-	#y = -0.0005x3 - 0.005x2 - 0.0089x - 0.0045
-	# -0.0004x3 + 0.0042x2 - 0.0084x + 0.0048
-	# -0.0004x3 - 0.0042x2 - 0.0084x - 0.0048
-	if (xAccel < -5 ) {
-		xDivergence = -0.03;
-	} elsif ((xAccel < -0.5) and (xAccel >= -5)) {
-		xDivergence = ((( -0.0005 * xAccel ) - ( 0.0036 )) * xAccel - ( 0.001 )) * xAccel - 0.0004;
-	} elsif ((xAccel > 1) and (xAccel <= 6)) {
-		xDivergence = ((( -0.0004 * xAccel ) + ( 0.0031 )) * xAccel - ( 0.0016 )) * xAccel + 0.0002;
-	} elsif (xAccel > 5) {
-		xDivergence = 0.02;
-	} else {
-		xDivergence = 0;
+			var xThreshold =  xThresholdNode.getValue();
+		var yThreshold =  yThresholdNode.getValue();
+		var zThreshold =  zThresholdNode.getValue();
+
+# Set viewpoint divergence and clamp
+# Note that each dimension has it's own special ratio and +X is clamped at 1cm
+# to simulate a headrest.
+
+#y = -0.0005x3 - 0.005x2 - 0.0089x - 0.0045
+# -0.0004x3 + 0.0042x2 - 0.0084x + 0.0048
+# -0.0004x3 - 0.0042x2 - 0.0084x - 0.0048
+		if (xAccel < -5 ) {
+			xDivergence = -0.03;
+		} elsif ((xAccel < -0.5) and (xAccel >= -5)) {
+			xDivergence = ((( -0.0005 * xAccel ) - ( 0.0036 )) * xAccel - ( 0.001 )) * xAccel - 0.0004;
+		} elsif ((xAccel > 1) and (xAccel <= 6)) {
+			xDivergence = ((( -0.0004 * xAccel ) + ( 0.0031 )) * xAccel - ( 0.0016 )) * xAccel + 0.0002;
+		} elsif (xAccel > 5) {
+			xDivergence = 0.02;
+		} else {
+			xDivergence = 0;
 		}
 
 #       These equations shape the output and convet from G number to divergence left/right in meters
 #	y = -0.0005x3 - 0.0036x2 + 0.0001x + 0.0004
 #	y = -0.013x3 + 0.125x2 - 0.1202x + 0.0272
-		
-	if (yAccel < -5 ) {
-		yDivergence = -0.03;
-	} elsif ((yAccel < -0.5) and (yAccel >= -5)) {
-		yDivergence = ((( -0.005 * yAccel ) - ( 0.0036 )) * yAccel - (  0.0001 )) * yAccel - 0.0004;
-	} elsif ((yAccel > 0.5) and (yAccel <= 5)) {
-		yDivergence = ((( -0.013 * yAccel ) + ( 0.125 )) * yAccel - (  0.1202 )) * yAccel + 0.0272;
-	} elsif (yAccel > 5) {
-		yDivergence = 0.03;
-	}else {
-		yDivergence = 0;
-	}
+
+		if (yAccel < -5 ) {
+			yDivergence = -0.03;
+		} elsif ((yAccel < -0.5) and (yAccel >= -5)) {
+			yDivergence = ((( -0.005 * yAccel ) - ( 0.0036 )) * yAccel - (  0.0001 )) * yAccel - 0.0004;
+		} elsif ((yAccel > 0.5) and (yAccel <= 5)) {
+			yDivergence = ((( -0.013 * yAccel ) + ( 0.125 )) * yAccel - (  0.1202 )) * yAccel + 0.0272;
+		} elsif (yAccel > 5) {
+			yDivergence = 0.03;
+		}else {
+			yDivergence = 0;
+		}
 
 #        setprop("/sim/current-view/x-offset-m", (yConfig + yDivergence));	
 # y = -0.0005x3 - 0.0036x2 + 0.0001x + 0.0004
 # y = -0.0004x3 + 0.0031x2 - 0.0016x + 0.0002
 
-	if (zAccel < -5 ) {
-		zDivergence = -0.03;
-	} elsif ((zAccel < -0.5) and (zAccel >= -5)) {
+		if (zAccel < -5 ) {
+			zDivergence = -0.03;
+		} elsif ((zAccel < -0.5) and (zAccel >= -5)) {
 			zDivergence = ((( -0.0005 * zAccel ) - ( 0.0036 )) * zAccel - ( 0.001 )) * zAccel - 0.0004;
 		} elsif ((zAccel > 0.5) and (zAccel <= 5)) {
-				zDivergence = ((( -0.0004 * zAccel ) + ( 0.0031 )) * zAccel - ( 0.0016 )) * zAccel + 0.0002;
-	} elsif (zAccel > 5) {
-		zDivergence = 0.02;
-	} else {
-		zDivergence = 0;
-	}
+			zDivergence = ((( -0.0004 * zAccel ) + ( 0.0031 )) * zAccel - ( 0.0016 )) * zAccel + 0.0002;
+		} elsif (zAccel > 5) {
+			zDivergence = 0.02;
+		} else {
+			zDivergence = 0;
+		}
 
 
-	xDivergence_total = (xDivergence * 0.75) + (zDivergence * 0.25);
+		xDivergence_total = (xDivergence * 0.75) + (zDivergence * 0.25);
 
-	if (xDivergence_total > xMax){xDivergence_total = xMax;}
-	if (xDivergence_total < xMin){xDivergence_total = xMin;}
-	
-	if (abs(last_xDivergence - xDivergence_total) <= xThreshold){
-		xDivergence_damp = ( xDivergence_total * n) + ( xDivergence_damp * (1 - n));
-	#	print ("x low pass");
-	} else {
-		xDivergence_damp = xDivergence_total;
-	#	print ("x high pass");
-	}
-		
-	last_xDivergence = xDivergence_damp;
+		if (xDivergence_total > xMax){xDivergence_total = xMax;}
+		if (xDivergence_total < xMin){xDivergence_total = xMin;}
+
+		if (abs(last_xDivergence - xDivergence_total) <= xThreshold){
+			xDivergence_damp = ( xDivergence_total * n) + ( xDivergence_damp * (1 - n));
+#	print ("x low pass");
+		} else {
+			xDivergence_damp = xDivergence_total;
+#	print ("x high pass");
+		}
+
+		last_xDivergence = xDivergence_damp;
 
 # print (sprintf("x-G=%0.5fx, total=%0.5f, x div damped=%0.5f",xAccel, xDivergence_total, xDivergence_damp));	
 
-	yDivergence_total = yDivergence;
-	if (yDivergence_total >= yMax){yDivergence_total = yMax;}
-	if (yDivergence_total <= yMin){yDivergence_total = yMin;}
+		yDivergence_total = yDivergence;
+		if (yDivergence_total >= yMax){yDivergence_total = yMax;}
+		if (yDivergence_total <= yMin){yDivergence_total = yMin;}
 
-	if (abs(last_yDivergence - yDivergence_total) <= yThreshold){
-		yDivergence_damp = ( yDivergence_total * n) + ( yDivergence_damp * (1 - n));
-		# 	print ("y low pass");
-	} else {
-		yDivergence_damp = yDivergence_total;
-	#	print ("y high pass");
-	}
+		if (abs(last_yDivergence - yDivergence_total) <= yThreshold){
+			yDivergence_damp = ( yDivergence_total * n) + ( yDivergence_damp * (1 - n));
+# 	print ("y low pass");
+		} else {
+			yDivergence_damp = yDivergence_total;
+#	print ("y high pass");
+		}
 
-	last_yDivergence = yDivergence_damp;
+		last_yDivergence = yDivergence_damp;
 
 #print (sprintf("y=%0.5f, y total=%0.5f, y min=%0.5f, y div damped=%0.5f",yDivergence, yDivergence_total, yMin , yDivergence_damp));
-	
-	zDivergence_total =  (xDivergence * 0.25 ) + (zDivergence * 0.75);
 
-	if (zDivergence_total >= zMax){zDivergence_total = zMax;}
-	if (zDivergence_total <= zMin){zDivergence_total = zMin;}
-	
-	if (abs(last_zDivergence - zDivergence_total) <= zThreshold){ 
-		zDivergence_damp = ( zDivergence_total * n) + ( zDivergence_damp * (1 - n));
-	#print ("z low pass");
-	} else {
-		zDivergence_damp = zDivergence_total;
-	#print ("z high pass");
-	}
-	
+		zDivergence_total =  (xDivergence * 0.25 ) + (zDivergence * 0.75);
+
+		if (zDivergence_total >= zMax){zDivergence_total = zMax;}
+		if (zDivergence_total <= zMin){zDivergence_total = zMin;}
+
+		if (abs(last_zDivergence - zDivergence_total) <= zThreshold){ 
+			zDivergence_damp = ( zDivergence_total * n) + ( zDivergence_damp * (1 - n));
+#print ("z low pass");
+		} else {
+			zDivergence_damp = zDivergence_total;
+#print ("z high pass");
+		}
+
 
 #	last_zDivergence = zDivergence_damp;
 
 #print (sprintf("z-G=%0.5f, z total=%0.5f, z div damped=%0.5f",zAccel, zDivergence_total,zDivergence_damp));
 
 # Now apply the divergence to the curent viewpoint
-		
+
 		var origin_z = xViewAxisNode.getValue() - old_xDivergence_damp;
 		var origin_x = yViewAxisNode.getValue() - old_yDivergence_damp;
 		var origin_y = zViewAxisNode.getValue() - old_zDivergence_damp;
@@ -272,14 +276,14 @@ var headShake = func {
 		old_yDivergence_damp = yDivergence_damp;
 		old_zDivergence_damp = zDivergence_damp + seat_vertical_adjust;
 	}
-	
-    settimer(headShake,0 );
+
+	settimer(headShake,0 );
 
 }
 
 setlistener("/sim/signals/fdm-initialized", func {
 	headShake();
-	}
+}
 );
 
 # ============================== end Pilot G stuff ============================
@@ -305,15 +309,15 @@ var updateCasterAngle = func {
 	var angle = caster_angle.getValue() ;
 	var speed = roll_speed.getValue();
 	var _wow = wow.getValue();
-	
+
 	if ( _wow ) {
 		n = (0.02 * speed) + 0.001;
 	} else {
 		n = 0.5;
 	}
-	
+
 	angle_damp = ( angle * n) + (angle_damp * (1 - n));
-	
+
 	caster_angle_damped.setDoubleValue(angle_damp);
 	timeratio.setDoubleValue(n); 
 
@@ -345,20 +349,20 @@ var updateShadowState = func {
 	var state_ac = shadow_state_ac.getValue() ;
 	var state_ac_transp = shadow_state_ac_transp.getValue() ;
 	var auto = shadow_auto.getValue() ;
-	
+
 	if ( state_ac == nil or state_ac_transp == nil or !auto ) {return;}
 	if ( internal == 1 ) {   
 		state = 0;
 	} else {
 		state = 1;
 	}
-	
+
 	state_ac = shadow_state_ac.setValue(state) ;
 	var state_ac_transp = shadow_state_ac_transp.setValue(state) ;
-	
-	
-print("shadow " , internal, " state " , state);
-		
+
+
+	print("shadow " , internal, " state " , state);
+
 } #end func updateShadowState()
 
 setlistener( current_view_internal , updateShadowState );
@@ -375,20 +379,20 @@ exhaust_node.setBoolValue(1) ;
 var updateExhaustState = func {
 	var speed = speed_node.getValue(); 
 	var exhaust = exhaust_node.getValue() ;
-	
+
 	if (speed == nil) {return;}
 	if (speed >= 90) {   
-	  exhaust = 0;
+		exhaust = 0;
 	} else {
-	  exhaust = 1;
+		exhaust = 1;
 	}
-	
+
 	exhaust_node.setBoolValue(exhaust) ;
-	
+
 #        print("exhaust " , exhaust);
-		
+
 #        settimer(updateExhaustState, 0);
-		
+
 } #end func updateExhaustState()
 
 #settimer(updateExhaustState,0);
@@ -400,11 +404,29 @@ aircraft.steering.init();
 #================================== Droptanks ================================
 print("droptanks starting");
 var droptank_node = props.globals.getNode("sim/ai/aircraft/impact/droptank", 1);
+var ext_force_stbd_node = props.globals.getNode("sim/ai/ballistic/force", 1);
+ext_force_stbd_node.getChild("force-lb", 0, 1).setDoubleValue(0);
+ext_force_stbd_node.getChild("force-azimuth-deg", 0, 1).setDoubleValue(0);
+ext_force_stbd_node.getChild("force-elevation-deg", 0, 1).setDoubleValue(0);
+ext_force_stbd_node.getChild("force-norm", 0, 1).setDoubleValue(0);
+
+var ext_force_port_node = props.globals.getNode("sim/ai/ballistic/force[1]", 1);
+ext_force_port_node.getChild("force-lb", 0, 1).setDoubleValue(0);
+ext_force_port_node.getChild("force-azimuth-deg", 0, 1).setDoubleValue(0);
+ext_force_port_node.getChild("force-elevation-deg", 0, 1).setDoubleValue(0);
+
+var ext_force_extra_node = props.globals.getNode("sim/ai/ballistic/force[2]", 1);
+ext_force_extra_node.getChild("force-lb", 0, 1).setDoubleValue(0);
+ext_force_extra_node.getChild("force-azimuth-deg", 0, 1).setDoubleValue(0);
+ext_force_extra_node.getChild("force-elevation-deg", 0, 1).setDoubleValue(90);
+
+var pitch_node = props.globals.getNode("orientation/pitch-deg", 1);
+var hdg_node = props.globals.getNode("orientation/heading-deg", 1);
 
 var droptanks = func(n) {
 	var droptank = droptank_node.getValue();
 	var node = props.globals.getNode(n.getValue(), 1);
-# print (" droptank ", droptank, " lon " , node.getNode("impact/longitude-deg").getValue(),);
+	print (" droptank ", droptank, " lon " , node.getNode("impact/longitude-deg").getValue(),);
 	geo.put_model("Aircraft/Hunter/Models/droptank.xml",
 		node.getNode("impact/latitude-deg").getValue(),
 		node.getNode("impact/longitude-deg").getValue(),
@@ -413,9 +435,45 @@ var droptanks = func(n) {
 		0,
 		0
 		);
-	}
+}
 
-setlistener( "sim/ai/aircraft/impact/droptank", droptanks);
+setlistener("sim/ai/aircraft/impact/droptank", droptanks);
+
+var ext_force_stbd = func {
+	if(ext_force_stbd_node.getChild("force-lb", 0, 1).getValue() != 0){
+		ext_force_stbd_node.getChild("force-lb", 0, 1).setDoubleValue(0);
+		ext_force_stbd_node.getChild("force-norm", 0, 1).setDoubleValue(0);
+		return;
+	} else {
+		ext_force_stbd_node.getChild("force-lb", 0, 1).setDoubleValue(100);
+		ext_force_stbd_node.getChild("force-azimuth-deg", 0, 1).setDoubleValue(hdg_node.getValue());
+		ext_force_stbd_node.getChild("force-elevation-deg", 0, 1).setDoubleValue(pitch_node.getValue()-90);
+		ext_force_stbd_node.getChild("force-norm", 0, 1).setDoubleValue(1);
+		setprop("ai/models/ballistic[1]/controls/slave-to-ac",0);
+		settimer(ext_force_stbd,0.75);
+	}
+}
+
+setlistener( "controls/armament/station[0]/jettison-all", ext_force_stbd);
+
+var ext_force_port = func {
+	if(ext_force_port_node.getChild("force-lb", 0, 1).getValue() != 0){
+		ext_force_port_node.getChild("force-lb", 0, 1).setDoubleValue(0);
+		ext_force_port_node.getChild("force-norm", 0, 1).setDoubleValue(0);
+		return;
+	} else {
+		ext_force_port_node.getChild("force-norm", 0, 1).setDoubleValue(1);
+		ext_force_port_node.getChild("force-lb", 0, 1).setDoubleValue(100);
+		ext_force_port_node.getChild("force-azimuth-deg", 0, 1).setDoubleValue(hdg_node.getValue());
+		ext_force_port_node.getChild("force-elevation-deg", 0, 1).setDoubleValue(pitch_node.getValue()-90);
+		ext_force_port_node.getChild("force-norm", 0, 1).setDoubleValue(1);
+#        print ("elevation ", ext_force_port_node.getChild("force-elevation-deg", 0, 1).getValue());
+		setprop("ai/models/ballistic[0]/controls/slave-to-ac",0);
+		settimer(ext_force_port,0.75);
+	}
+}
+
+setlistener( "controls/armament/station[0]/jettison-all", ext_force_port);
 
 print("droptanks running");
 
@@ -424,39 +482,39 @@ print("droptanks running");
 # tranfer fuel
 
 var fuelTrans = func {
-	
-	 var amount = 0;
-	 var maxFlowRate = 1;
+
+	var amount = 0;
+	var maxFlowRate = 1;
 
 	setprop("consumables/fuel/tank[2]/selected",0);
 	setprop("consumables/fuel/tank[3]/selected",0);
 
 	if(getprop("/sim/freeze/fuel")) { return registerTimer(fuelTrans); }
-	
+
 	var capacityPort = getprop("consumables/fuel/tank[0]/capacity-gal_us");
 	if(capacityPort == nil) { capacityPort = 0; }
 
 	var levelPort = getprop("consumables/fuel/tank[0]/level-gal_us");
 	if(levelPort == nil) { levelPort = 0; }
-	
+
 	var capacityStbd = getprop("consumables/fuel/tank[1]/capacity-gal_us");
 	if(capacityStbd == nil) { capacityStbd = 0; }
 
 	var levelStbd = getprop("consumables/fuel/tank[1]/level-gal_us");
 	if(levelStbd == nil) { levelStbd = 0; }
-	
+
 	var levelDropPort = getprop("consumables/fuel/tank[2]/level-gal_us");
 	if(levelDropPort == nil) { levelDropPort = 0; }
-	
+
 	var densityPort = getprop("consumables/fuel/tank[2]/density-ppg");
 	if(densityPort == nil) { densityPort = 0; }
 
 	var levelDropStbd = getprop("consumables/fuel/tank[3]/level-gal_us");
 	if(levelDropStbd == nil) { levelDropStbd = 0; }	
-	
+
 	var densityStbd = getprop("consumables/fuel/tank[3]/density-ppg");
 	if(densityStbd == nil) { densityStbd = 0; }
-	
+
 	if ( capacityPort > levelPort and levelDropPort > 0){
 		amount = capacityPort - levelPort;
 		if (amount > levelDropPort) {
@@ -470,7 +528,7 @@ var fuelTrans = func {
 		setprop( "consumables/fuel/tank[2]/level-gal_us",levelDropPort);
 		setprop( "consumables/fuel/tank[0]/level-gal_us",levelPort);
 	}
-	
+
 	if ( capacityStbd > levelStbd and levelDropStbd > 0){
 		amount = capacityStbd - levelStbd;
 		if (amount > levelDropStbd) {
@@ -484,12 +542,12 @@ var fuelTrans = func {
 		setprop( "consumables/fuel/tank[3]/level-gal_us",levelDropStbd);
 		setprop( "consumables/fuel/tank[1]/level-gal_us",levelStbd);
 	}
-	
+
 	setprop( "consumables/fuel/tank[2]/level-lbs",levelDropPort * densityPort);
 	setprop( "consumables/fuel/tank[3]/level-lbs",levelDropStbd * densityStbd);
 
-	#print("Port: ",levelPort, " Stbd: ",levelStbd);
-	#print( " Amount: ",amount);
+#print("Port: ",levelPort, " Stbd: ",levelStbd);
+#print( " Amount: ",amount);
 
 	registerTimer(fuelTrans);
 

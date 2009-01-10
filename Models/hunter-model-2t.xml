@@ -241,18 +241,7 @@
 		</offsets>
 	</model>
 
-	<model>
-		<path>Aircraft/Hunter/Models/blackout.xml</path>
-		<name>Blackout</name>
-		<offsets>
-			<x-m>-4.23661</x-m>
-			<y-m>0</y-m>
-			<z-m>0.765417</z-m>
-		</offsets>
-	</model>
-
 	<!-- ***** Navigation Lights ****** -->
-
 	<model>
 		<path>Aircraft/Hunter/Models/light-green.xml</path>
 		<name>Stbd-Light</name>
@@ -283,7 +272,7 @@
 		</offsets>
 	</model>
 
-	<!-- drop tanks -->
+	<!-- drop tanks 
 	<model>
 		<path>Aircraft/Hunter/Models/droptank.xml</path>
 		<name>Drop-Tank-Port</name>
@@ -292,9 +281,9 @@
 			<y-m>-2.93</y-m>
 			<z-m>-0.73</z-m>
 		</offsets>
-	</model>
+	</model>-->
 
-	<!--disappear -->
+	<!--disappear 
 	<animation>
 		<type>select</type>
 		<object-name>Drop-Tank-Port</object-name>
@@ -306,10 +295,10 @@
 				</equals>
 			</not>
 		</condition>
-	</animation>
+	</animation>-->
 
 
-	<model>
+	<!--<model>
 		<path>Aircraft/Hunter/Models/droptank.xml</path>
 		<name>Drop-Tank-Stbd</name>
 		<offsets>
@@ -319,7 +308,7 @@
 		</offsets>
 	</model>
 
-	<!--disappear -->
+	--><!--disappear --><!--
 	<animation>
 		<type>select</type>
 		<object-name>Drop-Tank-Stbd</object-name>
@@ -331,7 +320,7 @@
 				</equals>
 			</not>
 		</condition>
-	</animation>
+	</animation>-->
 
 
 	<!-- hide all of the model not visible from the cockpit -->
@@ -350,7 +339,6 @@
 		<object-name>UC-Nose</object-name>
 		<object-name>UC-Main-L</object-name>
 		<object-name>UC-Main-R</object-name>
-		<object-name>Exhausts</object-name>
 		<condition>
 			<not>
 				<equals>
@@ -379,21 +367,36 @@
 	</animation>
 
 	<animation>
-		<object-name>Turn</object-name>
 		<object-name>Gunsight</object-name>
-		<object-name>Undercarriage-Control</object-name>
-		<object-name>Gear-Indicator</object-name>
 		<object-name>Port-Nav-Lt-Cover</object-name>
 		<object-name>Stbd-Nav-Lt-Cover</object-name>
 		<object-name>Tail-Cone</object-name>
 		<object-name>Canopy</object-name>
-		<object-name>Blackout</object-name>
-		<object-name>Exhausts</object-name>
 	</animation>
 
 	<!-- **************************** Pilot ******************************* -->
+	
+	<animation>
+		<type>select</type>
+		<object-name>Pilot</object-name>
+		<object-name>Seat-Harness</object-name>
+		<object-name>Parachute-Harness</object-name>
+		<condition>
+			<or>
+				<not>
+					<property>sim/model/hunter/show-pilot</property>
+				</not>
+				<not>
+					<equals>
+						<property>sim/current-view/view-number</property>
+						<value>0</value>
+					</equals>
+				</not>
+			</or>
+		</condition>
+	</animation>
+	
 	<!--  conceal Pilot Head etc in Cockpit View-->
-
 	<animation>
 		<type>select</type>
 		<object-name>Pilot-Head</object-name>
@@ -535,24 +538,6 @@
 			<z>0</z>
 		</axis>
 	</animation>
-
-	<!--<animation>
-		<type>rotate</type>
-		<object-name>Pilot-RLArm</object-name>
-		<property>controls/flight/aileron</property>
-		<offset-deg>0</offset-deg>
-		<factor>-20</factor>
-		<center>
-			<x-m>-4.64448</x-m>
-			<y-m>0.0</y-m>
-			<z-m>0.096915</z-m>
-		</center>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>-->
 
 	<animation>
 		<type>rotate</type>
@@ -2174,7 +2159,7 @@
 	</animation>
 
 	<!-- ********************** Exhaust ******************* -->
-	<animation>
+	<!--<animation>
 		<type>shader</type>
 		<shader>heat-haze</shader>
 		<object-name>Exhausts</object-name>
@@ -2256,7 +2241,7 @@
 				<value>50</value>
 			</less-than>
 		</condition>
-	</animation>
+	</animation>-->
 
 	<!-- ***************** Canopy *********************** -->
 	<animation>
@@ -2315,14 +2300,23 @@
 		</emission>
 	</animation>
 
-	<animation>
+	<!--<animation>
 		<type>noshadow</type>
 		<object-name>Exhausts</object-name>
-	</animation>
+	</animation>-->
 
 	<animation>
 		<type>noshadow</type>
 		<object-name>Markings</object-name>
+	</animation>
+
+	<animation>
+		<type>shader</type>
+		<shader>chrome</shader>
+		<texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+		<object-name>Canopy-Main</object-name>
+		<object-name>Canopy-F</object-name>
+		<object-name>Panel-F-O</object-name>
 	</animation>
 
 	<!-- *** LoD for the whole model *** -->

@@ -2297,19 +2297,9 @@
 		<shader>chrome</shader>
 		<texture>Aircraft/Generic/Effects/glass_shader.png</texture>
 		<object-name>Canopy-Main</object-name>
-		<!--<object-name>Canopy-F</object-name>-->
+		<object-name>Canopy-F</object-name>
 		<object-name>Panel-F-O</object-name>
 	</animation>
-
-	<animation>
-		<type>shader</type>
-		<shader>chrome</shader>
-		<texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-		<!--<object-name>Canopy-Main</object-name>-->
-		<object-name>Canopy-F</object-name>
-		<!--<object-name>Panel-F-O</object-name>-->
-	</animation>
-
 
 	<!-- *** LoD for the whole model *** -->
 	<animation>
