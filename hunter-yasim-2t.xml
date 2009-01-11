@@ -66,7 +66,6 @@
 					 y="0.0"
 					 z="0.7839"/>
 
-
 	<!-- fuselage -->
 	<fuselage ax="0"
 						ay="0"
@@ -282,6 +281,22 @@ n1 100% -->
 									 transition-time="8"/>
 		<control-speed control="BRAKE"
 									 transition-time="1"/>
+	</gear>
+
+	<!-- tail bumper -->
+	<gear x="-12.02262"
+				y="-0.0759879"
+				z="-0.660405"
+				compression="0.05"
+				sfric="1"
+				dfric="0.8"
+				>
+		<control-input axis="/controls/gear/brake-parking"
+									 control="BRAKE"
+									 src0="0"
+									 src1="1"
+									 dst0="1"
+									 dst1="1" />
 	</gear>
 
 	<!-- Canopy -->
