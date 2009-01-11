@@ -277,6 +277,7 @@
 
 	<animation>
 		<type>select</type>
+		<nopreview/>
 		<object-name>Pylon-L</object-name>
 		<object-name>Pylon-R</object-name>
 	</animation>
@@ -2300,6 +2301,78 @@
 		<object-name>Canopy-F</object-name>
 		<object-name>Panel-F-O</object-name>
 	</animation>
+
+	<!-- smoke/rain effects-->
+
+	<model>
+		<path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
+		<name>tyre-smoke-n</name>
+		<offsets>
+			<x-m>-5.06829</x-m>
+			<y-m>0</y-m>
+			<z-m>-1.57792</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+		<name>tyre-smoke-p</name>
+		<offsets>
+			<x-m>-0.131152</x-m>
+			<y-m>-2.24905</y-m>
+			<z-m>-1.49778</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+		<name>tyre-smoke-s</name>
+		<offsets>
+			<x-m>-0.131152</x-m>
+			<y-m>2.24905</y-m>
+			<z-m>-1.49778</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/rain-nose.xml</path>
+		<name>rain-n</name>
+		<offsets>
+			<x-m>-5.06829</x-m>
+			<y-m>0</y-m>
+			<z-m>-1.57792</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/rain-port.xml</path>
+		<name>rain-p</name>
+		<offsets>
+			<x-m>-0.131152</x-m>
+			<y-m>-2.24905</y-m>
+			<z-m>-1.49778</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/rain-stbd.xml</path>
+		<name>rain-s</name>
+		<offsets>
+			<x-m>-0.131152</x-m>
+			<y-m>2.24905</y-m>
+			<z-m>-1.49778</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/rain-tail.xml</path>
+		<name>rain-t</name>
+		<offsets>
+			<x-m>15.0</x-m>
+			<y-m>0</y-m>
+			<z-m>-1.43238</z-m>
+		</offsets>
+	</model>
 
 	<!-- *** LoD for the whole model *** -->
 	<animation>

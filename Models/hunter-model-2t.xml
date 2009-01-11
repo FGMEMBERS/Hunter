@@ -181,7 +181,6 @@
 			<y-m>-0.29</y-m>
 			<z-m>0.27</z-m>
 		</offsets>
-
 	</model>
 
 	<!-- **************** Right Top Panel***************** -->
@@ -308,7 +307,9 @@
 		</offsets>
 	</model>
 
-	--><!--disappear --><!--
+	-->
+	<!--disappear -->
+	<!--
 	<animation>
 		<type>select</type>
 		<object-name>Drop-Tank-Stbd</object-name>
@@ -375,7 +376,7 @@
 	</animation>
 
 	<!-- **************************** Pilot ******************************* -->
-	
+
 	<animation>
 		<type>select</type>
 		<object-name>Pilot</object-name>
@@ -395,7 +396,7 @@
 			</or>
 		</condition>
 	</animation>
-	
+
 	<!--  conceal Pilot Head etc in Cockpit View-->
 	<animation>
 		<type>select</type>
@@ -568,7 +569,7 @@
 			<z>0</z>
 		</axis>
 	</animation>
-	
+
 	<animation>
 		<type>rotate</type>
 		<object-name>Pilot-RLArm</object-name>
@@ -719,7 +720,7 @@
 		</axis>
 	</animation>
 
-<animation>
+	<animation>
 		<type>rotate</type>
 		<object-name>Pilot-RUArm</object-name>
 		<property>controls/flight/aileron</property>
@@ -1075,7 +1076,7 @@
 			<z-m>0.35</z-m>
 		</offsets>
 	</model>
-	
+
 	<model>
 		<path>Aircraft/Hunter/Models/undercarriage-up-down.xml</path>
 		<name>Undercarriage-Control</name>
@@ -1085,7 +1086,7 @@
 			<z-m>0.38</z-m>
 		</offsets>
 	</model>
-	
+
 	<model>
 		<path>Aircraft/Hunter/Models/flap-emrgy-lowering.xml</path>
 		<offsets>
@@ -1338,7 +1339,7 @@
 			<z>0</z>
 		</axis>
 	</animation>
-	
+
 	<animation>
 		<type>rotate</type>
 		<object-name>F-Arm</object-name>
@@ -1674,7 +1675,7 @@
 			<z>0</z>
 		</axis>
 	</animation>
-	
+
 	<animation>
 		<type>rotate</type>
 		<object-name>Door4-L</object-name>
@@ -2318,6 +2319,79 @@
 		<object-name>Canopy-F</object-name>
 		<object-name>Panel-F-O</object-name>
 	</animation>
+
+	<!-- smoke/rain effects-->
+
+	<model>
+		<path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
+		<name>tyre-smoke-n</name>
+		<offsets>
+			<x-m>-5.06829</x-m>
+			<y-m>0</y-m>
+			<z-m>-1.57792</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+		<name>tyre-smoke-p</name>
+		<offsets>
+			<x-m>-0.131152</x-m>
+			<y-m>-2.24905</y-m>
+			<z-m>-1.49778</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+		<name>tyre-smoke-s</name>
+		<offsets>
+			<x-m>-0.131152</x-m>
+			<y-m>2.24905</y-m>
+			<z-m>-1.49778</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/rain-nose.xml</path>
+		<name>rain-n</name>
+		<offsets>
+			<x-m>-5.06829</x-m>
+			<y-m>0</y-m>
+			<z-m>-1.57792</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/rain-port.xml</path>
+		<name>rain-p</name>
+		<offsets>
+			<x-m>-0.131152</x-m>
+			<y-m>-2.24905</y-m>
+			<z-m>-1.49778</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/rain-stbd.xml</path>
+		<name>rain-s</name>
+		<offsets>
+			<x-m>-0.131152</x-m>
+			<y-m>2.24905</y-m>
+			<z-m>-1.49778</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Generic/Effects/rain-tail.xml</path>
+		<name>rain-t</name>
+		<offsets>
+			<x-m>15.0</x-m>
+			<y-m>0</y-m>
+			<z-m>-1.43238</z-m>
+		</offsets>
+	</model>
+
 
 	<!-- *** LoD for the whole model *** -->
 	<animation>
