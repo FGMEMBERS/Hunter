@@ -14,6 +14,69 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 ************************************************************************
 -->
 <PropertyList>
+
+	<!-- *************** set properties **********************-->
+	<!--parking brake ON -->
+	<!-- nosewheel lock OFF -->
+	<controls>
+		<armament>
+			<station n="0">
+				<jettison-all type="bool">false</jettison-all>
+			</station>
+		</armament>
+		<gear>
+			<brake-parking type="double">1</brake-parking>
+			<tailwheel-lock type="bool">false</tailwheel-lock>
+		</gear>
+		<flight>
+			<flaps-alternate-extension type="double">1</flaps-alternate-extension>
+		</flight>
+		<lighting>
+			<nav-lights type="double">0</nav-lights>
+		</lighting>
+	</controls>
+
+	<!-- hsi heading bug and source select-->
+	<instrumentation>
+		<heading-indicator>
+			<heading-bug-deg type="double">95</heading-bug-deg>
+			<heading-source type="bool">true</heading-source>
+		</heading-indicator>
+	</instrumentation>
+
+	<gear>
+		<gear n="0">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<spray type="int">0</spray>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+		</gear>
+		<gear n="1">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<spray type="int">0</spray>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+		<gear n="2">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<spray type="int">0</spray>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+	</gear>
+
+	<engines>
+		<engine n="0">
+			<running type="bool">0</running>
+			<smoking type="bool">0</smoking>
+		</engine>
+	</engines>
+
+	<position>
+		<altitude-agl-ft type="double">0</altitude-agl-ft>
+	</position>
+
 	<sim include="help.xml">
 		<description type="string" >Hawker Hunter GA11 (YASim)</description>
 		<author type="string">Vivian Meazza</author>
@@ -133,6 +196,13 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 			<show-pilot archive="y"
 									type="bool">true</show-pilot>
 		</hunter>
+
+		<multiplay>
+			<generic>
+				<float n="0"
+							 alias="/gear/gear/caster-angle-deg-damped"/>
+			</generic>
+		</multiplay>
 	</sim>
 
 	<consumables>
@@ -150,36 +220,6 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 		</fuel>
 	</consumables>
 
-	<!-- *************** set properties **********************-->
-	<!--parking brake ON -->
-	<!-- nosewheel lock OFF -->
-	<controls>
-		<gear>
-			<brake-parking>1</brake-parking>
-			<tailwheel-lock>false</tailwheel-lock>
-		</gear>
-		<flight>
-			<flaps-alternate-extension type="double">1</flaps-alternate-extension>
-		</flight>
-		<lighting>
-			<nav-lights>false</nav-lights>
-		</lighting>
-	</controls>
-
-	<engines>
-		<engine>
-			<smoking>true</smoking>
-		</engine>
-	</engines>
-
-	<!-- hsi heading bug and source select-->
-	<instrumentation>
-		<heading-indicator>
-			<heading-bug-deg type="double">95</heading-bug-deg>
-			<heading-source type="bool">true</heading-source>
-		</heading-indicator>
-
-	</instrumentation>
 	<!-- map keyboard input -->
 	<input>
 		<keyboard>
