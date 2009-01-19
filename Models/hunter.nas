@@ -308,7 +308,7 @@ var caster_angle_damped = props.globals.getNode("gear/gear/caster-angle-deg-damp
 
 caster_angle.setDoubleValue(0); 
 roll_speed.setDoubleValue(0); 
-timeratio.setDoubleValue(0.05); 
+timeratio.setDoubleValue(0.1); 
 caster_angle_damped.setDoubleValue(0);
 wow.setBoolValue(1); 
 
