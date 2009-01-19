@@ -1424,7 +1424,7 @@
 		<object-name>F-Wheel</object-name>
 		<object-name>F-Arm</object-name>
 		<object-name>F-DArm</object-name>
-		<property>gear/gear/caster-angle-deg</property>
+		<property>gear/gear/caster-angle-deg-damped</property>
 		<factor>-1</factor>
 		<axis>
 			<x1-m>-5.23</x1-m>
@@ -1439,7 +1439,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>F-Lower-Leg</object-name>
-		<property>gear/gear/caster-angle-deg</property>
+		<property>gear/gear/caster-angle-deg-damped</property>
 		<factor>-1</factor>
 		<axis>
 			<x1-m>-5.23</x1-m>
