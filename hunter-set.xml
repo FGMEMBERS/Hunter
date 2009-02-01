@@ -101,10 +101,6 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 				<exhaust type="bool">false</exhaust>
 			</aircraft>
 		</ai>
-		<submodels>
-			<serviceable type="bool">true</serviceable>
-			<path>Aircraft/Hunter/Models/hunter-submodels.xml</path>
-		</submodels>
 		<sound>
 			<path>Aircraft/Hunter/Sounds/hunter-sound.xml</path>
 		</sound>
