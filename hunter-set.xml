@@ -422,6 +422,9 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 				<desc>Jettison Inner and Outer Pylon Stores.</desc>
 				<!-- port inner -->
 				<binding>
+					<condition>
+						<property>/devices/status/keyboard/ctrl</property>
+					</condition>
 					<command>property-assign</command>
 					<property>/controls/armament/station[0]/jettison-all</property>
 					<value type="bool">1</value>
@@ -432,6 +435,9 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 					<value type="double">0.0</value>
 				</binding>-->
 				<binding>
+					<condition>
+						<property>/devices/status/keyboard/ctrl</property>
+					</condition>
 					<command>property-assign</command>
 					<property>controls/armament/station[1]/jettison-all</property>
 					<value type="bool">1</value>
