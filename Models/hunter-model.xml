@@ -2296,8 +2296,6 @@
 	<effect>
 		<inherits-from>Effects/reflect</inherits-from>
 		<object-name>Fuselage</object-name>
-		<object-name>Canopy-Main</object-name>
-		<object-name>Canopy-F</object-name>
 		<object-name>Panel-F-O</object-name>
 		<object-name>Tail</object-name>
 		<object-name>Tailplane-R</object-name>
@@ -2318,11 +2316,18 @@
 		<object-name>UC-Main-L</object-name>
 		<object-name>UC-Main-R</object-name>
 		<object-name>Rudder-Assmbly</object-name>
+		<object-name>Hull</object-name>
+		<object-name>Canopy-Main</object-name>
+		<object-name>Canopy-F</object-name>
+		<!--<object-name>MFrame-Inner</object-name>
+		<object-name>MFrame</object-name>
+		<object-name>FSFrame</object-name>
+		<object-name>FPFrame</object-name>-->
+		
 		<object-name>Visor</object-name>
 	</effect>
 
 	<!-- smoke/rain effects-->
-
 	<model>
 		<path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
 		<name>tyre-smoke-n</name>
