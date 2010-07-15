@@ -26,7 +26,7 @@ var flow = aircraft.rain.init();
 
 # =============================== armament stuff ================================
 
-controls.trigger = func(v) setprop("/ai/submodels/trigger", v);
+#controls.trigger = func(v) setprop("/ai/submodels/trigger", v);
 
 # =============================== Pilot G stuff==================================
 
@@ -438,7 +438,7 @@ var droptanks = func(n) {
 	var droptank = droptank_node.getValue();
 	var node = props.globals.getNode(n.getValue(), 1);
 	print (" droptank ", droptank, " lon " , node.getNode("impact/longitude-deg").getValue(),);
-	geo.put_model("Aircraft/Hunter/Models/droptank.xml",
+	geo.put_model("Aircraft/Hunter/Models/droptank-hot.xml",
 		node.getNode("impact/latitude-deg").getValue(),
 		node.getNode("impact/longitude-deg").getValue(),
 		node.getNode("impact/elevation-m").getValue()+ 0.25,
@@ -460,7 +460,7 @@ var ext_force_stbd = func {
 		ext_force_stbd_node.getChild("force-azimuth-deg", 0, 1).setDoubleValue(hdg_node.getValue());
 		ext_force_stbd_node.getChild("force-elevation-deg", 0, 1).setDoubleValue(pitch_node.getValue()-90);
 		ext_force_stbd_node.getChild("force-norm", 0, 1).setDoubleValue(1);
-		setprop("ai/models/load[1]/controls/slave-to-ac",0);
+		setprop("ai/models/ballistic[1]/controls/slave-to-ac",0);
 		settimer(ext_force_stbd,0.75);
 	}
 }
@@ -479,7 +479,7 @@ var ext_force_port = func {
 		ext_force_port_node.getChild("force-elevation-deg", 0, 1).setDoubleValue(pitch_node.getValue()-90);
 		ext_force_port_node.getChild("force-norm", 0, 1).setDoubleValue(1);
 #        print ("elevation ", ext_force_port_node.getChild("force-elevation-deg", 0, 1).getValue());
-		setprop("ai/models/load[0]/controls/slave-to-ac",0);
+		setprop("ai/models/ballistic[0]/controls/slave-to-ac",0);
 		settimer(ext_force_port,0.75);
 	}
 }
