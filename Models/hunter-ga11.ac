@@ -64009,7 +64009,7 @@ kids 5
 OBJECT poly
 name "cylinder"
 loc -2.08269 0.874723 -0.0608843
-texture "hunter-tx-01.rgb"
+texture "drab_cotton4.png"
 crease 61.000000
 numvert 18
 0.00476789 0.00134587 0.00286031
@@ -64227,7 +64227,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc -2.09676 0.817142 -0.0608843
-texture "hunter-tx-01.rgb"
+texture "drab_cotton4.png"
 crease 61.000000
 numvert 18
 -0.00458717 0.000473499 3.8147e-006
@@ -64445,7 +64445,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc -2.07281 0.916719 -0.0614112
-texture "hunter-tx-01.rgb"
+texture "drab_cotton4.png"
 crease 61.000000
 numvert 18
 -0.00381279 0.00135005 1.18017e-005
@@ -64663,7 +64663,7 @@ kids 0
 OBJECT poly
 name "Stole"
 loc 0.735658 0.524079 -0.0293828
-texture "drab_cotton4.rgb"
+texture "drab_cotton4.png"
 texrep 60 60
 crease 61.000000
 numvert 314
@@ -71564,7 +71564,7 @@ kids 2
 OBJECT poly
 name "Pilot-LL-Arm"
 loc -0.315866 0.962063 1.28048
-texture "drab_cotton4.rgb"
+texture "drab_cotton4.png"
 texrep 60 60
 crease 61.000000
 numvert 41
@@ -74966,7 +74966,7 @@ kids 2
 OBJECT poly
 name "Pilot-RL-Arm"
 loc -0.735521 1.17152 -0.180931
-texture "drab_cotton4.rgb"
+texture "drab_cotton4.png"
 texrep 60 60
 crease 61.000000
 numvert 41
@@ -78769,7 +78769,7 @@ kids 0
 OBJECT poly
 name "Pilot-LULeg"
 loc -0.788618 -0.403766 0.00461506
-texture "drab_cotton4.rgb"
+texture "drab_cotton4.png"
 texrep 60 60
 crease 61.000000
 numvert 62
@@ -79518,7 +79518,7 @@ kids 0
 OBJECT poly
 name "Pilot-RULeg"
 loc -0.787879 -0.403424 -0.186891
-texture "drab_cotton4.rgb"
+texture "drab_cotton4.png"
 texrep 60 60
 crease 61.000000
 numvert 62
@@ -80309,7 +80309,7 @@ kids 0
 OBJECT poly
 name "Pilot-LUArm"
 loc -0.434622 -0.176992 0.114447
-texture "drab_cotton4.rgb"
+texture "drab_cotton4.png"
 texrep 60 60
 crease 61.000000
 numvert 63
@@ -81113,7 +81113,7 @@ kids 0
 OBJECT poly
 name "Pilot-RUArm"
 loc -0.645859 -0.1215 -0.48637
-texture "drab_cotton4.rgb"
+texture "drab_cotton4.png"
 texrep 60 60
 crease 61.000000
 numvert 63
@@ -81917,7 +81917,7 @@ kids 0
 OBJECT poly
 name "Pilot-LLLeg"
 loc -1.08072 -0.479155 0.387646
-texture "drab_cotton4.rgb"
+texture "drab_cotton4.png"
 texrep 60 60
 crease 61.000000
 numvert 49
@@ -82503,7 +82503,7 @@ kids 0
 OBJECT poly
 name "Pilot-Body"
 loc -0.566649 -0.262028 -0.0911365
-texture "drab_cotton4.rgb"
+texture "drab_cotton4.png"
 texrep 60 60
 crease 61.000000
 numvert 234
@@ -85921,7 +85921,7 @@ kids 0
 OBJECT poly
 name "Pilot-RLLeg"
 loc -1.08162 -0.483904 -0.539322
-texture "drab_cotton4.rgb"
+texture "drab_cotton4.png"
 texrep 60 60
 crease 61.000000
 numvert 49
