@@ -115,7 +115,7 @@ kids 0
 OBJECT poly
 name "Helmet"
 loc 0.124113 -26.6141 0
-texture "D:/Cygwin/FlightGear/data/Aircraft/seahawk/Models/HelmetMk1a-ver6.png"
+texture "/Aircraft/seahawk/Models/HelmetMk1a-ver6.png"
 crease 45.000000
 numvert 116
 0.358037 24.4613 1.4073
