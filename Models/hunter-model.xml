@@ -2294,7 +2294,7 @@
 	</animation>
 
 	<effect>
-		<inherits-from>Effects/reflect</inherits-from>
+		<inherits-from>Effects/hunterreflect-uber</inherits-from>
 		<object-name>Fuselage</object-name>
 		<object-name>Panel-F-O</object-name>
 		<object-name>Tail</object-name>
