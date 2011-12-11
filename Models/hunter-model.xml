@@ -2296,7 +2296,6 @@
 	<effect>
 		<inherits-from>Effects/hunterreflect-uber</inherits-from>
 		<object-name>Fuselage</object-name>
-		<object-name>Panel-F-O</object-name>
 		<object-name>Tail</object-name>
 		<object-name>Tailplane-R</object-name>
 		<object-name>Tailplane-L</object-name>
@@ -2317,14 +2316,21 @@
 		<object-name>UC-Main-R</object-name>
 		<object-name>Rudder-Assmbly</object-name>
 		<object-name>Hull</object-name>
-		<object-name>Canopy-Main</object-name>
-		<object-name>Canopy-F</object-name>
-		<!--<object-name>MFrame-Inner</object-name>
+		<object-name>MFrame-Inner</object-name>
 		<object-name>MFrame</object-name>
 		<object-name>FSFrame</object-name>
-		<object-name>FPFrame</object-name>-->
+		<object-name>FPFrame</object-name>
 		
 		<object-name>Visor</object-name>
+	</effect>
+	
+	<effect>
+		<inherits-from>Effects/hunterglass-uber</inherits-from>
+		<object-name>Canopy-Main</object-name>
+		<object-name>Canopy-F-S</object-name>
+		<object-name>Canopy-F-P</object-name>
+		<object-name>Panel-F-I</object-name>
+		<object-name>Panel-F-O</object-name>
 	</effect>
 
 	<!-- smoke/rain effects-->
