@@ -15,12 +15,6 @@
 		<reflection-correction type="float">0.0</reflection-correction>
 		<ambient-correction type="float">0.2</ambient-correction>
 
-		<!-- 		quality slider -->
-		<shader-quality type="int">2</shader-quality>
-		<!--<use>/sim/rendering/shaders/model/quality</use>
-		</shader-quality>-->
-		<!--<vertex-program-two-side type="bool">false</vertex-program-two-side>-->
-		<!--<cull-face>back</cull-face>-->
 		<rendering-hint>transparent</rendering-hint>
 		<transparent>true</transparent>
 		<render-bin>
