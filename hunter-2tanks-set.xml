@@ -52,7 +52,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 		</panel>
 		<!-- no HUD -->
 		<hud>
-			<path>Huds/Default/default.xml</path>
+			<path>Huds/default.xml</path>
 			<visibility>false</visibility>
 		</hud>
 		<model>
