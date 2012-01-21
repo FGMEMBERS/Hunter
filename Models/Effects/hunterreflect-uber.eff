@@ -16,4 +16,9 @@
 		<ambient-correction type="float">0.2</ambient-correction>
 	</parameters>
 
+  <!--<generate>
+		<tangent type="int">6</tangent>
+		<binormal type="int">7</binormal>
+	</generate>-->
+
 </PropertyList>
