@@ -44,7 +44,7 @@
       <actions>
         <!-- ************** hsi hotspots ************** -->
         <!-- left knob heading-bug -->
-        <action>
+        <!--<action>
           <name>ccw-fine</name>
           <button>0</button>
           <x>-100</x>
@@ -75,8 +75,8 @@
             <max>360</max>
             <wrap>1</wrap>
           </binding>
-        </action>
-        <action>
+        </action>-->
+        <!--<action>
           <name>cw-fine</name>
           <button>0</button>
           <x>-40</x>
@@ -107,9 +107,9 @@
             <max>360</max>
             <wrap>1</wrap>
           </binding>
-        </action>
+        </action>-->
         <!-- right knob source select -->
-        <action>
+        <!--<action>
           <name>source select</name>
           <button>0</button>
           <x>35</x>
@@ -120,7 +120,7 @@
             <command>property-toggle</command>
             <property>instrumentation/heading-indicator/heading-source/</property>
           </binding>
-        </action>
+        </action>-->
         <!-- ************** altimeter hotspots ************** -->
         <action>
           <name>calibrate fine</name>
@@ -271,7 +271,7 @@
           </binding>
         </action>-->
         <!--emergency flap lowering-->
-        <action>
+        <!--<action>
           <name>emergy flap lowering</name>
           <button>0</button>
           <x>-320</x>
@@ -288,9 +288,9 @@
             <property>/controls/flight/flaps</property>
             <value type="double">1</value>
           </binding>
-        </action>
+        </action>-->
         <!--gear control-->
-        <action>
+        <!--<action>
           <name>extend</name>
           <button>0</button>
           <x>-380</x>
@@ -329,9 +329,9 @@
             <property>/controls/gear/gear-down</property>
             <value type="double">0</value>
           </binding>
-        </action>
+        </action>-->
         <!--  cockpit light dimmer hotspots -->
-        <action>
+        <!--<action>
           <name>panel brighter</name>
           <button>0</button>
           <x>65</x>
@@ -362,7 +362,7 @@
             <max>1</max>
             <wrap>0</wrap>
           </binding>
-        </action>
+        </action>-->
         <!-- navigation light switch -->
         <action>
           <name>nav light up</name>

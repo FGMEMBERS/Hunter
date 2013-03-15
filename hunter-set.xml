@@ -95,6 +95,17 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 		</systems>
 		<instrumentation>
 			<path>Aircraft/Hunter/Systems/instrumentation.xml</path>
+			<tacan n="0">
+				<serviceable type="bool"
+										 archive="y">true</serviceable>
+				<switch-position type="int"
+												 archive="y">1</switch-position>
+			</tacan>
+			<!-- hsi heading bug and source select-->
+			<heading-indicator>
+				<heading-bug-deg type="double">180</heading-bug-deg>
+				<heading-source type="bool">true</heading-source>
+			</heading-indicator>
 		</instrumentation>
 		<ai>
 			<aircraft>
