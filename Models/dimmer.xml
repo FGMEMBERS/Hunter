@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>dimmer.ac</path>
+
+	<animation>
+		<type>knob</type>
+		<object-name>Knob</object-name>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>/controls/lighting/panel-norm</property>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>0</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<label>Panel Light: %3d%%</label>
+				<tooltip-id>panel_light</tooltip-id>
+				<mapping>percent</mapping>
+				<property>/controls/lighting/panel-norm</property>
+			</binding>
+		</hovered>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Knob</object-name>
+		<property>/controls/lighting/panel-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>160</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-160</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+	<!-- *** LoD for the whole model *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>
