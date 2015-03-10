@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <default>
+    <menu n="100">
+      <label>Hawker Hunter</label>
+      <enabled type="bool">true</enabled>
+      <item>
+        <label>Select Livery</label>
+        <binding>
+          <command>nasal</command>
+          <script>aircraft.livery.dialog.open()</script>
+        </binding>
+      </item>
+    </menu>
+  <menu n="11">
+					<label>Hunter</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Toggle pilot model</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>sim/model/hunter/show-pilot</property>
+						</binding>
+					</item>
+				</menu>
+</default>
+
+</PropertyList>
+

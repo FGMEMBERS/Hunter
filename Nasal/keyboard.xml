@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+ <key n="125">
+     <name>}</name>
+     <desc>Engine Autostart</desc>
+	<binding>
+		<command>nasal</command>
+		<script>engines.engine1.autostart();</script>
+	</binding>
+  </key>
+
+<!-- map keys for airbrake interlock -->
+			<key n="2">
+				<name>Ctrl-B</name>
+				<desc>Toggle speedbrake.</desc>
+				<binding>
+					<condition>
+						<equals>
+							<property>/gear/gear/position-norm</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-toggle</command>
+					<property>/controls/flight/speedbrake</property>
+				</binding>
+			</key>
+			<!-- map keys for emergency flap lowering -->
+			<key n="6">
+				<name>Ctrl-F</name>
+				<desc>Emergency Flap Lowering.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/flight/flaps-alternate-extension</property>
+					<value type="double">0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/flight/flaps</property>
+					<value type="double">1</value>
+				</binding>
+			</key>
+			
+			<!-- map keys for wing fold -->
+			<key n="70">
+				<name>F</name>
+				<desc>Wing Fold Down/Canopy Close.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/flight/wing-fold</property>
+					<value type="bool">1.0</value>
+				</binding>
+			</key>
+			<key n="102">
+				<name>f</name>
+				<desc>Wing Fold Up/Canopy Open.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/flight/wing-fold</property>
+					<value type="bool">0.0</value>
+				</binding>
+			</key>
+			<!-- map keys for no action  -->
+			<key n="107">
+				<name>k</name>
+				<desc>Null.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>null</property>
+					<value type="double">0</value>
+				</binding>
+			</key>
+			<!-- map keys for seat vertical adjust -->
+			<key n="21">
+				<name>CTRL-U</name>
+				<desc>Seat Default.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/seat/vertical-adjust</property>
+					<value type="double">0</value>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>sim/current-view/view-number</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-assign</command>
+					<property>sim/current-view/y-offset-m</property>
+					<value type="double">0.7839</value>
+				</binding>
+			</key>
+			<key n="85">
+				<name>U</name>
+				<desc>Seat Down.</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>/controls/seat/vertical-adjust</property>
+					<step type="double">-0.01</step>
+					<min type="double">-0.05</min>
+					<max type="double">0.05</max>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>sim/current-view/view-number</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-adjust</command>
+					<property>sim/current-view/y-offset-m</property>
+					<step type="double">-0.01</step>
+					<min type="double">0.7339</min>
+					<max type="double">0.8339</max>
+				</binding>
+			</key>
+			<key n="117">
+				<name>u</name>
+				<desc>Seat Up.</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>controls/seat/vertical-adjust</property>
+					<step type="double">0.01</step>
+					<min type="double">-0.05</min>
+					<max type="double">0.05</max>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>sim/current-view/view-number</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-adjust</command>
+					<property>sim/current-view/y-offset-m</property>
+					<step type="double">0.01</step>
+					<min type="double">0.75</min>
+					<max type="double">0.85</max>
+				</binding>
+			</key>
+			<!-- map keys for 10 deg flap steps -->
+			<key n="91">
+				<name>[</name>
+				<desc>Decrease flaps.</desc>
+				<binding>
+					<condition>
+						<equals>
+							<property>controls/flight/flaps-alternate-extension</property>
+							<value>1</value>
+						</equals>
+					</condition>
+					<command>property-adjust</command>
+					<property>/controls/flight/flaps</property>
+					<step type="double">-0.10</step>
+				</binding>
+			</key>
+			<key n="93">
+				<name>]</name>
+				<desc>Increase flaps.</desc>
+				<binding>
+					<condition>
+						<equals>
+							<property>controls/flight/flaps-alternate-extension</property>
+							<value>1</value>
+						</equals>
+					</condition>
+					<command>property-adjust</command>
+					<property>/controls/flight/flaps</property>
+					<step type="double">0.10</step>
+				</binding>
+			</key>
+			<!-- map keys for jettison stores  -->
+			<!-- not used right now -->
+			<key n="74">
+				<name>J</name>
+				<desc>Jettison Outer Pylon Stores.</desc>
+			</key>
+			<key n="106">
+				<name>j</name>
+				<desc>Jettison Inner Pylon Stores.</desc>
+				<!--<binding>
+					<command>property-assign</command>
+					<property>/yasim/weights/tank-100gal-lbs[0]</property>
+					<value type="double">0.0</value>
+				</binding>-->
+				<!--<binding>
+					<command>property-assign</command>
+					<property>/yasim/weights/tank-100gal-lbs[1]</property>
+					<value type="double">0.0</value>
+				</binding>-->
+			</key>
+			<key n="10">
+				<name>Ctrl-J</name>
+				<desc>Jettison Inner and Outer Pylon Stores.</desc>
+				<!-- port inner -->
+				<binding>
+					<condition>
+						<property>/devices/status/keyboard/ctrl</property>
+					</condition>
+					<command>property-assign</command>
+					<property>/controls/armament/station[0]/jettison-all</property>
+					<value type="bool">1</value>
+				</binding>
+				<!--<binding>
+					<command>property-assign</command>
+					<property>/yasim/weights/tank-100gal-lbs[0]</property>
+					<value type="double">0.0</value>
+				</binding>-->
+				<binding>
+					<condition>
+						<property>/devices/status/keyboard/ctrl</property>
+					</condition>
+					<command>property-assign</command>
+					<property>controls/armament/station[1]/jettison-all</property>
+					<value type="bool">1</value>
+				</binding>
+				<!--<binding>
+					<command>property-assign</command>
+					<property>/yasim/weights/tank-100gal-lbs[1]</property>
+					<value type="double">0.0</value>
+				</binding>-->
+			</key>
+			<!-- Guns-->
+			<key n="101">
+    <name>e</name>
+    <desc>Guns</desc>
+    <binding>
+      <command>nasal</command>
+      <script>guns.fire_MG()</script>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>nasal</command>
+        <script>guns.stop_MG()</script>
+      </binding>
+    </mod-up>
+  </key>
+
+  
+
+
+</PropertyList>
+

@@ -118,10 +118,6 @@
     <prop>/systems/electrical/outputs/pitot-heat</prop>
   </output>
 
-  <output>
-    <name>Heading Indicator DG Power</name>
-    <prop>/systems/electrical/outputs/DG</prop>
-  </output>
 
   <!-- connect in power sources -->
 
@@ -254,6 +250,5 @@
       <prop>/controls/switches/pitot-heat</prop>
     </switch>
   </connector>
-  
 
 </PropertyList>

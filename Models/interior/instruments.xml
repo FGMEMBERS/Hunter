@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+<!-- Hunter model config file -->
+<!-- Vivian Meazza 2004/1/2 vivian.meazza@lineone.net -->
+<!-- Ver 0.1.0 -->
+<PropertyList>
+
+<animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>20</max-m>
+    </animation>
+
+	
+	<!-- ***************** Cockpit *************************** -->
+	<!-- Front hotspots -->
+	<panel>
+		<path>Aircraft/Hunter/Models/hunter-panel-hotspots.xml</path>
+		<bottom-left>
+			<x-m>-4.83</x-m>
+			<y-m>-0.50</y-m>
+			<z-m>-0.30</z-m>
+		</bottom-left>
+		<bottom-right>
+			<x-m>-4.83</x-m>
+			<y-m> 0.50</y-m>
+			<z-m>-0.30</z-m>
+		</bottom-right>
+		<top-left>
+			<x-m>-4.83</x-m>
+			<y-m>-0.50</y-m>
+			<z-m> 0.62</z-m>
+		</top-left>
+	</panel>
+
+
+	<!-- **************** Instruments ********************* -->
+	<!-- **************** Main Panel ********** -->
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/vsi.xml</path>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>0.11</y-m>
+			<z-m>0.46</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/attitude.xml</path>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>0.00</y-m>
+			<z-m>0.44</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/hsi.xml</path>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>0.00</y-m>
+			<z-m>0.33</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/asi.xml</path>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>-0.11</y-m>
+			<z-m>0.46</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/altimeter.xml</path>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>-0.115</y-m>
+			<z-m>0.37</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/mach.xml</path>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>-0.20</y-m>
+			<z-m>0.43</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/trim.xml</path>
+		<offsets>
+			<x-m>-4.81</x-m>
+			<y-m>-0.20</y-m>
+			<z-m>0.50</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/flaps.xml</path>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>-0.201</y-m>
+			<z-m>0.342</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/turn.xml</path>
+		<name>Turn</name>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>0.11</y-m>
+			<z-m>0.37</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/rpm.xml</path>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>0.185</y-m>
+			<z-m>0.41</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/dme.xml</path>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>0.185</y-m>
+			<z-m>0.50</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/dimmer.xml</path>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>0.09</y-m>
+			<z-m>0.30</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/nav-light-switch.xml</path>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>0.15</y-m>
+			<z-m>0.30</z-m>
+		</offsets>
+	</model>
+
+	<!-- **************** Right Panel *********** -->
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/egt.xml</path>
+		<offsets>
+			<x-m>-4.81</x-m>
+			<y-m>0.275</y-m>
+			<z-m>0.45</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/adf.xml</path>
+		<offsets>
+			<x-m>-4.81</x-m>
+			<y-m>0.275</y-m>
+			<z-m>0.35</z-m>
+		</offsets>
+	</model>
+
+	<!-- **************** Left Panel *********** -->
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/airbrake-warning.xml</path>
+		<offsets>
+			<x-m>-4.81</x-m>
+			<y-m>-0.29</y-m>
+			<z-m>0.27</z-m>
+		</offsets>
+
+	</model>
+
+	<!-- **************** Right Top Panel***************** -->
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/pilot-g.xml</path>
+		<offsets>
+			<x-m>-4.75</x-m>
+			<y-m>0.11</y-m>
+			<z-m>0.625</z-m>
+		</offsets>
+	</model>
+
+	<!-- ************* Right Lower Side Panel ******* -->
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/fuel-left.xml</path>
+		<offsets>
+			<x-m>-4.65</x-m>
+			<y-m>0.30</y-m>
+			<z-m>0.145</z-m>
+			<pitch-deg>-60</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/fuel-right.xml</path>
+		<offsets>
+			<x-m>-4.65</x-m>
+			<y-m>0.38</y-m>
+			<z-m>0.145</z-m>
+			<pitch-deg>-60</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- Gear Indicator Panel-->
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/gear.xml</path>
+		<name>Gear-Indicator</name>
+		<offsets>
+			<x-m>-4.81</x-m>
+			<y-m>-0.37</y-m>
+			<z-m>0.29</z-m>
+			<pitch-deg>-15</pitch-deg>
+			<heading-deg>35</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/ggs.xml</path>
+		<name>Gunsight</name>
+		<offsets>
+			<x-m>-4.75</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.65</z-m>
+		</offsets>
+	</model>
+
+	<!-- ***** Navigation Lights ****** -->
+
+	<model>
+		<path>Aircraft/Hunter/Models/light-green.xml</path>
+		<name>Stbd-Light</name>
+		<offsets>
+			<x-m>0.839935</x-m>
+			<y-m>4.7883</y-m>
+			<z-m>-0.100609</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/light-red.xml</path>
+		<name>Port-Light</name>
+		<offsets>
+			<x-m>0.839935</x-m>
+			<y-m>-4.7883</y-m>
+			<z-m>-0.100609</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/light-white.xml</path>
+		<name>Tail-Light</name>
+		<offsets>
+			<x-m>6.487</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.86</z-m>
+		</offsets>
+	</model>
+
+	
+
+
+	<!-- **************************** Controls **************************** -->
+	<!-- Flap Lever -->
+	<model>
+		<path>Aircraft/Hunter/Models/interior/flap.xml</path>
+		<offsets>
+			<x-m>-4.81</x-m>
+			<y-m>-0.26</y-m>
+			<z-m>0.35</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/undercarriage-up-down.xml</path>
+		<name>Undercarriage-Control</name>
+		<offsets>
+			<x-m>-4.81</x-m>
+			<y-m>-0.325</y-m>
+			<z-m>0.38</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/flap-emrgy-lowering.xml</path>
+		<offsets>
+			<x-m>-4.81</x-m>
+			<y-m>-0.28</y-m>
+			<z-m>0.41</z-m>
+		</offsets>
+	</model>
+
+	<!-- rudder pedals -->
+	<!-- Left -->
+	<animation>
+		<type>translate</type>
+		<object-name>Pedal-L</object-name>
+		<property>controls/flight/rudder</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-0.03</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0.03</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Right -->
+	<animation>
+		<type>translate</type>
+		<object-name>Pedal-R</object-name>
+		<property>controls/flight/rudder</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-0.03</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0.03</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+
+
+</PropertyList>

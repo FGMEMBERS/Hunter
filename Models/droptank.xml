@@ -2,9 +2,4 @@
 
 <PropertyList>
 	<path>droptank.ac</path>
-
-  <animation>
-    <enable-hot type="bool">false</enable-hot>
-  </animation>
-  
 </PropertyList>

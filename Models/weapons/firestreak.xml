@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>Aircraft/SeaVixen/Models/weapons/firestreak.ac</path>
+
+  <animation>
+    <object-name>firestreak</object-name>
+  </animation>
+
+</PropertyList>

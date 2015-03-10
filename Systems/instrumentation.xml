@@ -75,20 +75,20 @@ file, these values will be used (they are hardcoded).
     <number>0</number>
   </marker-beacon>-->
 
-  <magnetic-compass>
-    <name>magnetic-compass</name>
+  <heading-indicator-fg>
+    <name>heading-indicator-fg</name>
     <number>0</number>
-  </magnetic-compass>
-
-  <heading-indicator-dg>
-    <name>heading-indicator-dg</name>
-    <number>0</number>
-  </heading-indicator-dg>
+  </heading-indicator-fg>
 
   <!--<KT-70>
     <name>kt-70</name>
     <number>0</number>
   </KT-70>-->
+
+  <magnetic-compass>
+    <name>magnetic-compass</name>
+    <number>0</number>
+  </magnetic-compass>
 
   <nav-radio>
     <name>nav</name>

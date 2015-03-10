@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<!--back-->
+	<!--right -->
+	<!--up -->
+<model>
+		<name>Pylons</name>
+		<path>Aircraft/Hunter/Models/weapons/t45pylons.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.0</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+	</model>	
+
+<!--station left 1 -->
+
+<model>
+		<name>left-Tank1</name>
+		<path>Aircraft/Hunter/Models/weapons/tank1500.xml</path>
+		<offsets>
+			<x-m>0.8</x-m>
+			<y-m>-4.35</y-m>
+			<z-m>-0.48</z-m>
+			<pitch-deg>-1.74</pitch-deg>
+		</offsets>
+	</model>	
+  <animation>
+    <type>select</type>
+    <object-name>left-Tank1</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[0]/selected</property>
+          <value>100 G Droptank</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[0]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+  <model>
+		<name>left-firestreak1</name>
+		<path>Aircraft/Hunter/Models/weapons/firestreak.xml</path>
+		<offsets>
+			<x-m>0.7</x-m>
+			<y-m>-4.4</y-m>
+			<z-m>-0.48</z-m>
+			<pitch-deg>-1.74</pitch-deg>
+		</offsets>
+	</model>	
+  <animation>
+    <type>select</type>
+    <object-name>left-firestreak1</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[0]/selected</property>
+          <value>Firestreak</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[0]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+	
+<!-- station left 2 -->
+ 
+<model>
+		<name>left-Tank2</name>
+		<path>Aircraft/Hunter/Models/weapons/tank1500.xml</path>
+		<offsets>
+			<x-m>-0.4</x-m>
+			<y-m>-3.0</y-m>
+			<z-m>-0.48</z-m>
+			<pitch-deg>-1.74</pitch-deg>
+		</offsets>
+	</model>	
+  <animation>
+    <type>select</type>
+    <object-name>left-Tank2</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[1]/selected</property>
+          <value>230 G Droptank</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[1]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+	
+<model>
+		<name>left-firestreak2</name>
+		<path>Aircraft/Hunter/Models/weapons/firestreak.xml</path>
+		<offsets>
+			<x-m>-0.4</x-m>
+			<y-m>-3.05</y-m>
+			<z-m>-0.48</z-m>
+			<pitch-deg>-1.74</pitch-deg>
+		</offsets>
+	</model>	
+  <animation>
+    <type>select</type>
+    <object-name>left-firestreak2</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[1]/selected</property>
+          <value>Firestreak</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[1]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+	
+
+
+
+<!-- station right 2 -->
+ 
+	<model>
+		<name>right-Tank2</name>
+		<path>Aircraft/Hunter/Models/weapons/tank1500.xml</path>
+		<offsets>
+			<x-m>-0.4</x-m>
+			<y-m>3.0</y-m>
+			<z-m>-0.48</z-m>
+			<pitch-deg>-1.74</pitch-deg>
+		</offsets>
+	</model>	
+  <animation>
+    <type>select</type>
+    <object-name>right-Tank2</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[2]/selected</property>
+          <value>230 G Droptank</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[2]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+  
+<model>
+		<name>right-firestreak2</name>
+		<path>Aircraft/Hunter/Models/weapons/firestreak.xml</path>
+		<offsets>
+			<x-m>-0.4</x-m>
+			<y-m>3</y-m>
+			<z-m>-0.48</z-m>
+			<pitch-deg>-1.74</pitch-deg>
+		</offsets>
+	</model>	
+  <animation>
+    <type>select</type>
+    <object-name>right-firestreak2</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[2]/selected</property>
+          <value>Firestreak</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[2]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+
+
+<!-- station right 1 -->
+
+<model>
+		<name>right-Tank1</name>
+		<path>Aircraft/Hunter/Models/weapons/tank1500.xml</path>
+		<offsets>
+			<x-m>0.8</x-m>
+			<y-m>4.35</y-m>
+			<z-m>-0.48</z-m>
+			<pitch-deg>-1.74</pitch-deg>
+		</offsets>
+	</model>	
+  <animation>
+    <type>select</type>
+    <object-name>right-Tank1</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[3]/selected</property>
+          <value>100 G Droptank</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[3]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+<model>
+		<name>right-firestreak1</name>
+		<path>Aircraft/Hunter/Models/weapons/firestreak.xml</path>
+		<offsets>
+			<x-m>0.7</x-m>
+			<y-m>4.32</y-m>
+			<z-m>-0.48</z-m>
+			<pitch-deg>-1.74</pitch-deg>
+		</offsets>
+	</model>	
+  <animation>
+    <type>select</type>
+    <object-name>right-firestreak1</object-name>      
+    <condition>
+      <and>
+        <equals>
+          <property>sim/weight[3]/selected</property>
+          <value>Firestreak</value>
+        </equals>
+        <equals>
+          <property>controls/armament/station[3]/release</property>
+          <value>false</value>
+        </equals>
+      </and>
+    </condition>
+  </animation>
+
+</PropertyList>

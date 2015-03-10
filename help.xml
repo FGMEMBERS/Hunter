@@ -3,6 +3,10 @@
     <help> 
       <title>Hawker Hunter</title>
       <key> 
+        <name>}</name>
+        <desc>Start / Stop engine</desc>
+      </key>
+	  <key> 
         <name>Ctrl-F</name>
         <desc>emergency flap lowering</desc>
       </key>

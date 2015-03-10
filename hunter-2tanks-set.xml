@@ -24,7 +24,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 		<fuel-fraction>1.0</fuel-fraction>
 		<systems>
 			<autopilot>
-				<path>Aircraft/Hunter/Systems/hunter-autopilot.xml</path>
+				<path>Aircraft/Hunter/Systems/autopilot.xml</path>
 			</autopilot>
 			<electrical>
 				<path>Aircraft/Hunter/Systems/hunter-electrical.xml</path>
@@ -32,17 +32,6 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 		</systems>
 		<instrumentation>
 			<path>Aircraft/Hunter/Systems/instrumentation.xml</path>
-			<tacan n="0">
-				<serviceable type="bool"
-										 archive="y">true</serviceable>
-				<switch-position type="int"
-												 archive="y">1</switch-position>
-			</tacan>
-			<!-- hsi heading bug and source select-->
-			<heading-indicator>
-				<heading-bug-deg type="double">180</heading-bug-deg>
-				<heading-source type="bool">true</heading-source>
-			</heading-indicator>
 		</instrumentation>
 		<ai>
 			<aircraft>
@@ -55,7 +44,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 			<!--<path>Aircraft/Hunter/Models/hunter-submodels.xml</path>-->
 		</submodels>
 		<sound>
-			<path>Aircraft/Hunter/Sounds/hunter-sound.xml</path>
+			<path>Aircraft/Hunter/Sounds/sound.xml</path>
 		</sound>
 		<!-- hide the 2D panel -->
 		<panel>
@@ -63,12 +52,19 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 		</panel>
 		<!-- no HUD -->
 		<hud>
-			<path>Huds/default.xml</path>
+			<path>Huds/Default/default.xml</path>
 			<visibility>false</visibility>
 		</hud>
 		<model>
 			<path>Aircraft/Hunter/Models/hunter-model-2t.xml</path>
+			<livery>
+<file type="string"/>
+</livery>
 		</model>
+		<submodels> 
+<serviceable type="bool">true</serviceable>
+<path>Aircraft/Hunter/Models/Effects/guns/submodels.xml</path>
+</submodels>
 		<rendering>
 			<redout>
 				<parameters>
@@ -126,21 +122,7 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 													 type="double">7</target-z-offset-m>
 			</config>
 		</view>
-		<menubar>
-			<default>
-				<menu n="10">
-					<label>Hunter</label>
-					<enabled type="bool">true</enabled>
-					<item>
-						<label>Toggle pilot model</label>
-						<binding>
-							<command>property-toggle</command>
-							<property>sim/model/hunter/show-pilot</property>
-						</binding>
-					</item>
-				</menu>
-			</default>
-		</menubar>
+		<menubar include="Dialogs/hunter-menu.xml"/>
 		<hunter>
 			<show-pilot archive="y"
 									type="bool">true</show-pilot>
@@ -440,8 +422,17 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 					<value type="double">0.0</value>
 				</binding>
 			</key>
+			<key n="125">
+     <name>}</name>
+     <desc>Engine Autostart</desc>
+	<binding>
+		<command>nasal</command>
+		<script>engines.engine1.autostart();</script>
+	</binding>
+  </key>
 		</keyboard>
 	</input>
+
 
 	<yasim>
 		<weights>
@@ -455,13 +446,29 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 	<nasal>
 		<hunter>
 			<file>Aircraft/Hunter/Models/hunter.nas</file>
+<file>Aircraft/Hunter/Nasal/light.nas</file>
+<file>Aircraft/Hunter/Nasal/doors.nas</file>
+
 		</hunter>
+	<engines>
+      <file>Aircraft/BAE-Hawk/Nasal/generic-yasim-engine.nas</file>
+      <script>
+        var engine1 = engines.Jet.new(0, 0, 0.01, 5.21, 3, 5, 1, 6);
+        setlistener("sim/signals/fdm-initialized", func
+        {
+          engine1.init();
+        }, 0, 0);
+       </script>
+    </engines>	
 	</nasal>
 
 	<environment>
 		<params>
 			<contrail-altitude type="double">50000</contrail-altitude>
 		</params>
+		<turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
 	</environment>
 
 </PropertyList>

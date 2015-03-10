@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<!-- airbake warning -->
+
+<PropertyList>
+
+ <path>airbrake-warning.ac</path>
+
+<!-- **************** lamp **************** -->
+<!-- airbrake out -->
+ <animation>
+  <type>select</type>
+  <object-name>disk-airbrake</object-name>
+  <condition>
+   <equals>
+    <property>surface-positions/speedbrake-pos-norm</property>
+	<value>1</value>
+   </equals>
+  </condition>
+ </animation>
+ 
+ <!-- gear warning -->
+ 
+ <animation>
+  <type>select</type>
+  <object-name>disk-gear</object-name>
+  <condition>
+   <equals>
+    <property>controls/gear/gear-down</property>
+	<value>true</value>
+   </equals>
+  </condition>
+ </animation>
+ 
+ <animation> 
+      <type>material</type>
+	  <object-name>plate-gear</object-name>
+	  <object-name>cylinder-gear</object-name>
+	  <object-name>plate-airbrake</object-name>
+	  <object-name>cylinder-airbrake</object-name>
+      <emission> 
+        <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.25</green>
+        <blue>0.25</blue>
+      </emission>
+    </animation>
+ 
+ <!-- *** LoD *** -->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+ 
+ </PropertyList>
+
+
+

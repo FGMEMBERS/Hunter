@@ -1,0 +1,896 @@
+<?xml version="1.0"?>
+<!-- Hunter model config file -->
+<!-- Vivian Meazza 2004/1/2 vivian.meazza@lineone.net -->
+<!-- Ver 0.1.0 -->
+<PropertyList>
+
+<animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>100</max-m>
+    </animation>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/instruments.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</offsets>
+	</model>
+
+	
+ <!-- Rembrandt code -->
+ <!-- glass -->
+	<animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+   <object-name>Visor</object-name>
+  </animation>
+	
+	<effect>
+      <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>Visor</object-name>
+   </effect>
+  
+  
+  <animation>
+    <!-- Objets opaques -->
+   <object-name>Pilot</object-name>
+		<object-name>Seat-Harness</object-name>
+		<object-name>Parachute-Harness</object-name>
+<object-name>Pilot-Head</object-name>
+		<object-name>Helmet</object-name>
+		<object-name>Mask</object-name>
+		<object-name>Lever</object-name>
+    <!-- Objets transparents -->
+    <object-name>Visor</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>lunettes</object-name>
+  </animation>
+
+	 <animation>
+    <type>rotate</type>
+   <object-name>Pilot-Head</object-name>
+		<object-name>Helmet</object-name>
+		<object-name>Visor</object-name>
+		<object-name>Mask</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> -15 </factor> 
+    <center>
+      <x-m> 0.074 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.359 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+   <object-name>Pilot-Head</object-name>
+		<object-name>Helmet</object-name>
+		<object-name>Visor</object-name>
+		<object-name>Mask</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor>-25</factor>
+    <center>
+      <x-m> 0.074 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.359 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 0.000 </y>
+      <z> 1.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+   <object-name>Pilot-Head</object-name>
+		<object-name>Helmet</object-name>
+		<object-name>Visor</object-name>
+		<object-name>Mask</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <factor> -10.0</factor>
+    <center>
+      <x-m> 0.074 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.359 </z-m>
+    </center>
+    <axis>
+      <x> 1.000 </x>
+      <y> 0.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation> 
+
+	<!-- **************************** Pilot ******************************* -->
+
+	<animation>
+		<type>select</type>
+		<object-name>Pilot</object-name>
+		<object-name>Seat-Harness</object-name>
+		<object-name>Parachute-Harness</object-name>
+		<condition>
+			<or>
+				<not>
+					<property>sim/model/hunter/show-pilot</property>
+				</not>
+				<not>
+					<equals>
+						<property>sim/current-view/view-number</property>
+						<value>0</value>
+					</equals>
+				</not>
+			</or>
+		</condition>
+	</animation>
+
+	<!--  conceal Pilot Head etc in Cockpit View-->
+
+	<animation>
+		<type>select</type>
+		<object-name>Pilot-Head</object-name>
+		<object-name>Helmet</object-name>
+		<object-name>Visor</object-name>
+		<object-name>Mask</object-name>
+		<object-name>Lever</object-name>
+		<condition>
+			<not>
+				<equals>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+				</equals>
+			</not>
+		</condition>
+	</animation>
+
+	<!-- Pitch -->
+	<!--  Control Stick  -->
+	<animation>
+		<type>rotate</type>
+		<object-name>C-Stick-U</object-name>
+		<object-name>C-Stick-Handle</object-name>
+		<object-name>C-Stick-L</object-name>
+		<object-name>Cover</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<offset-deg>0</offset-deg>
+		<factor>-10</factor>
+		<center>
+			<x-m>-4.61041</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-0.228074</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RLArm</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<offset-deg>0</offset-deg>
+		<factor>-10</factor>
+		<center>
+			<x-m>-4.61041</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-0.228074</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RLArm</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-5</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.63211</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.3127</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RLArm</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-15</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>7.5</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.63211</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.3127</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation>
+
+	<!-- Right arm -->
+	<!-- Roll -->
+
+	<!-- control stick -->
+	<animation>
+		<type>rotate</type>
+		<object-name>C-Stick-U</object-name>
+		<object-name>C-Stick-Handle</object-name>
+		<object-name>Pilot-RLArm</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<offset-deg>0</offset-deg>
+		<factor>-20</factor>
+		<center>
+			<x-m>-4.64448</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.096915</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RLArm</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>7.5</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-15</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.63211</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.3127</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RLArm</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-1</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>7.5</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.63211</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.3127</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RUArm</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>10</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-6</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.19271</x-m>
+			<y-m>0.125018</y-m>
+			<z-m>0.565065</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RUArm</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-10</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>13</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.19271</x-m>
+			<y-m>0.125018</y-m>
+			<z-m>0.565065</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RUArm</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>2.5</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-5</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.19271</x-m>
+			<y-m>0.125018</y-m>
+			<z-m>0.565065</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RUArm</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>5</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-10</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.19271</x-m>
+			<y-m>0.125018</y-m>
+			<z-m>0.565065</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RUArm</object-name>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>12.5</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.19271</x-m>
+			<y-m>0.125018</y-m>
+			<z-m>0.565065</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<!-- left arm - throttle -->
+	<!-- throttle -->
+	<animation>
+		<type>rotate</type>
+		<object-name>Throttle</object-name>
+		<object-name>Pilot-LLArm</object-name>
+		<property>controls/engines/engine[0]/throttle</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>-10</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>35</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.69369</x-m>
+			<y-m>-0.356772</y-m>
+			<z-m>0.0907826</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-LLArm</object-name>
+		<property>controls/engines/engine[0]/throttle</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>-5</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>35</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.63486</x-m>
+			<y-m>-0.277667</y-m>
+			<z-m>0.191996</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-LUArm</object-name>
+		<property>controls/engines/engine[0]/throttle</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>-5</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>10</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.20111</x-m>
+			<y-m>-0.117579</y-m>
+			<z-m>0.571138</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Rudder -->
+	<!-- Left  -->
+	<animation>
+		<type>translate</type>
+		<object-name>Boot-L</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-0.03</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0.03</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>Pilot-LLLeg</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-0.03</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0.03</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-LLLeg</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-3</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>3</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.98</x-m>
+			<y-m>-0.22</y-m>
+			<z-m>-0.35</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-LULeg</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-3</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>3</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.27</x-m>
+			<y-m>0.18</y-m>
+			<z-m>-0.04</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Right -->
+	<animation>
+		<type>translate</type>
+		<object-name>Pilot-RLLeg</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-0.03</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0.03</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>Boot-R</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-0.03</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0.03</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RLLeg</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-3</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>3</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.98</x-m>
+			<y-m>0.22</y-m>
+			<z-m>-0.35</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pilot-RULeg</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-3</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>3</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>-4.27</x-m>
+			<y-m>0.18</y-m>
+			<z-m>-0.04</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- seat height -->
+	<animation>
+		<type>translate</type>
+		<object-name>Pilot</object-name>
+		<property>controls/seat/vertical-adjust</property>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<!-- **************************** Controls **************************** -->
+	<!-- Flap Lever -->
+	<model>
+		<path>Aircraft/Hunter/Models/interior/flap.xml</path>
+		<offsets>
+			<x-m>-4.81</x-m>
+			<y-m>-0.26</y-m>
+			<z-m>0.35</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/undercarriage-up-down.xml</path>
+		<name>Undercarriage-Control</name>
+		<offsets>
+			<x-m>-4.81</x-m>
+			<y-m>-0.325</y-m>
+			<z-m>0.38</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/interior/flap-emrgy-lowering.xml</path>
+		<offsets>
+			<x-m>-4.81</x-m>
+			<y-m>-0.28</y-m>
+			<z-m>0.41</z-m>
+		</offsets>
+	</model>
+
+	<!-- rudder pedals -->
+	<!-- Left -->
+	<animation>
+		<type>translate</type>
+		<object-name>Pedal-L</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-0.03</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0.03</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Right -->
+	<animation>
+		<type>translate</type>
+		<object-name>Pedal-R</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>-1</ind>
+				<dep>-0.03</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0.03</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+
+
+</PropertyList>
