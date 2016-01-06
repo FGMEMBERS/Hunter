@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!--
 ************************************************************************
-Hawker Hunter simulation config. This files ties together 
-all the components used by FGFS to represent the Hawker Hunter. Components include 
+Hawker Hunter simulation config. This files ties together
+all the components used by FGFS to represent the Hawker Hunter. Components include
 the flight data model, instrument panel, and external 3D model.
 
 Ver 0.1.0
 
-Revised keybard bindings are included for cockpit canopy open/close, arrestor hook 
+Revised keybard bindings are included for cockpit canopy open/close, arrestor hook
 raise/lower, emergency flap lowering, and 10 degree flap steps.
 
 
@@ -22,6 +22,8 @@ raise/lower, emergency flap lowering, and 10 degree flap steps.
 		<flight-model>yasim</flight-model>
 		<aero>hunter-yasim-2t</aero>
 		<fuel-fraction>1.0</fuel-fraction>
+		<variant-of>hunter</variant-of>
+
 		<systems>
 			<autopilot>
 				<path>Aircraft/Hunter/Systems/hunter-autopilot.xml</path>
